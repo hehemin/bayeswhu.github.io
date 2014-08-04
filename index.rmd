@@ -7,8 +7,11 @@ output:
 
 ## Jing Fang (方晶)
 
-[Home](http://bayeswhu.github.io/index.html)
-[Teaching](http://bayeswhu.github.io/teaching.html)
+-----
+
+[Home](http://bayeswhu.github.io/index.html) | [Teaching](~/teaching.html)
+
+-----
 
 ### Home
 <img src="fj.jpg" height="400px" width="300px" />

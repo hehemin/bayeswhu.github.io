@@ -1,0 +1,14 @@
+---
+output: 
+    html_document:
+        css: my_markdown.css
+        mathjax: null
+---
+
+### Teaching
+
+#### Classes:
+
+- [R workshop](~/r.html) (Fall 2014)
+
+- [International Trade](~/trade.html) (Fall 2014)
