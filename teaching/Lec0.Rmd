@@ -1,0 +1,115 @@
+---
+title: "An Introduction of the R workshop"
+author: "Jing Fang"
+output: revealjs_presentation
+---
+
+## What is R?
+
+- R is a free software environment for statistical computing and graphics.
+
+- R has become the world-wide language for statistics, predictive analytics, and data visualization.
+
+## What can you do with R?
+
+- Do calculations
+
+- Perform statistic analysis
+
+- Create graphics
+
+- Write your own functions
+
+## Why R?
+
+- Technical advantages: free, open-source, available for all OSs
+
+- Efficient functions and data structures for data analysis
+
+- Powerful graphics
+
+- Access to fast growing number of analysis packages
+
+## Comparison to other software
+
+- Stata: It can handle all kinds of econometrics research. Many packages available
+
+- SAS: It is really good for big data set, but the grammar is really weird.
+
+- Matlab: I could not compare it directly to R since it is a mathematical software instead of a statistic one. The only problem may be the size.
+
+- Others do not be very popular in economic field. SPSS may be good for management student; Eviews specializes more in time series analysis and a little bit out of date.
+
+- And the most important factor: you need to pay for them.
+
+## Object
+
+- The object of this workshop is to collect students who are interesting in R, so that we all have a chance to discuss the application of R in economics.
+
+## Reference
+
+- There is no textbook for this workshop.
+
+- Instead, we have several reference books.
+
+- You could find all of them on the internet, or buy the Chinese version for some of them.
+
+## Reference
+
+“R in action - Data analysis and graphics with R”
+
+<p style="text-align: center"><img src="RIA_Front_Cover.png" height="480px" width="360px" /></p>
+
+## Reference
+
+“ggplot2 - Elegant Graphics for Data Analysis”
+
+<p style="text-align: center"><img src="ggplot2_Front_Cover.png" height="480px" width="360px" /></p>
+
+## Reference
+
+“Applied Econometrics with R”
+
+<p style="text-align: center"><img src="AER_Front_Cover.png" height="480px" width="360px" /></p>
+
+## Reference
+
+“Introductory Econometrics:A Modern Approach”
+
+<p style="text-align: center"><img src="Econometrics_Front_Cover.png" height="480px" width="360px" /></p>
+
+## Workshop Description
+
+- This will be a full English workshop. We will use English everywhere except conversation. 
+
+- There is no exam. We will have a lot of practice and homework to do.
+
+- We will meet twice a week, until the number of students are less than 5.
+
+- You need to bring your laptop to the school of economics. This is a kind of cost to identify the students who are really interesting in R.
+
+## Schedule
+
+- We wil first introduce the basic of R, including the materials in “R in Action”, “ggplot2”, and “Applied Econometrics with R”.
+
+- The next step is to use what we have learned to do the econometrics exercise as much as possible.
+
+- You guys need to prepare to learn it by yourself and help each other.
+
+## Questions?
+
+- Time
+
+- Location
+
+## Questions?
+
+- A good question is much more important than the good or right answer.
+
+- Learn to be a undergraduate student.
+
+## Homework 0
+
+- Install [R](http://www.r-project.org).
+
+- You will not like the ugly R interface. I suggest the beautiful [Rstudio](http://www.rstudio.com/ide/)

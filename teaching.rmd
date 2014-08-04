@@ -9,6 +9,6 @@ output:
 
 #### Classes:
 
-- [R workshop](~/r.html) (Fall 2014)
+- [R workshop](teaching/r.html) (Fall 2014)
 
-- [International Trade](~/trade.html) (Fall 2014)
+- [International Trade](teaching/trade.html) (Fall 2014)
