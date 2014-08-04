@@ -8,7 +8,9 @@ output:
 ### R workshop (Fall 2014)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
+
 Office: 419, School of Economics
+
 Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 -----
@@ -17,7 +19,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 #### Slides
 
-- [Lec 0](teaching/Lec0.html)
+- [Lec 0](r/Lec0.html)
 
 #### Homeworks
 
