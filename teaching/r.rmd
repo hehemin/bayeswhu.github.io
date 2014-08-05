@@ -35,6 +35,10 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 <!-- - [Lec 7](r/Lec7.html) -->
 
+#### Data
+
+data([txt](r/data.zip)) for homework
+
 #### Homeworks
 
 <!-- - [Homework 1](r/CE1.html) -->
