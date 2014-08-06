@@ -105,6 +105,9 @@ hr {
    color: red;
 }
 
+img {
+  max-width: 960px;
+}
 
 /* Code below this line is copyright Twitter Inc. */
 
