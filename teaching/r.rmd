@@ -23,7 +23,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 1](r/Lec1.html)
 
-<!-- - [Lec 2](r/Lec2.html) -->
+- [Lec 2](r/Lec2.html)
 
 <!-- - [Lec 3](r/Lec3.html) -->
 
