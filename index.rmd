@@ -9,7 +9,7 @@ output:
 
 -----
 
-[Home](http://bayeswhu.github.io/index.html) | [Teaching](teaching.html)
+[Home](http://bayeswhu.github.io/index.html) | [Research](research.html) | [Teaching](teaching.html)
 
 -----
 

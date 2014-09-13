@@ -1,0 +1,14 @@
+---
+output: 
+    html_document:
+        css: my_markdown.css
+        mathjax: null
+---
+
+### Research
+
+#### Papers:
+
+- Invention and Superstar Inventors: Evidence from China Patents, working paper, 2014
+
+- Country Size and Strategic Trade Policy: A Model of a Dominant Country Facing a Competitive Fringe, working paper, 2014
