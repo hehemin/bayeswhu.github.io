@@ -25,7 +25,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 2](r/Lec2.html)
 
-<!-- - [Lec 3](r/Lec3.html) -->
+- [Lec 3](r/Lec3.html)
 
 <!-- - [Lec 4](r/Lec4.html) -->
 
