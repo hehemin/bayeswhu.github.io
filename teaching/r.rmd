@@ -29,7 +29,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 4](r/Lec4.html)
 
-<!-- - [Lec 5](r/Lec5.html) -->
+- [Lec 5](r/Lec5.html)
 
 <!-- - [Lec 6](r/Lec6.html) -->
 
