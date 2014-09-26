@@ -55,4 +55,8 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 <!-- - [Key 2](r/CE2_key.html) -->
 
+#### Quiz
+
+- [Quiz 1](trade/Quiz1.ppt)
+
 #### Project
