@@ -33,7 +33,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 6](r/Lec6.html)
 
-<!-- - [Lec 7](r/Lec7.html) -->
+- [Lec 7](r/Lec7.html)
 
 #### Data
 
@@ -41,7 +41,7 @@ data([txt](r/data.zip)) for homework
 
 #### Homeworks
 
-<!-- - [Homework 1](r/CE1.html) -->
+- [Homework 1](r/CE1.html)
 
 <!-- - [Homework 2](r/CE2.html) -->
 
