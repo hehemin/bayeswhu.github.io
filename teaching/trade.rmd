@@ -35,7 +35,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 8](trade/Lec8.html)
 
-<!-- - [Lec 7](trade/Lec7.html) -->
+- [Lec 9](trade/Lec9.html)
 
 <!-- - [Lec 7](trade/Lec7.html) -->
 
@@ -51,7 +51,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 #### Keys
 
-<!-- - [Key 1](r/CE1_key.html) -->
+- [Key 1](trade/Hw1_key.doc)
 
 <!-- - [Key 2](r/CE2_key.html) -->
 
