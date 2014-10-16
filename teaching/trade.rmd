@@ -37,7 +37,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 9](trade/Lec9.html)
 
-<!-- - [Lec 7](trade/Lec7.html) -->
+- [Lec 10](trade/Lec10.html)
 
 <!-- - [Lec 7](trade/Lec7.html) -->
 
