@@ -41,7 +41,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Lec 11](trade/Lec11.html)
 
-<!-- - [Lec 7](trade/Lec7.html) -->
+- [Lec 12](trade/Lec12.html)
 
 #### Homeworks
 
