@@ -47,7 +47,7 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Homework 1](trade/Homework1.doc)
 
-<!-- - [Homework 2](r/CE2.html) -->
+- [Homework 2](trade/Homework2.doc)
 
 #### Keys
 
