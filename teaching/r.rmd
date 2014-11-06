@@ -47,7 +47,7 @@ data([txt](r/data.zip)) for homework
 
 - [Homework 3](r/CE3.html)
 
-<!-- - [Homework 4](r/CE4.html) -->
+- [Homework 4](r/CE4.html)
 
 <!-- - [Homework 5](r/CE5.html) -->
 
