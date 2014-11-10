@@ -61,6 +61,8 @@ Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
 
 - [Quiz 2](trade/Quiz2.ppt)
 
+- [Quiz 3](trade/Quiz3.ppt)
+
 #### Project
 
 - [Project List](trade/Project.html)
