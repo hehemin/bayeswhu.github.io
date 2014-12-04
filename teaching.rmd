@@ -11,4 +11,4 @@ output:
 
 - [R workshop](teaching/r.html) (Fall 2014)
 
-- [International Trade](teaching/trade.html) (Fall 2014)
+- International Trade (Fall 2014)
