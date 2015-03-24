@@ -1,0 +1,32 @@
+---
+output: 
+    html_document:
+        css: my_markdown.css
+        mathjax: null
+---
+
+### Industrial Organization (Spring 2015)
+
+Instructor: [Jing Fang](http://bayeswhu.github.io)
+
+Office: 419, School of Economics
+
+Email: [bayeswhu@gmail.com](bayeswhu@gmail.com)
+
+-----
+
+### Course Materials
+
+#### Slides
+
+- [Lec 0](io/Lec0.html)
+
+- [Lec 1](io/Lec1.html)
+
+#### Homeworks
+
+<!-- - [Homework 1](io/Homework1.doc) -->
+
+#### Keys
+
+<!-- - [Key 1](io/Hw1_key.doc) -->

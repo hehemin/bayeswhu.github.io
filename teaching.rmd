@@ -9,6 +9,10 @@ output:
 
 #### Classes:
 
-- [R workshop](teaching/r.html) (Fall 2014)
+- [Industrial Organization for PhD](teaching/iophd.html) (Spring 2015)
+
+- [Industrial Organization](teaching/io.html) (Spring 2015)
+
+- [R workshop](teaching/r.html) (Spring 2015)
 
 - International Trade (Fall 2014)
