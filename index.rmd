@@ -20,7 +20,7 @@ output:
 - Assistant Professor of [Economics](http://eco.hust.edu.cn) at the [Huazhong University of Science and Technology](http://www.hust.edu.cn)
 
 ##### Email: 
-[bayeswhu@gmail.com](bayeswhu@gmail.com)
+[jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 ##### Web: 
 [bayeswhu.github.io](http://bayeswhu.github.io)
