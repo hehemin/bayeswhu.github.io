@@ -23,6 +23,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 1](io/Lec1.html)
 
+- [Lec 2](io/Lec2.html)
+
 #### Homeworks
 
 <!-- - [Homework 1](io/Homework1.doc) -->
