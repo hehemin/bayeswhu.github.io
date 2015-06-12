@@ -13,6 +13,6 @@ output:
 
 - [Industrial Organization](teaching/io.html) (Spring 2015)
 
-- [R workshop](teaching/r.html) (Spring 2015)
+- R workshop (Spring 2015)
 
 - International Trade (Fall 2014)
