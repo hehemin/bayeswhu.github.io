@@ -39,6 +39,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 9](io/Lec9.html)
 
+- [Lec 10](io/Lec10.html)
+
 #### Homeworks
 
 - [Homework 1](io/Homework.pdf)
