@@ -9,9 +9,9 @@ output:
 
 #### Classes:
 
-- [Industrial Organization for PhD](teaching/iophd.html) (Spring 2015)
+- Industrial Organization for PhD (Spring 2015)
 
-- [Industrial Organization](teaching/io.html) (Spring 2015)
+- Industrial Organization (Spring 2015)
 
 - R workshop (Spring 2015)
 
