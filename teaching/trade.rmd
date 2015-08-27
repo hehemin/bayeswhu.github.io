@@ -5,7 +5,7 @@ output:
         mathjax: null
 ---
 
-### International Trade (Fall 2014)
+### International Trade (Fall 2015)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
@@ -21,7 +21,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 1](trade/Lec1.html)
 
-- [Lec 2](trade/Lec2.html)
+<!-- - [Lec 2](trade/Lec2.html)
 
 - [Lec 3](trade/Lec3.html)
 
@@ -41,28 +41,28 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 11](trade/Lec11.html)
 
-- [Lec 12](trade/Lec12.html)
+- [Lec 12](trade/Lec12.html) -->
 
 #### Homeworks
 
-- [Homework 1](trade/Homework1.doc)
+<!-- - [Homework 1](trade/Homework1.doc)
 
-- [Homework 2](trade/Homework2.doc)
+- [Homework 2](trade/Homework2.doc) -->
 
 #### Keys
 
-- [Key 1](trade/Hw1_key.doc)
+<!-- - [Key 1](trade/Hw1_key.doc)
 
-- [Key 2](trade/Hw2_key.doc)
+- [Key 2](trade/Hw2_key.doc) -->
 
 #### Quiz
 
-- [Quiz 1](trade/Quiz1.ppt)
+<!-- - [Quiz 1](trade/Quiz1.ppt)
 
 - [Quiz 2](trade/Quiz2.ppt)
 
-- [Quiz 3](trade/Quiz3.ppt)
+- [Quiz 3](trade/Quiz3.ppt) -->
 
 #### Project
 
-- [Project List](trade/Project.html)
+<!-- - [Project List](trade/Project.html) -->

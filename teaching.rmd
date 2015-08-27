@@ -9,6 +9,8 @@ output:
 
 #### Classes:
 
+- [International Trade](teaching/trade.html) (Fall 2015)
+
 - Industrial Organization for PhD (Spring 2015)
 
 - Industrial Organization (Spring 2015)
