@@ -1,0 +1,58 @@
+---
+output: 
+    html_document:
+        css: my_markdown.css
+        mathjax: null
+---
+
+### Quantitative Economics (Fall 2015)
+
+Instructor: [Jing Fang](http://bayeswhu.github.io)
+
+Office: 419, School of Economics
+
+Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
+
+-----
+
+### Course Materials
+
+#### Slides
+
+- [Lec 0](qe/Lec0.html)
+
+- [Lec 1](qe/Lec1.html)
+
+- [Lec 2](qe/Lec2.html)
+
+<!-- - [Lec 3](qe/Lec3.html)
+
+- [Lec 4](qe/Lec4.html)
+
+- [Lec 5](qe/Lec5.html)
+
+- [Lec 6](qe/Lec6.html)
+
+- [Lec 7](qe/Lec7.html)
+
+- [Lec 8](qe/Lec8.html)
+
+- [Lec 9](qe/Lec9.html)
+
+- [Lec 10](qe/Lec10.html)
+
+- [Lec 11](qe/Lec11.html)
+
+- [Lec 12](qe/Lec12.html) -->
+
+#### Homeworks
+
+<!-- - [Homework 1](qe/Homework1.doc)
+
+- [Homework 2](qe/Homework2.doc) -->
+
+#### Keys
+
+<!-- - [Key 1](qe/Hw1_key.doc)
+
+- [Key 2](qe/Hw2_key.doc) -->
