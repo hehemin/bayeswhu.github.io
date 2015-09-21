@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Python Essentials</title>
+  <title>Pandas</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -25,7 +25,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Python Essentials',
+                title: 'Pandas',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -96,642 +96,348 @@
 </article></slide><slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview-1">
 
 <ul>
-<li>Topics:
+<li><p>Pandas is a package of fast, efficient data analysis tools for Python</p></li>
+<li><p>Just as NumPy provides the basic array type plus core array operations, pandas defines some fundamental structures for working with data and endows them with methods that form the first steps of data analysis</p></li>
+<li><p>The most important data type defined by pandas is a <code>DataFrame</code>, which is an object for storing related columns of data</p></li>
+<li><p>In this sense, you can think of a <code>DataFrame</code> as analogous to a (highly optimized) Excel spreadsheet, or as a structure for storing the \(X\) matrix in a linear regression</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview-2">
 
 <ul>
-<li>Data types</li>
-<li>Imports</li>
-<li>Basic file I/O</li>
-<li>The Pythonic approach to iteration</li>
-<li>More on user-defined functions</li>
-<li>Comparisons and logic</li>
-<li>Standard Python style</li>
+<li><p>In the same way that NumPy specializes in basic array operations and leaves the rest of scientific tool development to other packages (e.g., SciPy, Matplotlib), pandas focuses on the fundamental data types and their methods, leaving other packages to add more sophisticated statistical functionality</p></li>
+<li>The strengths of pandas lie in
+
+<ul>
+<li>reading in data</li>
+<li>manipulating rows and columns</li>
+<li>adjusting indices</li>
+<li>working with dates and time series</li>
+<li>sorting, grouping, re-ordering and general data munging [1]</li>
+<li>dealing with missing values, etc., etc.</li>
+</ul></li>
+<li><p>This lecture will provide a basic introduction</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview-3">
+
+<ul>
+<li>Throughout the lecture we will assume that the following imports have taken place</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>import pandas as pd
+import numpy as np</pre>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Series</h2></hgroup><article  id="series">
+
+</article></slide><slide class=''><hgroup><h2>Series</h2></hgroup><article  id="series-1">
+
+<ul>
+<li><p>Perhaps the two most important data types defined by pandas are the <code>DataFrame</code> and <code>Series</code> types</p></li>
+<li><p>You can think of a <code>Series</code> as a “column” of data, such as a collection of observations on a single variable</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>s = pd.Series(np.random.randn(4), name=&#39;daily returns&#39;)
+s</pre>
+
+<ul>
+<li>Here you can imagine the indices <code>0, 1, 2, 3</code> as indexing four listed companies, and the values being daily returns on their shares</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Series</h2></hgroup><article  id="series-2">
+
+<ul>
+<li>Pandas <code>Series</code> are built on top of NumPy arrays, and support many similar operations</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>s * 100
+
+np.abs(s)</pre>
+
+<ul>
+<li><p>But Series provide more than NumPy arrays</p></li>
+<li><p>Not only do they have some additional (statistically oriented) methods</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>s.describe()</pre>
+
+<ul>
+<li>But their indices are more flexible</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>s.index = [&#39;AMZN&#39;, &#39;AAPL&#39;, &#39;MSFT&#39;, &#39;GOOG&#39;]
+s</pre>
+
+</article></slide><slide class=''><hgroup><h2>Series</h2></hgroup><article  id="series-3">
+
+<ul>
+<li><p>Viewed in this way, <code>Series</code> are like fast, efficient Python dictionaries (with the restriction that the items in the dictionary all have the same type—in this case, floats)</p></li>
+<li><p>In fact you can use much of the same syntax as Python dictionaries</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>s[&#39;AMZN&#39;]
+
+s[&#39;AMZN&#39;] = 0
+s
+
+&#39;AAPL&#39; in s</pre>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>DataFrames</h2></hgroup><article  id="dataframes">
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-1">
+
+<ul>
+<li><p>As mentioned above a <code>DataFrame</code> is somewhat like a spreadsheet, or a structure for storing the data matrix in a regression</p></li>
+<li><p>While a <code>Series</code> is one individual column of data, a <code>DataFrame</code> is all the columns</p></li>
+<li><p>Let’s look at an example, reading in data from the CSV file <code>data/test_pwt.csv</code>.</p></li>
+<li><p>Now let’s read the data in using pandas’ <code>read_csv</code> function</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df = pd.read_csv(&#39;data/test_pwt.csv&#39;)
+type(df)
+
+df</pre>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-2">
+
+<ul>
+<li>We can select particular rows using standard Python array slicing notation</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df[2:5]</pre>
+
+<ul>
+<li>To select columns, we can pass a list containing the names of the desired columns represented as strings</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df[[&#39;country&#39;, &#39;tcgdp&#39;]]</pre>
+
+<ul>
+<li>To select a mix of both we can use the <code>ix</code> attribute</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df.ix[2:5, [&#39;country&#39;, &#39;tcgdp&#39;]]</pre>
+
+<ul>
+<li>Let’s imagine that we’re only interested in population and total GDP (<code>tcgdp</code>)</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-3">
+
+<ul>
+<li>One way to strip the data frame <code>df</code> down to only these variables is as follows</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>keep = [&#39;country&#39;, &#39;POP&#39;, &#39;tcgdp&#39;]
+df = df[keep]
+df</pre>
+
+<ul>
+<li><p>Here the index <code>0, 1,..., 7</code> is redundant, because we can use the country names as an index</p></li>
+<li><p>To do this, first let’s pull out the country column using the pop method</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-4">
+
+<pre class = 'prettyprint lang-python'>countries = df.pop(&#39;country&#39;)
+type(countries)
+
+countries
+
+df
+
+df.index = countries
+df</pre>
+
+<ul>
+<li>Let’s give the columns slightly better names</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df.columns = &#39;population&#39;, &#39;total GDP&#39;
+df</pre>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-5">
+
+<ul>
+<li>Population is in thousands, let’s revert to single units</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df[&#39;population&#39;] = df[&#39;population&#39;] * 1e3
+df</pre>
+
+<ul>
+<li>Next we’re going to add a column showing real GDP per capita, multiplying by 1,000,000 as we go because total GDP is in millions</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df[&#39;GDP percap&#39;] = df[&#39;total GDP&#39;] * 1e6 / df[&#39;population&#39;]
+df</pre>
+
+<ul>
+<li>One of the nice things about pandas <code>DataFrame</code> and <code>Series</code> objects is that they have methods for plotting and visualization that work through Matplotlib</li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-6">
+
+<ul>
+<li>For example, we can easily generate a bar plot of GDP per capita</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df[&#39;GDP percap&#39;].plot(kind=&#39;bar&#39;)
+import matplotlib.pyplot as plt
+plt.show()</pre>
+
+<ul>
+<li>At the moment the data frame is ordered alphabetically on the countries—let’s change it to GDP per capita</li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>df = df.sort_index(by=&#39;GDP percap&#39;, ascending=False)
+df</pre>
+
+</article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-7">
+
+<p style="text-align: center">
+
+<img src="data:image/png;base64,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" width="60%" />
+
+</p>
+
+</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>On-Line Data Sources</h2></hgroup><article  id="on-line-data-sources">
+
+</article></slide><slide class=''><hgroup><h2>On-Line Data Sources</h2></hgroup><article  id="on-line-data-sources-1">
+
+<ul>
+<li><p>pandas makes it straightforward to query several common Internet databases programmatically</p></li>
+<li><p>One particularly important one is FRED — a vast collection of time series data maintained by the St. Louis Fed</p></li>
+<li><p>For example, suppose that we are interested in the unemployment rate</p></li>
+<li><p>Via FRED, the entire series for the US civilian rate can be downloaded directly by entering this URL into your browser</p></li>
+</ul>
+
+<pre >http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv</pre>
+
+<ul>
+<li>Equivalently, click <a href='http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv' title=''>here</a></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>On-Line Data Sources</h2></hgroup><article  id="on-line-data-sources-2">
+
+<ul>
+<li><p>This request returns a CSV file, which will be handled by your default application for this class of files</p></li>
+<li><p>Alternatively, we can access the CSV file from within a Python program</p></li>
+<li><p>This can be done with a variety of methods</p></li>
+<li><p>We start with a relatively low level method, and then return to pandas</p></li>
+</ul>
+
+</article></slide><slide class=''><hgroup><h2>Accessing Data with urllib.request</h2></hgroup><article  id="accessing-data-with-urllib.request">
+
+<ul>
+<li><p>One option is to use <code>urllib.request</code>, a standard Python library for requesting data over the Internet</p></li>
+<li><p>To begin, try the following code on your computer</p></li>
+</ul>
+
+<pre class = 'prettyprint lang-python'>import urllib.request
+web_page = urllib.request.urlopen(&#39;http://cnn.com&#39;)</pre>
+
+<ul>
+<li><p>If there’s no error message, then the call has succeeded</p></li>
+<li>If you do get an error, then there are two likely causes
+
+<ul>
+<li>You are not connected to the Internet — hopefully this isn’t the case</li>
+<li>Your machine is accessing the Internet through a proxy server, and Python isn’t aware of this</li>
 </ul></li>
 </ul>
 
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Data Types</h2></hgroup><article  id="data-types">
-
-</article></slide><slide class=''><hgroup><h2>Primitive Data Types</h2></hgroup><article  id="primitive-data-types">
+</article></slide><slide class=''><hgroup><h2>Accessing Data with urllib.request</h2></hgroup><article  id="accessing-data-with-urllib.request-1">
 
 <ul>
-<li><p>So far we’ve briefly met several common data types, such as strings, integers, floats and lists</p></li>
-<li><p>A particularly simple data type is Boolean values, which can be either <code>True</code> or <code>False</code></p></li>
+<li>Assuming that all is working, you can now proceed to using the <code>web_page</code> object returned by the call <code>urllib.request.urlopen(&#39;http://cnn.com&#39;)</code></li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>x = True
-y = 100 &lt; 10   # Python evaluates expression on right and assigns it to y
-y
-
-type(y)</pre>
-
-</article></slide><slide class=''><hgroup><h2>Primitive Data Types</h2></hgroup><article  id="primitive-data-types-1">
+<pre class = 'prettyprint lang-python'>web_page.read(100)</pre>
 
 <ul>
-<li>In arithmetic expressions, <code>True</code> is converted to 1 and <code>False</code> is converted 0</li>
+<li>The same idea can be used to access the CSV file discussed above</li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>x + y
-
-x * y
-
-True + True
-
-bools = [True, True, False, True]  # List of Boolean values
-sum(bools)</pre>
-
-</article></slide><slide class=''><hgroup><h2>Primitive Data Types</h2></hgroup><article  id="primitive-data-types-2">
+<pre class = 'prettyprint lang-python'>url = &#39;http://research.stlouisfed.org/fred2/series/UNRATE/downloaddata/UNRATE.csv&#39;
+source = urllib.request.urlopen(url)
+source.read(100)</pre>
 
 <ul>
-<li>The two most common data types used to represent numbers are integers and floats</li>
+<li>We could now write some additional code to parse this text and store it as an array&#8230;</li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>a, b = 1, 2
-c, d = 2.5, 10.0
-type(a)
-
-type(c)</pre>
+</article></slide><slide class=''><hgroup><h2>Accessing Data with urllib.request</h2></hgroup><article  id="accessing-data-with-urllib.request-2">
 
 <ul>
-<li>Computers distinguish between the two because, while floats are more informative, interal arithmetic operations on integers are more straightforward</li>
+<li>But this is unnecessary — pandas’ <code>read_csv</code> function can handle the task for us</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Primitive Data Types</h2></hgroup><article  id="primitive-data-types-3">
+<pre class = 'prettyprint lang-python'>source = urllib2.urlopen(url)
+data = pd.read_csv(source, index_col=0, parse_dates=True, header=None)</pre>
 
 <ul>
-<li>Complex numbers are another primitive data type in Python</li>
+<li>The data has been read into a pandas DataFrame called <code>data</code> that we can now manipulate in the usual way</li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>x = complex(1, 2)
-y = complex(2, 1)
-x * y</pre>
+<pre class = 'prettyprint lang-python'>type(data)
 
-</article></slide><slide class=''><hgroup><h2>Containers</h2></hgroup><article  id="containers">
+data.head()  # A useful method to get a quick look at a data frame
+
+data.describe()  # Your output might differ slightly</pre>
+
+</article></slide><slide class=''><hgroup><h2>Accessing Data with pandas</h2></hgroup><article  id="accessing-data-with-pandas">
 
 <ul>
-<li><p>Python has several basic types for storing collections of (possibly heterogeneous) data</p></li>
-<li><p>We have already discussed lists. A related data type is tuples, which are “immutable” lists</p></li>
+<li><p>Although it is worth understanding the low level procedures, for the present case pandas can take care of all these messy details</p></li>
+<li><p>For example, we can obtain the same unemployment data for the period 2006–2012 inclusive as follows</p></li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>x = (&#39;a&#39;, &#39;b&#39;)  # Round brackets instead of the square brackets
-x = &#39;a&#39;, &#39;b&#39;   # Or no brackets at all---the meaning is identical
-x
+<pre class = 'prettyprint lang-python'>import pandas.io.data as web
+import datetime as dt  # Standard Python date / time library
+start, end = dt.datetime(2006, 1, 1), dt.datetime(2012, 12, 31)
+data = web.DataReader(&#39;UNRATE&#39;, &#39;fred&#39;, start, end)
+type(data)
 
-type(x)</pre>
+data.plot()
+import matplotlib.pyplot as plt
+plt.show()</pre>
 
-</article></slide><slide class=''><hgroup><h2>Containers</h2></hgroup><article  id="containers-1">
+</article></slide><slide class=''><hgroup><h2>Data from the World Bank</h2></hgroup><article  id="data-from-the-world-bank">
 
 <ul>
-<li><p>In Python, an object is called “immutable” if, once created, the object cannot be changed</p></li>
-<li><p>Lists are mutable while tuples are not</p></li>
+<li><p>Let’s look at one more example of downloading and manipulating data — this time from the World Bank</p></li>
+<li><p>The World Bank collects and organizes data on a huge range of indicators</p></li>
+<li><p>For example, here we find data on government debt as a ratio to GDP: <a href='http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries' title=''>http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries</a></p></li>
+<li><p>If you click on “DOWNLOAD DATA” you will be given the option to download the data as an Excel file</p></li>
+<li><p>The next program does this for you, parses the data from Excel file to pandas DataFrame, and plots time series for France, Germany, the US and Australia</p></li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>x = [1, 2]  # Lists are mutable
-x[0] = 10   # Now x = [10, 2], so the list has &quot;mutated&quot;
-x = (1, 2)  # Tuples are immutable
-x[0] = 10   # Trying to mutate them produces an error</pre>
+</article></slide><slide class=''><hgroup><h2>Data from the World Bank</h2></hgroup><article  id="data-from-the-world-bank-1">
+
+<pre class = 'prettyprint lang-python'>import matplotlib.pyplot as plt
+from pandas.io.excel import ExcelFile
+from urllib.request import urlretrieve
+# == Get data and read into file gd.xls == #
+wb_data_file_dir = &quot;http://api.worldbank.org/datafiles/&quot;
+file_name = &quot;GC.DOD.TOTL.GD.ZS_Indicator_MetaData_en_EXCEL.xls&quot;
+url = wb_data_file_dir + file_name
+urlretrieve(url, &quot;gd.xls&quot;)
+# == Parse data into a DataFrame == #
+gov_debt_xls = ExcelFile(&#39;gd.xls&#39;)
+govt_debt = gov_debt_xls.parse(&#39;Sheet1&#39;, index_col=1, na_values=[&#39;NA&#39;])
+# == Take desired values and plot == #
+govt_debt = govt_debt.transpose()
+govt_debt = govt_debt[[&#39;AUS&#39;, &#39;DEU&#39;, &#39;FRA&#39;, &#39;USA&#39;]]
+govt_debt = govt_debt[36:]
+govt_debt.plot(lw=2)
+plt.show()</pre>
+
+</article></slide><slide class=''><hgroup><h2>Data from the World Bank</h2></hgroup><article  id="data-from-the-world-bank-2">
 
 <ul>
-<li>We’ll say more about mutable vs immutable a bit later, and explain why the distinction is important</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Containers</h2></hgroup><article  id="containers-2">
-
-<ul>
-<li>Tuples (and lists) can be “unpacked” as follows</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>integers = (10, 20, 30)
-x, y, z = integers
-x
-
-y</pre>
-
-</article></slide><slide class=''><hgroup><h2>Slice Notation</h2></hgroup><article  id="slice-notation">
-
-<ul>
-<li>To access multiple elements of a list or tuple, you can use Python’s slice notation</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>a = [2, 4, 6, 8]
-a[1:]
-
-a[1:3]</pre>
-
-</article></slide><slide class=''><hgroup><h2>Slice Notation</h2></hgroup><article  id="slice-notation-1">
-
-<ul>
-<li><p>The general rule is that <code>a[m:n]</code> returns <code>n - m</code> elements, starting at <code>a[m]</code></p></li>
-<li><p>Negative numbers are also permissible</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>a[-2:]  # Last two elements of the list</pre>
-
-<ul>
-<li>The same slice notation works on tuples and strings</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>s = &#39;foobar&#39;
-s[-3:]  # Select the last three elements</pre>
-
-</article></slide><slide class=''><hgroup><h2>Sets and Dictionaries</h2></hgroup><article  id="sets-and-dictionaries">
-
-<ul>
-<li><p>Two other container types we should mention before moving on are sets and dictionaries</p></li>
-<li><p>Dictionaries are much like lists, except that the items are named instead of numbered</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>d = {&#39;name&#39;: &#39;Frodo&#39;, &#39;age&#39;: 33}
-type(d)
-
-d[&#39;age&#39;]</pre>
-
-</article></slide><slide class=''><hgroup><h2>Sets and Dictionaries</h2></hgroup><article  id="sets-and-dictionaries-1">
-
-<ul>
-<li><p>The names <code>&#39;name&#39;</code> and <code>&#39;age&#39;</code> are called the <em>keys</em></p></li>
-<li><p>The objects that the keys are mapped to (<code>&#39;Frodo&#39;</code> and <code>33</code>) are called the <em>values</em></p></li>
-<li><p>Sets are unordered collections without duplicates, and set methods provide the usual set theoretic operations</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>s1 = {&#39;a&#39;, &#39;b&#39;}
-type(s1)
-
-s2 = {&#39;b&#39;, &#39;c&#39;}
-s1.issubset(s2)
-
-s1.intersection(s2)</pre>
-
-</article></slide><slide class=''><hgroup><h2>Sets and Dictionaries</h2></hgroup><article  id="sets-and-dictionaries-2">
-
-<ul>
-<li>The <code>set()</code> function creates sets from sequences</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>s3 = set((&#39;foo&#39;, &#39;bar&#39;, &#39;foo&#39;))
-s3</pre>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Imports</h2></hgroup><article  id="imports">
-
-</article></slide><slide class=''><hgroup><h2>Imports</h2></hgroup><article  id="imports-1">
-
-<ul>
-<li>From the start, Python has been designed around the twin principles of
-
-<ul>
-<li>a small core language</li>
-<li>extra functionality in separate libraries or modules</li>
-</ul></li>
-<li><p>For example, if you want to compute the square root of an arbitrary number, there’s no built in function that will perform this for you</p></li>
-<li><p>Instead, you need to <em>import</em> the functionality from a module — in this case a natural choice is <code>math</code></p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>import math
-math.sqrt(4)</pre>
-
-</article></slide><slide class=''><hgroup><h2>Imports</h2></hgroup><article  id="imports-2">
-
-<ul>
-<li><p>Note that the <code>math</code> module is part of the standard library, which is part of every Python distribution</p></li>
-<li><p>On the other hand, the scientific libraries we’ll work with later are not part of the standard library</p></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Imports</h2></hgroup><article  id="imports-3">
-
-<ul>
-<li>In your Python travels you will often see the following syntax</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>from math import *
-sqrt(4)</pre>
-
-<ul>
-<li><p>Here <code>from math import *</code> pulls all of the functionality of math into the current “namespace”</p></li>
-<li><p>Actually this kind of syntax should be avoided for the most part</p></li>
-<li><p>In essence the reason is that it pulls in lots of variable names without explicitly listing them — a potential source of conflicts</p></li>
-</ul>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Input and Output</h2></hgroup><article  id="input-and-output">
-
-</article></slide><slide class=''><hgroup><h2>Input and Output</h2></hgroup><article  id="input-and-output-1">
-
-<ul>
-<li><p>We discuss only reading and writing to text files</p></li>
-<li><p>Let’s start with writing</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>f = open(&#39;newfile.txt&#39;, &#39;w&#39;)   # Open &#39;newfile.txt&#39; for writing
-f.write(&#39;Testing\n&#39;)           # Here &#39;\n&#39; means new line
-f.write(&#39;Testing again&#39;)
-f.close()</pre>
-
-</article></slide><slide class=''><hgroup><h2>Input and Output</h2></hgroup><article  id="input-and-output-2">
-
-<ul>
-<li>Here
-
-<ul>
-<li>The built-in function <code>open()</code> creates a file object for writing to</li>
-<li>Both <code>write()</code> and <code>close()</code> are methods of file objects</li>
-</ul></li>
-<li>Where is this file that we’ve created?</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Input and Output</h2></hgroup><article  id="input-and-output-3">
-
-<ul>
-<li>Recall that Python maintains a concept of the current working directory (cwd) that can be located by</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>import os
-print(os.getcwd())</pre>
-
-<ul>
-<li>If a path is not specified, then this is where Python writes to</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Input and Output</h2></hgroup><article  id="input-and-output-4">
-
-<ul>
-<li>We can also use Python to read the contents of <code>newline.txt</code> as follows</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>f = open(&#39;newfile.txt&#39;, &#39;r&#39;)
-out = f.read()
-out
-
-print(out)</pre>
-
-</article></slide><slide class=''><hgroup><h2>Paths</h2></hgroup><article  id="paths">
-
-<ul>
-<li><p>Note that if <code>newfile.txt</code> is not in the cwd then this call to <code>open()</code> fails</p></li>
-<li><p>In this case you can either specify the full path to the file</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>f = open(&#39;insert_full_path_to_file/newfile.txt&#39;, &#39;r&#39;)</pre>
-
-<ul>
-<li><p>or change the current working directory to the location of the file via <code>os.chdir(&#39;path_to_file&#39;)</code></p></li>
-<li><p>Details are OS specific, by a Google search on paths and Python should yield plenty of examples</p></li>
-</ul>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Iterating</h2></hgroup><article  id="iterating">
-
-</article></slide><slide class=''><hgroup><h2>Iterating</h2></hgroup><article  id="iterating-1">
-
-<ul>
-<li><p>One of the most important tasks in computing is stepping through a sequence of data and performing a given action</p></li>
-<li><p>One of Python’s strengths is its simple, flexible interface to this kind of iteration via the <code>for</code> loop</p></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Looping over Different Objects</h2></hgroup><article  id="looping-over-different-objects">
-
-<ul>
-<li><p>Many Python objects are “iterable”, in the sense that they can be placed to the right of <code>in</code> within a <code>for</code> loop statement</p></li>
-<li><p>To give an example, suppose that we have a file called <code>us_cities.txt</code> listing US cities and their population</p></li>
-</ul>
-
-<pre >new york: 8244910
-los angeles: 3819702
-chicago: 2707120 
-houston: 2145146
-philadelphia: 1536471
-phoenix: 1469471
-san antonio: 1359758
-san diego: 1326179
-dallas: 1223229</pre>
-
-</article></slide><slide class=''><hgroup><h2>Looping over Different Objects</h2></hgroup><article  id="looping-over-different-objects-1">
-
-<ul>
-<li>Suppose that we want to make the information more readable, by capitalizing names and adding commas to mark thousands</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>data_file = open(&#39;data/us_cities.txt&#39;, &#39;r&#39;)
-for line in data_file:
-    city, population = line.split(&#39;:&#39;)            # Tuple unpacking
-    city = city.title()                           # Capitalize city names
-    population = &#39;{0:,}&#39;.format(int(population))  # Add commas to numbers
-    print(city.ljust(15) + population)
-data_file.close()</pre>
-
-<ul>
-<li>Here <code>format()</code> is a powerful string method used for inserting variables into strings</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Looping over Different Objects</h2></hgroup><article  id="looping-over-different-objects-2">
-
-<ul>
-<li><p>The reformatting of each line is the result of three different string methods, the details of which can be left till later</p></li>
-<li>The interesting part of this program for us is line 2, which shows that
-
-<ul>
-<li>The file object <code>f</code> is iterable, in the sense that it can be placed to the right of <code>in</code> within a <code>for</code> loop</li>
-<li>Iteration steps through each line in the file</li>
-</ul></li>
-<li><p>This leads to the clean, convenient syntax shown in our program</p></li>
-<li><p>Many other kinds of objects are iterable, and we’ll discuss some of them later on</p></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Looping without Indices</h2></hgroup><article  id="looping-without-indices">
-
-<ul>
-<li>One thing you might have noticed is that Python tends to favor looping without explicit indexing</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>for x in x_values:
-    print x * x</pre>
-
-<pre class = 'prettyprint lang-python'>for i in range(len(x_values)):
-    print x_values[i] * x_values[i]</pre>
-
-<ul>
-<li>When you compare these two alternatives, you can see why the first one is preferred</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Looping without Indices</h2></hgroup><article  id="looping-without-indices-1">
-
-<ul>
-<li><p>Python provides some facilities to simplify looping without indices</p></li>
-<li><p>One is <code>zip()</code>, which is used for stepping through pairs from two sequences</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>countries = (&#39;Japan&#39;, &#39;Korea&#39;, &#39;China&#39;)
-cities = (&#39;Tokyo&#39;, &#39;Seoul&#39;, &#39;Beijing&#39;)
-for country, city in zip(countries, cities):
-    print(&#39;The capital of {0} is {1}&#39;.format(country, city))</pre>
-
-</article></slide><slide class=''><hgroup><h2>Looping without Indices</h2></hgroup><article  id="looping-without-indices-2">
-
-<ul>
-<li>The zip() function is also useful for creating dictionaries</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>names = [&#39;Tom&#39;, &#39;John&#39;]
-marks = [&#39;E&#39;, &#39;F&#39;]
-dict(zip(names, marks))</pre>
-
-</article></slide><slide class=''><hgroup><h2>Looping without Indices</h2></hgroup><article  id="looping-without-indices-3">
-
-<ul>
-<li>If we actually need the index from a list, one option is to use <code>enumerate()</code></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>letter_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
-for index, letter in enumerate(letter_list):
-    print(&quot;letter_list[{0}] = &#39;{1}&#39;&quot;.format(index, letter))</pre>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Comparisons and Logical Operators</h2></hgroup><article  id="comparisons-and-logical-operators">
-
-</article></slide><slide class=''><hgroup><h2>Comparisons</h2></hgroup><article  id="comparisons">
-
-<ul>
-<li><p>Many different kinds of expressions evaluate to one of the Boolean values (i.e., <code>True</code> or <code>False</code>)</p></li>
-<li><p>A common type is comparisons, such as</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>x, y = 1, 2
-x &lt; y
-
-x &gt; y</pre>
-
-<ul>
-<li>One of the nice features of Python is that we can <em>chain</em> inequalities</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>1 &lt; 2 &lt; 3
-
-1 &lt;= 2 &lt;= 3</pre>
-
-</article></slide><slide class=''><hgroup><h2>Comparisons</h2></hgroup><article  id="comparisons-1">
-
-<ul>
-<li>As we saw earlier, when testing for equality we use <code>==</code></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>x = 1    # Assignment
-x == 2   # Comparison</pre>
-
-<ul>
-<li>For “not equal” use <code>!=</code></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>1 != 2</pre>
-
-</article></slide><slide class=''><hgroup><h2>Comparisons</h2></hgroup><article  id="comparisons-2">
-
-<ul>
-<li>Note that when testing conditions, we can use any valid Python expression</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>x = &#39;yes&#39; if 42 else &#39;no&#39;
-x
-
-x = &#39;yes&#39; if [] else &#39;no&#39;
-x</pre>
-
-<ul>
-<li>What’s going on here? The rule is:
-
-<ul>
-<li>Expressions that evaluate to zero, empty sequences/containers (strings, lists, etc.) and <code>None</code> are equivalent to <code>False</code></li>
-<li>All other values are equivalent to <code>True</code></li>
-</ul></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Combining Expressions</h2></hgroup><article  id="combining-expressions">
-
-<ul>
-<li>We can combine expressions using <code>and</code>, <code>or</code> and <code>not</code>. These are the standard logical connectives (conjunction, disjunction and denial)</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>1 &lt; 2 and &#39;f&#39; in &#39;foo&#39;
-
-1 &lt; 2 and &#39;g&#39; in &#39;foo&#39;
-
-1 &lt; 2 or &#39;g&#39; in &#39;foo&#39;
-
-not True
-
-not not True</pre>
-
-<ul>
-<li>Remember
-
-<ul>
-<li>P and Q is <code>True</code> if both are <code>True</code>, else <code>False</code></li>
-<li>P or Q is <code>False</code> if both are <code>False</code>, else <code>True</code></li>
-</ul></li>
-</ul>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>More Functions</h2></hgroup><article  id="more-functions">
-
-</article></slide><slide class=''><hgroup><h2>More Functions</h2></hgroup><article  id="more-functions-1">
-
-<ul>
-<li><p>Let’s talk a bit more about functions, which are all-important for good programming style</p></li>
-<li><p>Python has a number of built-in functions that are available without <code>import</code></p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>max(19, 20)
-
-range(4)
-
-str(22)
-
-type(22)</pre>
-
-</article></slide><slide class=''><hgroup><h2>More Functions</h2></hgroup><article  id="more-functions-2">
-
-<ul>
-<li>Two more useful built-in functions are any() and all()</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>bools = False, True, True
-all(bools)  # True if all are True and False otherwise
-
-any(bools)  # False if all are False and True otherwise</pre>
-
-<ul>
-<li>Now let’s talk some more about user-defined functions constructed using the keyword <code>def</code></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Why Write Functions?</h2></hgroup><article  id="why-write-functions">
-
-<ul>
-<li>User defined functions are important for improving the clarity of your code by
-
-<ul>
-<li>separating different strands of logic</li>
-<li>facilitating code reuse</li>
-</ul></li>
-<li>Writing the same thing twice is always a bad idea</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>The Flexibility of Python Functions</h2></hgroup><article  id="the-flexibility-of-python-functions">
-
-<ul>
-<li>In particular
-
-<ul>
-<li>Any number of functions can be defined in a given file</li>
-<li>Any object can be passed to a function as an argument, including other functions</li>
-<li>Functions can be (and often are) defined inside other functions</li>
-<li>A function can return any kind of object, including functions</li>
-</ul></li>
-<li><p>Note that a function can have arbitrarily many return statements (including zero)</p></li>
-<li><p>Execution of the function terminates when the first return is hit</p></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>The Flexibility of Python Functions</h2></hgroup><article  id="the-flexibility-of-python-functions-1">
-
-<pre class = 'prettyprint lang-python'>def f(x):
-    if x &lt; 0:
-        return &#39;negative&#39;
-    return &#39;nonnegative&#39;</pre>
-
-<ul>
-<li>Functions without a return statement automatically return the special Python object <code>None</code></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Docstrings</h2></hgroup><article  id="docstrings">
-
-<ul>
-<li><p>Python has a system for adding comments to functions, modules, etc. called <em>docstrings</em></p></li>
-<li><p>The nice thing about docstrings is that they are available at run-time</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>def f(x):
-    &quot;&quot;&quot;
-    This function squares its argument
-    &quot;&quot;&quot;
-    return x**2</pre>
-
-<ul>
-<li>After it has been run in the IPython shell, the docstring is available</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Docstrings</h2></hgroup><article  id="docstrings-1">
-
-<pre class = 'prettyprint lang-python'>f?
-
-f??</pre>
-
-<ul>
-<li>With one question mark we bring up the docstring, and with two we get the source code as well</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>One-Line Functions: lambda</h2></hgroup><article  id="one-line-functions-lambda">
-
-<ul>
-<li>The <code>lambda</code> keyword is used to create simple functions on one line</li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>def f(x):
-    return x**3</pre>
-
-<pre class = 'prettyprint lang-python'>f = lambda x: x**3</pre>
-
-<ul>
-<li>The definitions are entirely equivalents</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>One-Line Functions: lambda</h2></hgroup><article  id="one-line-functions-lambda-1">
-
-<ul>
-<li><p>To see why <code>lambda</code> is useful, suppose that we want to calculate \(\int^2_0 x^3dx\) (and have forgotten our high-school calculus)</p></li>
-<li><p>The SciPy library has a function called <code>quad</code> that will do this calculation for us</p></li>
-<li><p>The syntax of the <code>quad</code> function is <code>quad(f, a, b)</code> where <code>f</code> is a function and <code>a</code> and <code>b</code> are numbers</p></li>
-<li><p>To create the function \(f(x)=x^3\) we can use <code>lambda</code> as follows</p></li>
-</ul>
-
-<pre class = 'prettyprint lang-python'>from scipy.integrate import quad
-quad(lambda x: x**3, 0, 2)</pre>
-
-<ul>
-<li>Here the function created by <code>lambda</code> is said to be anonymous, because it was never given a name</li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Keyword Arguments</h2></hgroup><article  id="keyword-arguments">
-
-<ul>
-<li><p>You would have come across the statement <code>plt.plot(x, &#39;b-&#39;, label=&quot;white noise&quot;)</code></p></li>
-<li><p>In this call to Matplotlib’s <code>plot</code> function, notice that the last argument is passed in <code>name=argument</code> syntax</p></li>
-<li><p>This is called a <em>keyword argument</em>, with <code>label</code> being the keyword</p></li>
-<li>Non-keyword arguments are called <em>positional arguments</em>, since their meaning is determined by order
-
-<ul>
-<li><code>plot(x, &#39;b-&#39;, label=&quot;white noise&quot;)</code> is different from <code>plot(&#39;b-&#39;, x, label=&quot;white noise&quot;)</code></li>
-</ul></li>
-<li><p>Keyword arguments are particularly useful when a function has a lot of arguments, in which case it’s hard to remember the right order</p></li>
-<li><p>You can adopt keyword arguments in user defined functions with no difficulty</p></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Keyword Arguments</h2></hgroup><article  id="keyword-arguments-1">
-
-<pre class = 'prettyprint lang-python'>def f(x, coefficients=(1, 1)):
-    a, b = coefficients
-    return a + b * x</pre>
-
-<pre class = 'prettyprint lang-python'>f(2, coefficients=(0, 0))
-
-f(2)  # Use default values (1, 1)</pre>
-
-</article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Coding Style and PEP8</h2></hgroup><article  id="coding-style-and-pep8">
-
-</article></slide><slide class=''><hgroup><h2>Coding Style and PEP8</h2></hgroup><article  id="coding-style-and-pep8-1">
-
-<ul>
-<li><p>To learn more about the Python programming philosophy type <code>import this</code> at the prompt</p></li>
-<li><p>Among other things, Python strongly favors consistency in programming style</p></li>
-<li><p>We’ve all heard the saying about consistency and little minds</p></li>
-<li>In programming, as in mathematics, quite the opposite is true
-
-<ul>
-<li>A mathematical paper where the symbols \(\cup\) and \(\cap\) were reversed would be very hard to read, even if the author told you so on the first page</li>
-</ul></li>
-<li><p>In Python, the style that all good programs follow is set out in <a href='https://www.python.org/dev/peps/pep-0008/' title=''>PEP8</a> (Python Enhancement Proposals)</p></li>
-<li><p>We recommend that you slowly learn it, and following it in your programs</p></li>
+<li><p>Actually pandas includes high-level functions for downloading World Bank data</p></li>
+<li><p>Please see the documents for detail.</p></li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Exercises</h2></hgroup><article  id="exercises">
@@ -739,56 +445,39 @@ f(2)  # Use default values (1, 1)</pre>
 </article></slide><slide class=''><hgroup><h2>Exercises 1</h2></hgroup><article  id="exercises-1">
 
 <ul>
-<li><p>Part 1: Given two numeric lists or tuples <code>x_vals</code> and <code>y_vals</code> of equal length, compute their inner product using <code>zip()</code></p></li>
-<li>Part 2: In one line, count the number of even numbers in 0,&#8230;,99
-
-<ul>
-<li>Hint: <code>x % 2</code> returns 0 if x is even, 1 otherwise</li>
-</ul></li>
-<li><p>Part 3: Given pairs = ((2, 5), (4, 2), (9, 8), (12, 10)), count the number of pairs <code>(a, b)</code> such that both <code>a</code> and <code>b</code> are even</p></li>
+<li>Write a program to calculate the percentage price change since the start of the year for the following shares</li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Exercises 2</h2></hgroup><article  id="exercises-2">
+<pre >ticker_list = {&#39;INTC&#39;: &#39;Intel&#39;,
+               &#39;MSFT&#39;: &#39;Microsoft&#39;,
+               &#39;IBM&#39;: &#39;IBM&#39;,
+               &#39;BHP&#39;: &#39;BHP&#39;,
+               &#39;RSH&#39;: &#39;RadioShack&#39;,
+               &#39;TM&#39;: &#39;Toyota&#39;,
+               &#39;AAPL&#39;: &#39;Apple&#39;,
+               &#39;AMZN&#39;: &#39;Amazon&#39;,
+               &#39;BA&#39;: &#39;Boeing&#39;,
+               &#39;QCOM&#39;: &#39;Qualcomm&#39;,
+               &#39;KO&#39;: &#39;Coca-Cola&#39;,
+               &#39;GOOG&#39;: &#39;Google&#39;,
+               &#39;SNE&#39;: &#39;Sony&#39;,
+               &#39;PTR&#39;: &#39;PetroChina&#39;}</pre>
+
+</article></slide><slide class=''><hgroup><h2>Exercises 1</h2></hgroup><article  id="exercises-1-1">
 
 <ul>
-<li><p>Consider the polynomial \[ p(x)=a_0+a_1x+a_2x^2+...+a_nx^n=\sum^n_{i=0}a_ix^i \]</p></li>
-<li><p>Write a function <code>p</code> such that <code>p(x, coeff)</code> that computes the value in it given a point <code>x</code> and a list of coefficients <code>coeff</code></p></li>
-<li><p>Try to use <code>enumerate()</code> in your loop</p></li>
+<li><p>Use pandas to download the data from Yahoo Finance</p></li>
+<li><p>Hint: Try replacing <code>data = web.DataReader(&#39;UNRATE&#39;, &#39;fred&#39;, start, end)</code> with <code>data = web.DataReader(&#39;AAPL&#39;, &#39;yahoo&#39;, start, end)</code> in the code above</p></li>
+<li><p>Plot the result as a bar graph, such as this one (of course actual results will vary)</p></li>
 </ul>
 
-</article></slide><slide class=''><hgroup><h2>Exercises 3</h2></hgroup><article  id="exercises-3">
+</article></slide><slide class=''><hgroup><h2>Exercises 1</h2></hgroup><article  id="exercises-1-2">
 
-<ul>
-<li><p>Write a function that takes a string as an argument and returns the number of capital letters in the string</p></li>
-<li><p>Hint: <code>&#39;foo&#39;.upper()</code> returns <code>&#39;FOO&#39;</code></p></li>
-</ul>
+<p style="text-align: center">
 
-</article></slide><slide class=''><hgroup><h2>Exercises 4</h2></hgroup><article  id="exercises-4">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlMAAAIOCAYAAACcUYjBAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAIABJREFUeJzs3XucznX+//Hnxei0mSRipRpRGINxrlY1GhMqvrLllIwRtbXUbt2U7O0b7W5R6rvpZLeSLOXwK4uOK+VTm5JDDkUOlZEU0WCcx4zP74/ZuTLNXNfoPXPN+319PO6329xyzTDvRxjervfr+nxCvu/7AgAAgJEqtgMAAADiGZspAACAcmAzBQAAUA5spgAAAMqBzRQAAEA5sJkCAAAoh3JvpsaOHatmzZqpefPm6t+/vw4fPqycnBxlZGTooosu0lVXXaXdu3dXRCsAAIBzyrWZys7O1nPPPadPP/1Un332mQoKCjRjxgyNGzdOGRkZ2rBhg9LT0zVu3LiK6gUAAHBKuTZTiYmJqlatmg4cOKD8/HwdOHBA9erV07x585SZmSlJyszM1Jw5cyokFgAAwDXl2kzVrFlTd999t8477zzVq1dPNWrUUEZGhrZv3646depIkurUqaPt27dXSCwAAIBrEsrzg7/66is9/vjjys7O1hlnnKEbbrhB06ZNK/Z9QqGQQqFQiR/bqFEjffXVV+VZHgAAoFK0bNlSK1euLPVj5XpmatmyZbr00kt11llnKSEhQb169dLHH3+sunXratu2bZKk77//XmeffXaJH/vVV1/J9/2Yvo0ePTrma9BGW7z00UYbbfHRR5ubbatWrYq4HyrXZqpJkyZavHixDh48KN/3tWDBAiUnJ6t79+6aMmWKJGnKlCnq2bNneZYxlp2dbWXd40GbGZfbJLf7aDNDmxmX2yS3+2gzY7OtXMd8LVu21MCBA9W2bVtVqVJFrVu31i233KK9e/eqd+/emjRpkpKSkjRr1qyK6gUAAHBKuTZTknTPPffonnvuKfa+mjVrasGCBeX91OU2aNAg2wkR0WbG5TbJ7T7azNBmxuU2ye0+2szYbAv5vu9bWTgUkqWlAQAAfpFo+5ZA307G8zzbCRHRZsblNsntPtrM0GbG5TbJ7T7azNhsC/RmCgAAINY45gMAACjDCXvMBwAAEGuB3kxxtmuGNnMu99FmhjYzLrdJbvfRZoaZKQAAgDjFzBQAAEAZmJkCAACIkUBvpjjbNUObOZf7aDNDmxmX2yS3+2gzw8wUAABAnGJmCgAAoAzMTAEAAMRIoDdTnO2aoc2cy320maHNjMttktt9tJlhZgoAACBOMTMFAABQBmamAAAAYiTQmynOds3QZs7lPtrM0GbG5TbJ7T7azDAzBQAAEKeYmQIAACgDM1MAAAAxEujNFGe7Zmgz53IfbWZoM+Nym+R2H21mmJkCAACIU8xMAQAAlIGZKQAAgBgJ9GaKs10ztJlzuY82M7SZcblNcruPNjM22xKsrQwAAHCMxMSa2rt3V6WvW736mcrNzTH+8cxMAQAAJ4RCIUk29gZl70mYmQIAAIiRQG+mONs1Q5s5l/toM0ObGZfbJLf7aDPlWVs50JspAACAWGNmCgAAOIGZKQAAgBNQoDdTLp/t0mbG5TbJ7T7azNBmxuU2ye0+2kx51lYO9GYKAAAg1piZAgAATmBmCgAA4AQU6M2Uy2e7tJlxuU1yu482M7SZcblNcruPNlOetZUDvZkCAACINWamAACAE5iZAgAAOAEFejPl8tkubWZcbpPc7qPNDG1mXG6T3O6jzZRnbeVAb6YAAABijZkpAADgBGamAAAATkCB3ky5fLZLmxmX2yS3+2gzQ5sZl9skt/toM+VZWznQmykAAIBYY2YKAAA4gZkpAACAE1CgN1Mun+3SZsblNsntPtrM0GbG5TbJ7T7aTHnWVg70ZgoAACDWmJkCAABOYGYKAADgBBTozZTLZ7u0mXG5TXK7jzYztJlxuU1yu482U561lQO9mQIAAIi1cs9M7d69W0OGDNGaNWsUCoU0efJkXXjhherTp482b96spKQkzZo1SzVq1Ci+MDNTAADgGCfszNSdd96pq6++Wl988YVWr16tJk2aaNy4ccrIyNCGDRuUnp6ucePGlXcZAAAAJ5VrM7Vnzx795z//0eDBgyVJCQkJOuOMMzRv3jxlZmZKkjIzMzVnzpzylxpw+WyXNjMut0lu99FmhjYzLrdJbvfRZsqztnK5NlObNm1S7dq1lZWVpdatW2vo0KHav3+/tm/frjp16kiS6tSpo+3bt1dILAAAgGsSyvOD8/Pz9emnn+qpp55Su3bt9Ic//KHEkV4oFPrvGWhJgwYNUlJSkiSpRo0aSk1NVVpamqSfdr/lfVykoj5fRT0uep8rPcc+TktLc6qHx3w98PUQn4+LuNITL31F73Olp7K/HiTvv/+t7Mcq1lP07ezsbJWlXAPo27Zt0yWXXKJNmzZJkj788EONHTtWX3/9tRYuXKi6devq+++/V6dOnbRu3briCzOADgAAjnFCDqDXrVtX5557rjZs2CBJWrBggZo1a6bu3btrypQpkqQpU6aoZ8+e5VnG2M//9eES2sy43Ca53UebGdrMuNwmud1HmynP2srlOuaTpCeffFI33nij8vLy1LBhQ02ePFkFBQXq3bu3Jk2aFL40AgAAQBBxbz4AAOCEE/KYDwAA4EQX6M2Uy2e7tJlxuU1yu482M7SZcblNcruPNlOetZUDvZkCAACINWamAACAE5iZAgAAOAEFejPl8tkubWZcbpPc7qPNDG1mXG6T3O6jzZRnbeVAb6YAAABijZkpAADgBGamAAAATkCB3ky5fLZLmxmX2yS3+2gzQ5sZl9skt/toM+VZWznQmykAAIBYY2YKAAA4gZkpAACAE1CgN1Mun+3SZsblNsntPtrM0GbG5TbJ7T7aTHnWVg70ZgoAACDWmJkCAABOYGYKAADgBBTozZTLZ7u0mXG5TXK7jzYztJlxuU1yu482U561lQO9mQIAAIg1ZqYAAIATmJkCAAA4AQV6M+Xy2S5tZlxuk9zuo80MbWZcbpPc7qPNlGdt5UBvpgAAAGKNmSkAAOAEZqYAAABOQIHeTLl8tkubGZfbJLf7aDNDmxmX2yS3+2gz5VlbOdCbKQAAgFhjZgoAADiBmSkAAIATUKA3Uy6f7dJmxuU2ye0+2szQZsblNsntPtpMedZWDvRmCgAAINaYmQIAAE5gZgoAAOAEFOjNlMtnu7SZcblNcruPNjO0mXG5TXK7jzZTnrWVA72ZAgAAiDVmpgAAgBOYmQIAADgBBXoz5fLZLm1mXG6T3O6jzQxtZlxuk9zuo82UZ23lQG+mAAAAYo2ZKQAA4ARmpgAAAE5Agd5MuXy2S5sZl9skt/toM0ObGZfbJLf7aDPlWVs50JspAACAWGNmCgAAOIGZKQAAgBNQoDdTLp/t0mbG5TbJ7T7azNBmxuU2ye0+2kx51lZOsLYyAACodImJNbV3765KX7d69TOVm5tT6etWBmamAAA4gbg+l+RyGzNTAAAAMRDozZTLZ7u0mXG5TXK7jzYztJlxuU1yu8/lNptzSWXzrK0c6M0UAABArDEzBQDACcT1uSSX25iZAgAAiIFAb6ZcPnemzYzLbZLbfbSZoc2My21S7PsSE2sqFApV6ltiYs2Y/j8V8iphDVOetZUDvZkCAMCGwus4+YZvC41+nI1rR6FQhcxMFRQUqG3btqpfv75ee+015eTkqE+fPtq8ebOSkpI0a9Ys1ahRo/jCzEwBAALKzuzP8f296vpcksttMZ2ZmjBhgpKTk//7kyCNGzdOGRkZ2rBhg9LT0zVu3LiKWAYAAMA55d5Mffvtt3rzzTc1ZMiQ8I5t3rx5yszMlCRlZmZqzpw55V3GiMtn9rSZcblNcruPNjO0mXG5TXK9z7MdEIVnOyAKz9rK5d5M/fGPf9T48eNVpcpPn2r79u2qU6eOJKlOnTravn17eZcBAABwUrludPz666/r7LPPVqtWrSLu8oteZVCaQYMGKSkpSZJUo0YNpaamKi0tTdJP/2oo7+MiFfX5Kupx0ftc6Tn2cVpamlM9PObrga+H+HxcxJWeyu47ZoX//jftOB8Xve94v3/x9Y7n683s86f99+2XfH+TPtPPX97HxfuKvp2dna2ylGsAfdSoUZo6daoSEhJ06NAh5ebmqlevXlq6dKk8z1PdunX1/fffq1OnTlq3bl3xhRlABwAEFAPopa7MAHppHnroIW3ZskWbNm3SjBkzdOWVV2rq1Knq0aOHpkyZIkmaMmWKevbsWZ5ljJX814E7aDPjcpvkdh9tZmgz43Kb5HqfZzsgCs92QBSetZXLtZn6uaLjvJEjR+qdd97RRRddpPfee08jR46syGUAAACcwb35AACoYBzzlboyx3wAAAAoKdCbKZfPxGkz43Kb5HYfbWZoM+Nym+R6n2c7IArPdkAUnrWVA72ZAgAAiDVmpgAAqGDMTJW6MjNTAAAAKCnQmymXz8RpM+Nym+R2H21maDPjcpvkep9nOyAKz3ZAFJ61lQO9mQIAAIg1ZqYAAKhgzEyVujIzUwAAACgp0Jspl8/EaTPjcpvkdh9tZmgz43Kb5HqfZzsgCs92QBSetZUDvZkCAACINWamAACoYMxMlboyM1MAAAAoKdCbKZfPxGkz43Kb5HYfbWZoM+Nym+R6n2c7IArPdkAUnrWVA72ZAgAAiDVmpgAAqGDMTJW6MjNTAAAAKCnQmymXz8RpM+Nym+R2H21maDPjcpvkep9nOyAKz3ZAFJ61lQO9mQIAAIg1ZqYAAKhgzEyVujIzUwAAACgp0Jspl8/EaTPjcpvkdh9tZmgz43Kb5HqfZzsgCs92QBSetZUDvZkCAACINWamAACoYMxMlboyM1MAAAAoKdCbKZfPxGkz43Kb5HYfbWZoM+Nym+R6n2c7IArPdkAUnrWVA72ZAgAAiDVmpgAAqGDMTJW6MjNTAAAAKCnQmymXz8RpM+Nym+R2H21maDPjcpvkep9nOyAKz3ZAFJ61lQO9mQIAAIg1ZqYAAKhgzEyVujIzUwAAACgp0Jspl8/EaTPjcpvkdh9tZmgz43Kb5HqfZzsgCs92QBSetZUDvZkCAACINWamAACoYMxMlboyM1MAAAAoKdCbKZfPxGkz43Kb5HYfbWZoM+Nym+R6n2c7IArPdkAUnrWVA72ZAgAAiDVmpgAAqGDMTJW6MjNTAAAAKCnQmymXz8RpM+Nym+R2H21maDPjcpvkep9nOyAKz3ZAFJ61lQO9mQIAAIg1ZqYAAKhgzEyVujIzUwAAACgp0Jspl8/EaTPjcpvkdh9tZmgz43Kb5HqfZzsgCs92QBSetZUDvZkCAACINWamAACoYMxMlboyM1MAALgkMbGmQqFQpb4lJta0/b8NBwV6M+XymThtZlxuk9zuo80MbWYqo23v3l0qfBbD5G2h0Y8rXDPWvEpYw5RnOyAKz9rKgd5MAQAAxBozUwCAuMRcUolVHW6TmJkCAABAqQK9mTrR5wlM0WbO5T7azJzobcEd8vYqYQ1Tnu2AKDzbAVF41lYO9GYKAFA+5kPeZgPelTfkDVSccs1MbdmyRQMHDtQPP/ygUCikW265RXfccYdycnLUp08fbd68WUlJSZo1a5Zq1KhRfGFmpgDAecz+lFiVNmPBnZkq12Zq27Zt2rZtm1JTU7Vv3z61adNGc+bM0eTJk1WrVi3dc889evjhh7Vr1y6NGzfuuKMAAG5gU1BiVdqMBXczVa5jvrp16yo1NVWSdPrpp6tp06baunWr5s2bp8zMTElSZmam5syZU55ljJ3osw6maDPnch9tZmgz5dkOKINnOyAKz3ZAFJ7tgCg8aytX2MxUdna2VqxYoQ4dOmj79u2qU6eOJKlOnTravn17RS0DAADglISK+CT79u3Tb3/7W02YMEHVq1cv9rGiV2eUZtCgQUpKSpIk1ahRQ6mpqUpLS5P007+4yvu4SEV9vop6XPQ+V3qOfZyWluZUD4/5euDrwe7jn/7F/0sfq4yPR3p8fL8fzD9/+X78L/16M/n/L3zf8X7/4usdz9eb2edP++/bL/n+Jn2mn7+8j4v3FX07OztbZSn3RTuPHDmia6+9Vt26ddMf/vAHSVKTJk3keZ7q1q2r77//Xp06ddK6deuKL8zMFAA4j9mfEqvSZoyZqVL5vq+bb75ZycnJ4Y2UJPXo0UNTpkyRJE2ZMkU9e/YszzLGSv7rwB20mXG5TXK7jzYztJnybAeUwbMdEIVnOyAKz3ZAFJ61lct1zLdo0SJNmzZNLVq0UKtWrSRJY8eO1ciRI9W7d29NmjQpfGkEAACAIOLefACAiDiuKrEqbcY45gMAAEApAr2ZcnmegDYzLrdJbvfRZoY2U57tgDJ4tgOi8GwHROHZDojCs7ZyoDdTAAAAscbMFAAgImZ/SqxKmzFmpgAAAFCKQG+mXJ4noM2My22S2320maHNlGc7oAye7YAoPNsBUXi2A6LwrK0c6M0UAABArDEzBQCIiNmfEqvSZoyZKQAAAJQi0Jspl+cJaDPjcpvkdh9tZmgz5dkOKINnOyAKz3ZAFJ7tgCg8ayuX6958AIDyS0ysqb17d1XqmtWrn6nc3JxKXRMIKmamAMAy5mtKrEqbEZfbJGamAAAAUKpAb6ZcniegzYzLbZLbfbSZcbmN+ZXy8GwHROHZDojCsx0QhWdt5UBvpgAAAGKNmSkAsIz5mhKr0mbE5TaJmSkAAACUKtCbKZdnHWgz43Kb5HbfidyWmFhToVCo0t8SE2vG9P+L+ZXy8GwHROHZDojCsx0QhWdt5UBvpgBA0n+v4eQbvi00/rGVfe0oAHYwMwUg8Fyew5CYryllVdqMuNwmMTMFAACAUgV6M3Uiz4iUB23mXO6jzZRnOyAKz3ZAFJ7tgDJ4tgOi8GwHROHZDojCs7ZyoDdTAAAAscbMFIDAc3kOQ2K+ppRVaTPicpvEzBQAAABKFejNlMtzGLSZcblNcruPNlOe7YAoPNsBUXi2A8rg2Q6IwrMdEIVnOyAKz9rKCdZWBhAoiYk1rVxXqXr1M5Wbm1Pp6wJAEWamAFQI12cdXG2TmK8pZVXajLjcJsX71yozUwAAADES6M2Uy3MYtJlxuU1yu8/lNuYwTHm2A6LwbAeUwbMdEIVnOyAKz3ZAFJ61lQO9mQIAAIg1ZqYAVAjXZx1cbZOYryllVdqMuNwmxfvXKjNTQEAkJtZUKBSq1LfExJq2/7cBwGmB3ky5PCNCmxmX26TY9xVeesA3fFto9OMq53IHXiWsYcqzHRCFZzsgCs92QBk82wFReLYDovBsB0ThWVs50JspAACAWGNmCogjzGGUunJcz2FI/LqWsiptRlxuk+L9a5WZKQAAgBgJ9GbK5fka2sy43Ca53ufZDojCsx0QhWc7IArPdkAUnu2AMni2A6LwbAdE4dkOiMKztnKgN1MAAACxxswUEEeYwyh15biew5D4dS1lVdqMuNwmxfvXKjNTAAAAMRLozZTL8yu0mXG5TXK9z7MdEIVnOyAKz3ZAFJ7tgCg82wFl8GwHROHZDojCsx0QhWdt5UBvpgAAAGKNmSkgjjCHUerKcT2HIfHrWsqqtBlxuU2K969VZqYAAABiJNCbKZfnV2gz43Kb5HqfZzsgCs92QBSe7YAoPNsBUXi2A8rg2Q6IwrMdEIVnOyAKz9rKgd5MAQAAxBozU0AcYQ6j1JXjeg5D4te1lFVpM+JymxTvX6vMTAEAAMRIoDdTLs+v0GbG5TbJ9T7PdkAUnu2AKDzbAVF4tgOi8GwHlMGzHRCFZzsgCs92QBSetZUDvZkCAACINWamgDjCHEapK8f1HIbEr2spq9JmxOU2Kd6/VpmZAgAAiJFAb6Zcnl+hzYzLbZLrfZ7tgCg82wFReLYDovBsB0Th2Q4og2c7IArPdkAUnu2AKDxrK8dsM/X222+rSZMmuvDCC/Xwww/HahkAAACrYjIzVVBQoMaNG2vBggU655xz1K5dO02fPl1Nmzb9aWFmpoBfjDmMUleO6zkMiV/XUlalzYjLbVK8f61W+szUkiVL1KhRIyUlJalatWrq27ev5s6dG4ulAAAArIrJZmrr1q0699xzw4/r16+vrVu3xmKpqFyeX6HNjMttkut9nu2AKDzbAVF4tgOi8GwHROHZDiiDZzsgCs92QBSe7YAoPHtL+zHwyiuv+EOGDAk/njp1qj9s2LBi30eFz+OVeBs9erTv+76/cOFCf+HChX716mdG/L6V8fbzniKZmZnWmqpXP9Opnp+3Resp+vk89dTTrbdG+vW1+XuO329mffH8+833fT8hoZpTPbZ/fU899fTj6jnppFMqve14fr8tXLjQid9zrv1+O+mkU5z8/SYV/p47np5IYjIztXjxYo0ZM0Zvv/22JGns2LGqUqWK7r333vD3Od6ZKdfPT11tkzizL2XVuG8DANhR6TNTbdu21caNG5Wdna28vDzNnDlTPXr0iMVSAAAAVsVkM5WQkKCnnnpKXbp0UXJysvr06VPslXyVx7Ow5vHybAdE4dkOiMKzHVAGz3ZARC7Pc9FmhjZzLvfRZsZmW0KsPnG3bt3UrVu3WH16AAAAJzh/bz6X55JcbpPcnv2hrcSqzEwBgMO4Nx8AAECMBHwz5dkOiMKzHRCFZzsgCs92QBk82wERMetghjYzLrdJbvfRZsZmW8A3UwAAALHFzFTklZmZMkKbGWamAMBlzEwBAADESMA3U57tgCg82wFReLYDovBsB5TBsx0QEbMOZmgz43Kb5HYfbWaYmQIAAIhTzExFXpmZKSO0mWFmCgBcxswUAABAjAR8M+XZDojCsx0QhWc7IArPdkAZPNsBETHrYIY2My63SW730WYmkPfmA+JV9epnau/eUKWvCQCIT8xMRV6ZmSkjx9eWmFhTe/fuqoSen1SvfqZyc3MqdU0AQDBE27ewmYq8MpspIwxSAwCC5wQeQPdsB0Th2Q6IwrMdEJHL5/WS2320maHNjMttktt9tJnhOlMAAABximO+yCtzzGeEYz4AQPCcwMd8AAAAsRXwzZRnOyAKz3ZAFJ7tgIhcPq+X3O6jzQxtZlxuk9zuo80MM1MAAABxipmpyCszM2WEmSkAQPAwMwUAABAjAd9MebYDovBsB0Th2Q6IyOXzesntPtrM0GbG5TbJ7T7azDAzBQAAEKeYmYq8MjNTRpiZAgAEDzNTAAAAMRLwzZRnOyAKz3ZAFJ7tgIhcPq+X3O6jzQxtZlxuk9zuo80MM1MAAABxipmpyCszM2WEmSkAQPAwMwUAABAjAd9MebYDovBsB0Th2Q6IyOXzesntPtrM0GbG5TbJ7T7azDAzBQAAEKeYmYq8MjNTRpiZAgAEDzNTAAAAMRLwzZRnOyAKz3ZAFJ7tgIhcPq+X3O6jzQxtZlxuk9zuo82MzbYEaysj5qpXP1N794YqfU0AAE4kzExFXjnuZ6YAAEDFYGYKAAAgRgK+mfJsB0Th2Q6IiDNxcy730WaGNjMut0lu99FmhutMAQAAxClmpiKvzMwUAACQxMwUAABAzAR8M+XZDojCsx0QEWfi5lzuo80MbWZcbpPc7qPNDDNTAAAAcYqZqcgrMzMFAAAkMTMFAAAQMwHfTHm2A6LwbAdExJm4OZf7aDNDmxmX2yS3+2gzw8wUAABAnGJmKvLKzEwBAABJzEwBAADETMA3U57tgCg82wERcSZuzuU+2szQZsblNsntPtrMMDMFAAAQp5iZirwyM1MAAEASM1MAAAAxE/DNlBfTz169+pmSQpX+Vrhu7HAmbs7lPtrM0GbG5TbJ7T7azMTlzNSIESPUtGlTtWzZUr169dKePXvCHxs7dqwuvPBCNWnSRPPnz6+QUBfl5ubI932jt4ULFxr/2NzcHNv/6wAA4L+MZ6beeecdpaenq0qVKho5cqQkady4cVq7dq369++vpUuXauvWrercubM2bNigKlWK79uCMDMFAABODDGZmcrIyAhvkDp06KBvv/1WkjR37lz169dP1apVU1JSkho1aqQlS5aYLgMAAOC0CpmZeuGFF3T11VdLkr777jvVr18//LH69etr69atFbGMAc/SumXj3NmMy22S2320maHNjMttktt9tJmx2ZYQ7YMZGRnatm1bifc/9NBD6t69uyTpwQcf1EknnaT+/ftH/DyFR3UlDRo0SElJSZKkGjVqKDU1VWlpaZJK+0kpepz2Cx6v/IXf/9jHhQ0/76moxytXrqzQz3eiPC7iSk889a1cudKpnmMf8/Vg9riIKz3x8vvN9T6+HsweF6nIz+d5nrKzs1WWcl1n6sUXX9Rzzz2nd999V6eccoqkwrkpSeE5qq5du+qBBx5Qhw4dii/MzBQAAIgTMZmZevvttzV+/HjNnTs3vJGSpB49emjGjBnKy8vTpk2btHHjRrVv3950GQAAAKcZb6aGDx+uffv2KSMjQ61atdLtt98uSUpOTlbv3r2VnJysbt266Zlnnol4zBd7nqV1y/bzpyVdQps5l/toM0ObGZfbJLf7aDNjsy3qzFQ0GzdujPixUaNGadSoUaafGgAAIG5wb77IKzMzBQAAJHFvPgAAgJgJ+GbKsx0QEefOZlxuk9zuo80MbWZcbpPc7qPNjM22gG+mAAAAYouZqcgrMzMFAAAkMTMFAAAQMwHfTHm2AyLi3NmMy22S2320maHNjMttktt9tJlhZgoAACBOMTMVeWVmpgAAgCRmpgAAAGIm4Jspz3ZARJw7m3G5TXK7jzYztJlxuU1yu482M8xMAQAAxClmpiKvzMwUAACQxMwUAABAzAR8M+XZDoiIc2czLrdJbvfRZoY2My63SW730WaGmSkAAIA4xcxU5JWZmQIAAJKYmQIAAIiZgG+mPNsBEXHubMblNsntPtrM0GbG5TbJ7T7azDAzBQAAEKeYmYq8MjNTAABAEjNTAAAAMRPwzZRnOyAizp3NuNwmud1HmxnazLjcJrndR5sZZqYAAADiFDNTkVdmZgoAAEhiZgoAACBmAr6Z8mwHRMS5sxmX2yS3+2gzQ5sZl9skt/toM8PMFAAVSdrWAAAgAElEQVQAQJxiZiryysxMAQAAScxMAQAAxEzAN1Oe7YCIOHc243Kb5HYfbWZoM+Nym+R2H21mmJkCAACIU8xMRV6ZmSkAACCJmSkAAICYCfhmyrMdEBHnzmZcbpPc7qPNDG1mXG6T3O6jzQwzUwAAAHGKmanIKzMzBQAAJDEzBQAAEDMB30x5tgMi4tzZjMttktt9tJmhzYzLbZLbfbSZYWYKAAAgTjEzFXllZqYAAIAkZqYAAABiJuCbKc92QEScO5txuU1yu482M7SZcblNcruPNjPMTAEAAMQpZqYir8zMFAAAkMTMFAAAQMwEfDPl2Q6IiHNnMy63SW730WaGNjMut0lu99FmhpkpAACAOMXMVOSVmZkCAACSmJkCAACImYBvpjzbARFx7mzG5TbJ7T7azNBmxuU2ye0+2swwMwUAABCnmJmKvDIzUwAAQBIzUwAAADET8M2UZzsgIs6dzbjcJrndR5sZ2sy43Ca53UebmbiemXrsscdUpUoV5eTkhN83duxYXXjhhWrSpInmz59f3iUAAACcVa6ZqS1btmjo0KFav369li9frpo1a2rt2rXq37+/li5dqq1bt6pz587asGGDqlQpvm9jZgoAAMSLmM1M3XXXXXrkkUeKvW/u3Lnq16+fqlWrpqSkJDVq1EhLliwpzzIAAADOMt5MzZ07V/Xr11eLFi2Kvf+7775T/fr1w4/r16+vrVu3mheWi2dp3bJx7mzG5TbJ7T7azNBmxuU2ye0+2szYbEuI9sGMjAxt27atxPsffPBBjR07ttg8VLQjscKjupIGDRqkpKQkSVKNGjWUmpqqtLQ0SaX9pBQ9TvsFj1f+wu9/7OPChp/3VNTjlStXVujnO1EeF3GlJ576Vq5c6VTPsY/5ejB7XMSVnnj5/eZ6H18PZo+LVOTn8zxP2dnZKovRzNTnn3+u9PR0nXbaaZKkb7/9Vuecc44++eQTTZ48WZI0cuRISVLXrl31wAMPqEOHDsUXZmYKAADEiWj7lgq5aGeDBg1KDKAvWbIkPID+5Zdflnh2is0UAACIFzG/aOexG6Xk5GT17t1bycnJ6tatm5555pmIx3yx51lat2w/f1rSJbSZc7mPNjO0mXG5TXK7jzYzNtuizkwdr6+//rrY41GjRmnUqFEV8akBAACcxr35Iq/MMR8AAJDEvfkAAABiJuCbKc92QEScO5txuU1yu482M7SZcblNcruPNjM22wK+mQIAAIgtZqYir8zMFAAAkMTMFAAAQMwEfDPl2Q6IiHNnMy63SW730WaGNjMut0lu99FmhpkpAACAOMXMVOSVmZkCAACSmJkCAACImYBvpjzbARFx7mzG5TbJ7T7azNBmxuU2ye0+2swwMwUAABCnmJmKvDIzUwAAQBIzUwAAADET8M2UZzsgIs6dzbjcJrndR5sZ2sy43Ca53UebGWamAAAA4hQzU5FXZmYKAABIYmYKAAAgZpzfTFWvfqakUKW/Fa4bO5w7m3G5TXK7jzYztJlxuU1yu482M8xMRZGbmyPf943eFi5caPxjc3NzbP+vAwCAOOD8zBQAAIBtzEwBAADESKA3U5ztmqHNnMt9tJmhzYzLbZLbfbSZYWYKAAAgTjEzBQAAUAZmpgAAAGIk0JspznbN0GbO5T7azNBmxuU2ye0+2swwMwUAABCnmJkCAAAoAzNTAAAAMRLozRRnu2ZoM+dyH21maDPjcpvkdh9tZpiZAgAAiFPMTAEAAJSBmSkAAIAYCfRmirNdM7SZc7mPNjO0mXG5TXK7jzYzzEwBAADEKWamAAAAysDMFAAAQIwEejPF2a4Z2sy53EebGdrMuNwmud1HmxlmpgAAAOIUM1MAAABlYGYKAAAgRgK9meJs1wxt5lzuo80MbWZcbpPc7qPNDDNTAAAAcYqZKQAAgDIwMwUAABAjgd5McbZrhjZzLvfRZoY2My63SW730WaGmSkAAIA4xcwUAABAGZiZAgAAiJFAb6Y42zVDmzmX+2gzQ5sZl9skt/toM8PMFAAAQJxiZgoAAKAMzEwBAADESKA3U5ztmqHNnMt9tJmhzYzLbZLbfbSZiduZqSeffFJNmzZVSkqK7r333vD7x44dqwsvvFBNmjTR/Pnzyx1pauXKldbWLgttZlxuk9zuo80MbWZcbpPc7qPNjM22BNMfuHDhQs2bN0+rV69WtWrVtGPHDknS2rVrNXPmTK1du1Zbt25V586dtWHDBlWpUvlPgu3evbvS1zxetJlxuU1yu482M7SZcblNcruPNjM224x3OBMnTtR9992natWqSZJq164tSZo7d6769eunatWqKSkpSY0aNdKSJUsqphYAAMAxxpupjRs36oMPPtDFF1+stLQ0LVu2TJL03XffqX79+uHvV79+fW3durX8pQays7OtrHs8aDPjcpvkdh9tZmgz43Kb5HYfbWastvlRdO7c2U9JSSnxNnfuXD8lJcW/4447fN/3/SVLlvgNGjTwfd/3hw0b5k+bNi38OW6++Wb/1VdfLfG5W7Zs6UvijTfeeOONN954c/6tZcuWEfdLUWem3nnnnYgfmzhxonr16iVJateunapUqaKdO3fqnHPO0ZYtW8Lf79tvv9U555xT4se7PMQGAABwvIyP+Xr27Kn33ntPkrRhwwbl5eWpVq1a6tGjh2bMmKG8vDxt2rRJGzduVPv27SssGAAAwCXGr+YbPHiwBg8erObNm+ukk07SP//5T0lScnKyevfureTkZCUkJOiZZ55RKBSqsGAAAACXWLudDAAAQBAYPzOFXy4nJ0cbN27U4cOHw++7/PLLLRbB1GOPPRbxPk2hUEh33XWXharS/fDDDzp06FD48XnnnWexJj7wtXr8li9fHvX0oXXr1pVYU7bc3Fzl5+eHH9esWdNiTaEff/xRZ511lu2MUn344Yfq2LFjsfctWrRIv/nNbywV/aR79+7F/hwOhUJKTExUu3btdOutt+qUU06ptJZAPTM1adIk3XzzzcXed++99+rhhx+2VPST5557Tk888YS+/fZbpaamavHixbrkkkvCc2c2LF68WLfeequ+/PJLtWjRQpMmTVJycrK1ntIcPXpUL730kjZt2qT7779f33zzjbZt22Z9Dq9KlSpq2bKlunXrppNPPrnEx0ePHm2hqrh58+bp7rvv1nfffaezzz5bmzdvVtOmTbVmzRrbadq2bZv+9Kc/aevWrXr77be1du1affzxxyW+fm1w8Wv1WFu3blV2drYKCgrk+75CoZDVjV5aWlrUzdTChQsrsSayf/zjHxo9erROPvnk8EWkQ6GQvv76a8tl0oUXXqjU1FRlZWWpW7duTo3GtGrVSitWrCjzfTbccccd2rlzp/r16yff9zVz5kwlJiaqSpUqys3N1dSpUysvJtqlEeJN165d/alTp4Yf33777X5WVpbFop80a9bMP3DgQPillV988YXfs2dPq02tW7f258+f7x88eNCfNWuWf9VVV1ntKc2tt97q33bbbX7jxo193/f9H3/80W/Tpo3lKt9fsWKFf8899/gtW7b0s7Ky/Pnz5/sFBQW2s4pp3ry5v2PHDj81NdX3fd9/7733nPl66NKliz9jxgy/efPmvu/7fl5ent+sWTPLVYVc/Fotcs899/jnn3++361bN//aa68Nv6FsDRs29Hfs2GE7o1QFBQX+v//9b79Pnz7+BRdc4I8cOdJfv3691aaPPvrIf/TRR/1zzjnHf+yxx/xHH33Uf/TRR/3Ro0f7LVq0sNpWpLS/C4rel5ycXKktgbrR8ezZszVlyhRNnz5dAwcOVEJCgl544QXbWZKkU045Raeeeqok6dChQ2rSpInWr19vteno0aPKyMjQKaecohtuuEE//PCD1Z7SfPLJJ3rmmWfCP3c1a9bUkSNHLFdJqampevjhh7VixQoNGTJE8+bNU7NmzTRv3jzbaWHVqlVTrVq1dPToURUUFKhTp07hi+vatnPnTvXp00dVq1aVVNiakODG1IGLX6tF/vWvf2n9+vV688039dprr4XfXLB//3795S9/0dChQyUVXtj59ddft1z1kwsuuCD86+qaKlWq6KqrrtKMGTP03HPPacqUKWrXrp2uuOIKffTRR1aa8vLytHfvXhUUFGjv3r3at2+f9u3bp8TERL3yyitWmn5u//792rx5c/jx5s2btX//fknSSSedVKktbvzpVU45OTnhbz///PP6n//5H3Xs2FGjR49WTk6OE2fi5557rnbt2qWePXsqIyNDZ555ppKSkqw27dmzR7Nnzw6fNx/7OBQKha8jZtNJJ52kgoKC8OMdO3ZYuc9jJDt27NCKFSu0evVq1a9fP3xbJReceeaZ2rt3ry677DLdeOONOvvss3X66afbzpIknX766frxxx/DjxcvXqwzzjjDYtFP6tev79zXapGGDRsqLy+v1KNl27KystSmTZvwX/716tXT9ddfr2uvvdZyWaFx48bpkksu0SWXXBL+izYUCumJJ56wXFb4j4uXXnpJ//znP1WnTh099dRT6t69u1atWqXrr7/eypW9//znP+vdd9/V2rVrnRhbKM1jjz2myy67TBdccIEk6euvv9Yzzzyj/fv3KzMzs1JbAjEzlZSUVOyMuWgzUGTTpk02siLyPE+5ubnq2rVrpe+ejzVo0KCoP2+TJ0+2kVXMtGnTNGvWLC1fvlyZmZl65ZVX9Ne//lW9e/e22jVp0iTNmjVLhw8f1vXXX68bbrhBderUsdr0c/v27dOpp54anjvLzc3VjTfe6MSg6/LlyzV8+HCtWbNGzZo1044dO/TKK6+oZcuWttOKceVrtUivXr20atUqpaenhzdUrmwI2rRpo+XLlxebp2nZsqVWrVpluaxQ27Ztdfnll6t58+aqUqVK+M+7yv5LtzQXXXSRBgwYoKysLJ177rnFPjZu3DiNHDmy0puSk5P1/PPPa/DgwXr55ZdLfNyVFxYcOnRI69atUygUUuPGjSt16PxYgdhMxYuCggJt375d+fn54S9kXllVti+++ELvvvuuJCk9PV1Nmza1XFT4tHxKSorOP//8Eh8LhUJOHfe56siRI+Hjs8aNG4dvmm7bTTfdVGJwtbT32fDiiy9KUvgfPS5tCC699FK9++67uvTSS7VixQp99dVX6tevnzM3undlaLo0R48edeoZd0n6f//v/2nSpElatGiR2rZtW+Ljrryw4KOPPtKmTZuUn58f/roYOHBgpXcEajP19NNPq3///jrzzDMlSbt27dL06dN1++23Wy6TnnzyST3wwAM6++yzw3MikvTZZ59Zazr25f2l/dfmy/uPPbqVVOylr5L9lzN7nidJpV4eIRQK6YorrrBQVej000+P+GqgUCik3NzcSi76yauvvlri91pRlyQnjpZ//pdufn6+WrRoobVr11qs+snhw4e1YcMGSVKTJk2c2YTOnz9fDz74oNauXauMjAwtWrRIL774ojp16mQ7TZI0atQonX/++erRo0exY1Lbf5ZI0vr16/Xoo48qOzs7fNmGUCjkxCtI//znP+v++++3nVGqAQMG6Ouvv1Zqamqxv1effPLJSm8J1GaqtKeUU1NTnbgPYMOGDbVkyRInjliKjBkzJvwX2j/+8Q/97ne/K/Zxm+fkPz+6/TnXjm5xfH5+tPxzNo+WH3roIY0dO1YHDx4sNqhcrVo13XLLLRo3bpy1tiKe5ykzMzP8jOg333yjKVOmWN28H2vnzp1avHixJKlDhw5OzRBG+jPFhT9LWrRoodtuu02tW7cObwpCoZDatGljuazQ3Llz9cEHH4T/odi9e3fbSZKkpk2bau3atW5cSqISXzkYcykpKcVenp6fn1/pL4+MJC0tzc/Ly7OdEVHRy+dxfNavX+9nZmb6f/zjH/0tW7b4Xbt29U877TS/RYsW/pIlS2znha1cudJ/4okn/CeffNJfuXKl7Zy4cO+999pOiKhVq1b+unXrwo/Xr1/vt2rVymLRT6688srjeh9Kat26te2EiO69917/yiuv9CdNmuQ///zzfufOnf2RI0fazvJ93/evv/56f+vWrbYzfN/3/UC8mq9Ily5d1LdvX916663hZ1u6du1qO0uS1KBBA3Xq1EnXXHNNsVeSuHSlbBd9+umnJd53xhln6Pzzz7f6UvqsrCxlZmZqz549at++vR5//HHNnj1bH374oYYNG6ZPPvnEWluRCRMm6LnnnlOvXr3k+74GDBigoUOH6o477rCdpp07d+qBBx7Qhx9+qFAopMsuu0z333+/E8/cjhs3ztl/iefn56tx48bhxxdddFGxq3nbcPDgQR04cEA7duwodjyfm5urrVu3WiwrLj8/X2+88YY2b95cbG7VhT+Du3fvrqefflq9evVy7gjyjTfe0MqVK8PPmA0aNEipqakaO3as5bLCV1MnJyerffv2xV6QYWNmNVDHfAUFBXr22WfDw8oZGRkaMmRIsbNUW8aMGSOp5OCoKy85dXU48+KLL9by5cvVokULSYUzZs2aNdOePXs0ceJEdenSxUrXscfHjRo10pdfflnqx2xq3ry5Fi9erF/96leSCq/JcvHFF1ud0yvSuXNnXXHFFRowYIB839fLL78sz/O0YMEC22kaOXKkli5dqhtvvFG+72vGjBlq27atE395ZGVlqWrVquGft5deeklHjx61ej29xx9/XBMmTNB3332nevXqhd9fvXp13XLLLRo2bJi1tmN169ZNp556avjVfEVc+DO4tCNIV67O3qJFCy1cuDD8D50ff/xRnTp10urVqy2X/TS7+nNpaWmV2iEpWMd8+GVSUlLCb6eeemqxx0VXprbtuuuu8z///PPw4zVr1vi9evXyv/zyS6tX4T32WPTnR6SuHJmmpKT4Bw4cCD8+cOCAn5KSYrHoJ6Vd7dyVtpSUFD8/Pz/8OD8/35m2Q4cO+Y8++qh/3XXX+dddd53/f//3f/6hQ4dsZ/m+7/sTJkywnRCVK3+mxZuXX37ZP++88/zMzEx/4MCB/vnnn+9Pnz7ddpZzAnXMt2HDBo0aNUpr167VwYMHJdnf3d95552aMGFCqccEtl9C78qVk6NZv369mjVrFn6cnJysdevWqWHDhlaHDtetW6fmzZtLkr766qvwt4seuyArK0sdOnQIH/PNmTNHgwcPtp0lSbrqqqs0ffp09enTR1Lhy7Cvuuoqy1WFQqGQdu/eHf6X+O7du90YcJU0a9Ys3XLLLbr77rvD73v99deduDDmHXfcoY8++qjYK9IkOy9TL81VV12lf//739aezY4mLy9PEydOLHa0/Lvf/c6JV2r269dPV1xxhZYuXapQKKSHH35YdevWtdr0m9/8RosWLSr1lcu2XrEcqGO+3/zmN3rggQd01113ad68eXrxxRdVUFCgv/zlL9aali9frjZt2rj1dGQUO3fu1FlnneXMXx69e/fWWWedpb59+8r3fc2aNUs7duzQtGnT1LFjRy1dutRKV1lXJHblitnLly8vNpfUqlUr20mSCi/fcODAgfBxy9GjR8PHkbYv3zB9+nSNHDlSnTp1ku/7ev/99zVu3Dj17dvXWlORGjVqKCkpSS+//HL4puSuHNG79DL10syePVsDBgzQ0aNHw5sU27/Xitx8883Kz89XZmamfN/X1KlTlZCQoOeff952mhYtWqSWLVvq9NNP19SpU7VixQrdeeedpV5j74Rm82mxilb0qpZjn5J35ZUuLvroo4/8K664wr/uuuv85cuX+82aNfPr1Knj16pVy3/zzTdt5/m+7/v79+/3x48f7/fs2dPv2bOnP378eH///v1+QUGBn5ubazvPSZ988on/xhtvlHj/G2+84S9btsxCUfzZunWrP2fOHH/u3Ln+d999ZzsnLDU11V+2bJmfnJzsz5w5M/w+FzRp0sQ/evSo7YyIzj//fH/VqlXO3ZDc90s/gnTlWDIlJcU/evSov3LlSj81NdV/6qmn/Msvv9x2VtgHH3zgv/DCC77v+/4PP/zgf/3111Y6AnXMd8opp6igoECNGjXSU089pXr16oVvemjbhx9+qAceeKDERdlsHkEOGzZMY8eO1Z49e3TllVfq7bff1sUXX6x169apb9++6tatm7W2IqeddpqGDx8efmq+cePG4VdDVq9e3VqXyxfGvPfee0u9XlNycrKysrKcuHKx7/vhVz9WqVJFHTt21HXXXWc7S1LhhUNvvvlmde/e3bmrUkuFt215//331a9fP33yySfF7l1pU0pKir7//vtiQ+guOe+889SsWTMnf00TEhL05ZdfqlGjRpIKRwVcufF3QkKCQqGQ5syZo9///vcaMmSIJk2aZDtLUuELu5YtW6YNGzYoKytLeXl5uvHGG63cHNqNX60K8vjjj+vAgQN64okn9L//+7/Kzc3VlClTbGdJKnwa9/HHHy92UTbbCgoKwnMq999/vy6++GJJhVdVduWYz9WLFO7bt8/q+tHs3bu31GPGpKQk7dy5s/KDSnH77beHbzfi+77+/ve/65133tEzzzxjO0233XabJk+erOHDh6t3797KysoqdjkCm4o2KrVq1dLbb7+tkSNH6vPPP7dcVcill6mXpujyNN26dXPu8jTjx4/XlVdeqQYNGkiSNm/ebPUVmseqXr26HnroIU2bNk3/+c9/VFBQoCNHjtjOkiT961//0ooVK8IXNz3nnHOs/dkcqM1U+/btJRX+4hfdw8oVNWrUcOKZnmMdu2GydXPIstx1112aP39++C+zDRs2qG/fvqVefwqFdu/eHfFjRS/MsG3hwoVau3Zt+FmCQYMGhWeAbMvIyFBGRoZ2796tGTNmKD09Xeedd56GDh2qAQMGWB0KfuONN8Lfrlq1qsaPH6/x48db6zlW0eVfXNWgQQM1aNBAeXl5ysvLK3FjdxuWLFmic889V+np6dqwYYOeffZZzZkzRxkZGUpNTbXaVmTmzJl6+eWX9cILL6hu3br65ptvNGLECNtZkqSTTz652DONNk+iAjWA7uL9jZYvXy6p8NVKBQUFJS7KZvPO21WrVtVpp50mSSVuoXHw4EHrFwOUCq9x8vPrmZT2Pvzk1ltvVa1atfTXv/41/JfF0aNHNXr0aG3fvl3PPvus5ULp2muv1VNPPRV+Bi07O1vDhg3T66+/bjfsv3788UdNnTpV06ZNU7169dS/f399+OGH+vzzzyO+mKQy/PDDD3rkkUe0Zs0aHTp0SJL9P+Pizd69eyXZHRMo0qpVK7377ruqWbOmPvjgA/Xp00dPPfWUVqxYoXXr1umVV16xnShJ2rZtW/jVfO3bt9fZZ59tO0lS4TN6X375pebPn6/77rtPL7zwgvr372/lwsSB2ky5eH+jtLS0qP/6cWF+xWUuXqTQdfv27dOQIUO0ZMmS8L9uV61apbZt2+r555934i+Ryy+/XEuXLlX79u0VCoW0ZMkStWvXTomJidaPhq677jqtW7dON910k7KysvTrX/86/LE2bdqE/4FkQ0ZGhvr06aNHH31U//jHP/Tiiy+qdu3aeuSRR6w1uTw/eKzPPvtMAwcO1I8//ihJql27tqZMmaKUlBRrTcfeT/b3v/+9ateuHX6Gr7R7zdowa9YsjRgxIjxa8cEHH2j8+PG64YYbLJcVmj9/vubPny+p8C4oGRkZVjoCtZmy/QcdKt6hQ4f09NNPa9GiRZKkyy67TLfffnuxZ/dQuq+++kpr1qxRKBRSs2bNdMEFF9hOCit6dqfoRtsffPCBZsyYoYkTJ0qS1Zm49957T1deeaW19aNp3bq1Pv3002LPzrZt21bLli2zXOa+Sy65RA899JA6deokqfD34KhRo6wMKxdJSUnRihUrVK1aNTVu3FjPPvts+Pd+s2bNtGbNGmttRVq0aKEFCxaEn43asWOH0tPTnTkdKHrWTCq8ubatZ80CMTOVk5Mj3/edvL/RY489pho1aujmm28u9v5JkyZp7969+sMf/mCpLD6ccsopGjZsWHhQvkmTJk5cyC4eNGzYUA0bNpRUOM/i0kxLWlqaPv30U02fPl2zZs1SgwYNdNttt1l/YYEkdezYURMmTNAHH3wgqbDVlQsoFg1O161bV6+//rrq1aunXbt2Wa6KDwcOHAhvpKTCX1fbr/YuuiBmrVq1dNppp+myyy6TJG3cuFE1atSw2lbE933Vrl07/Piss86SK8/B/PxZs+HDh1t71iwQz0yVdl+jIrYvP9C6dWstXrw4/Idgkby8PLVp08aJ+6S5zNVX88UbVy7suH79ek2fPl0zZ85U7dq1dcMNN2j8+PH65ptvbKeFuXwBxddee02XXXaZtmzZouHDhys3N1djxoxRjx49bKc5r2fPnmrTpo1uuumm8MjA8uXL9a9//ctq18cff6xt27bpqquuCl+4dsOGDdq3b5/VmdoiI0aM0KpVq9S/f3/5vq+ZM2eqRYsWVo+Wi7j0rFkgNlMuizYsnZKS4szLml3VunVrTZ8+nVfzlZMrN1+uUqVKePj8vPPOk1T4KqtNmzZZLpPy8/OVkJDAix4CKicnR6NHjy42MjBmzBideeaZlsvc5fu+tmzZoqVLlxb7eXPlmnDNmzfX6tWri73QpmXLllaepAjEMd/SpUtVv3798KDolClT9OqrryopKUljxoyxeszn+762bdtW4l5G27dvt/6y3HiQn59f7Bo/F110kROvMow3rmw+Z8+erenTp+vyyy9X165ddcMNNzhzZNC+fXt9+umnqlq1qrMXUPz666/15JNPlnjFsivXcnJZzZo1nbm1TTy5+uqr9fnnn+u3v/2t7ZQSunbtqi5duhR71szWJYgC8cyUyy8v/ec//6kJEyboscceC7+qcNmyZRoxYoSGDRumQYMGWWuLB7yaz9zBgwc1adKkEi+jd+Hnbt++fZo7d66mT5+uhQsXauDAgbruuuus3uy46Cj03XffVVZWlnSdfSIAAAzeSURBVC644AL5vq/s7GxNnjzZiaH0Fi1aaMiQIUpJSQlfX6foxriIrnPnznrllVfCs0g5OTnq16+f/v3vf1suc1tmZqZ+//vfh6/j6JJj76RQdP9RW8+aBWIz5frLS9966y2NHTs2/MqMZs2a6b777nPuIp4uOvbVfEVfLLfddhuv5jsO119/vZo2baqXXnpJo0eP1rRp09S0aVM98cQTttOKycnJ0SuvvKIZM2ZYvV5S/fr1ddddd8n3fR06dCh8m5aqVavq1FNPdeJK2e3bt9eSJUtsZ8Sl0o66XTn+dlnjxo315Zdf6vzzzy92M3LXjr137NihWrVqWTvxCcRmKh5eXopfZs6cOfr22281bNgwSYV/iezYsUOS9MgjjzhzjROXFf1FUTTvc+TIEXXs2FGffPKJ7TQn/frXv9bvfve7iB8fPXp0JdaUburUqfrqq6/UpUsXZy7+Gy/atGmj2bNnh1/Mkp2drV69ejlzBO6q7OzsUt9f2i2rKsvHH3+s++67TzVr1tT//u//6qabbtLOnTt19OhRTZkyxcoTFW4MApRTPLy8dMuWLbrjjjv04YcfSiq8aOGECRNUv359y2VueuSRRzRjxozw47y8PC1btkz79+/XoEGD2Ewdh6JXkJ5xxhn67LPPVLdu3fCGFCXVrVvXiQ1TNGvWrNHUqVO1cOHCYrfR4OK/ZXvwwQd12WWX6fLLL5dUePFJF+4G4Lpt27YpOTlZiYmJkqTc3Fx98cUXVjdTw4YN09ixY7Vnzx516tRJb7/9ti6++GKtW7dOffv2tXPq4wfERx995M+ePdvft29f+H3r16/3ly9fbrHqJ+np6f4LL7zg5+Xl+Xl5ef7kyZP9zp07285yVps2bYo9vv3228Pfbt++fWXnxKVnn33W//HHH33P8/ykpCS/Vq1a/sSJE21nOSs1NdV2QpkuuOAC//Dhw7Yz4tYPP/zgz5s3z3/ttdf8HTt22M6JCy1btvQLCgrCj/Pz861/rbRs2TL87SZNmhT7mK22QDwzJRVe3VaSVq5cqf/85z/h+RpXnv7esWOHsrKywo8HDRqkv/3tbxaL3PbzCxE+/fTT4W/z7MrxGTp0qKTCq4m7cOkB1y1YsMB2QpmaN2+uXbt2qU6dOrZT4sby5cuLzdHUq1dPUuE167755htn/o5w2bHPglatWjU8T2jLsb+ep5xyisWSnwRmMyVJEyZM0HPPPadevXrJ930NGDBAQ4cOtXLTw58766yzNHXq1PBLOGfMmKFatWrZznJWhw4d9Oyzz+qWW24p9v6///3v6tChg6Wq+DJq1CiNGDEifB2dXbt26bHHHtNf//pXy2VuOuuss2wnlGnXrl1q0qSJ2rVrF56Z4tII0d19993cH7UcGjRooCeeeEK33XabfN/XxIkTrd+aavXq1eF7jB48eLDY/UYPHjxopSkQA+hFmjdvrsWLF4dfcbB//35dfPHFTlxlfPPmzRo2bJgWL14sSbr00kv15JNPhi9ciOK2b9+unj176uSTTw7/y/HTTz/VoUOHNGfOnBLX7UJJpb1SyZUrocNMpHsarl271m4YAmv79u264447wpvO9PR0TZgwwdo98FwVqGempOJPRx77bZvy8/M1atQovfbaa7ZT4kadOnX00Ucf6b333gvfrPfaa6914lo/8eLo0aM6dOhQ+GnwgwcPKi8vz3IVyiPSPQ1xfD777DN98cUX4euuSdLAgQMtFrmvTp06mjlzpu0M5wVqM5WVlaUOHTqEj/nmzJmjwYMH285SQkKCNm/erMOHD3N9pF8gFAopPT1d6enptlPi0o033qj09HQNHjxYvu9r8uTJ/MURp0q7p6Hv++FnqlC2MWPG6P3339eaNWt0zTXX6K233lLHjh35mojg4Ycf1r333qvhw4eX+FgoFHLuenW2BeqYTyocNjz2aqitWrWynSRJuummm7Ru3Tr16NFDp512mqTC35AuXAgQwfXWW2/p3XfflSRlZGSoS5culotgwuV7GsaLlJQUrVq1Sq1bt9aqVau0fft23XjjjXHxwgMbXnvtNXXv3l0vvvhiiY+FQiFlZmZWfpTDAvHMVG5urhITE5WTk6MGDRqEr38RCoWUk5Nj9d58RRo2bKiGDRvq6NGj2rdvn+0cnCBatWoVvoebK/+wwC/n8j0N48Wpp56qqlWrKiEhQXv27NHZZ5+tLVu22M5yVvfu3SWJW54dp0Bspvr166c33nhDrVu3LvVVGy786y05OVm9e/cu9r5Zs2ZZqsGJYNasWRoxYkT4bgDDhw/X+PHjueBpHOrZs6d69uwZvqfh3/72N+3YsUO33Xab9Xsaxot27dpp165dGjp0qNq2batf/epXuvTSS21nOat79+7hFzr8HK8gLSlwx3yuKu1VVLyyCrHUokULLViwIPyqmx07dig9Pd25e2rBjCv3NIxHmzZt0t69e9WiRQvbKc6qXbu26tevr379+oUvR1O0XeDm2iUFYjNV1r2VbF6U7a233tKbb76pmTNnqm/fvuHfjHv37tXatWu5aSlipnnz5lq9enX42dqjR4+qZcuWTlwqBKhs77//fqknF0W3l0Fx+fn5eueddzR9+nR99tlnuuaaa9SvXz81a9bMdpqTAnHMd9dddykUCungwYNavnx5+F8bq1evVtu2bfXxxx9ba6tXr57atGmjuXPnqk2bNvJ9X6FQSNWrV+cK6Iiprl27qkuXLuELxc6cOdPOPasAB4wfPz68mTp06JCWLFmiNm3a8KxeBAkJCerWrZu6deumw4cPa/r06briiis0ZsyY8A3o8ZNAPDNVpFevXnrggQfUvHlzSdLnn3+u0aNH69VXX7VcJh05ckRHjhzRN998oyZNmtjOQYBt3LhR27dvV8eOHfXqq69q0aJFkqQaNWqof//+atSokeVCwL4tW7bozjvv1OzZs22nOOvQoUN64403NGPGDGVnZ6tHjx4aPHiwzjnnHNtpzgnUZio5ObnElYBLe58N8+bN04gRI3T48GFlZ2drxYoVGj16NEN8qHDXXHONxo4dW2IeZPXq1frTn/7ExWMBFc7/JCcn64svvrCd4qSbbrpJa9as0dVXX60+ffqEn6RA6QK1merbt69OP/10DRgwQL7v6+WXX9a+ffs0ffp022lq3bq13nvvPXXq1Ck8dJ6SkqLPP//cchmCpm3btlq2bFmpH+P3HE5Ux1588ujRo1q5cqUaNGigadOmWaxyV5UqVcK3Zvu5UCik3NzcSi5yWyBmpopMnjxZEydO1IQJEyQVDha6cquFatWqqUaNGsXe58rtbhAsu3fvjvixY2+jAZxIkpOTVVBQoCNHjuj/t3f/LumEcRzA32KJBjXVYA4tR2CWRL9AbMqhOYcClyAiGsO2xCFqL46CMpBEWlokhwiH+gtqiCy4LAiXZrE7oq5riO+B3+93CdOnnt6v6Xxc3uObez73PF1dXYjFYgiHw6JjfVtvb2+iI/woUpUpj8eDeDz+LU8VDwQCODg4wOvrK25vb6GqKs84oYYYGRlBKpXCwsJCzfre3h6Gh4cFpSIS4+XlBYlEAul02j49vlwuIxaLYWxsDKVSCX6/X3BK+umk2ubTNA0rKyu4vr6GYRgAPl5H3t/fC04G6LqO9fV1FAoFAMDk5CSSyaR9CS3RV3l8fMTU1BRcLpddns7Pz/H8/IxcLgev1ys4IVHzLC0toVqtYmNjA+3t7QA+bs1YXl5GpVJBsVjk1jfVTaoyFQ6Hsbq6ing8jnw+j/39fZimibW1NWGZDMPAzs4OSqUSgsEg5ubm0NraKiwP/Q6WZeHs7AxXV1dwOBwIBAKYmJgQHYuo6RRFgaZp/4xVmKaJzs5OHB8fIxQKCUpHspCqTA0NDeHi4gIDAwP2wYR/1kSZnp6Gy+XC+Pg4Tk5O0NPTY890ERFRY/X29kLTtE//R/QZUs1Mud1umKYJRVGwtbWF7u5uPD09Cc10c3NjF7v5+XmMjo4KzUNE9Jv4/X5kMhnMzs7WrGezWc5K0ZeRqkxtbm5C13WoqopkMolKpYJMJiM0U0tLy3+fiYio8ba3txGNRpFOp2tmCHVdRy6XE5yOZCHVNt/fLMvC4eEhZmZmhGVwOp1oa2uzfxuGAY/HA4BndRARNYNlWTg9PUWxWITD4UBfXx8ikYjoWCQRKcpUtVrF7u4u7u7u0N/fj8XFRRwdHSGRSEBRFJ4yTkRERA0jRZmKRqPo6OhAKBRCoVBAuVyG2+2GqqoYHBwUHY+IiIgkJkWZCgaDuLy8BPDxuavX68XDw4O9nUZERETUKFLcZ+J0OmuefT4fixQRERE1hRRvpjjkTURERKJIUaaIiIiIRJFim4+IiIhIFJYpIiIiojqwTBERERHVgWWKiIiIqA7v1kt56S+1RIgAAAAASUVORK5CYII=" width="60%" />
 
-<ul>
-<li>Write a function that takes two sequences <code>seq_a</code> and <code>seq_b</code> as arguments and returns <code>True</code> if every element in <code>seq_a</code> is also an element of <code>seq_b</code>, else <code>False</code>
-
-<ul>
-<li>By “sequence” we mean a list, a tuple or a string</li>
-<li>Do the exercise without using sets and set methods</li>
-</ul></li>
-</ul>
-
-</article></slide><slide class=''><hgroup><h2>Exercises 5</h2></hgroup><article  id="exercises-5">
-
-<ul>
-<li><p>When we cover the numerical libraries, we will see they include many alternatives for interpolation and function approximation. Nevertheless, let’s write our own function approximation routine as an exercise</p></li>
-<li>In particular, without using any imports, write a function <code>linapprox</code> that takes as arguments
-
-<ul>
-<li>A function <code>f</code> mapping some interval \([a,b]\) into \(\mathbb{R}\)</li>
-<li>two scalars <code>a</code> and <code>b</code> providing the limits of this interval</li>
-<li>An integer <code>n</code> determining the number of grid points</li>
-<li>A number <code>x</code> satisfying <code>a &lt;= x &lt;= b</code></li>
-</ul></li>
-<li><p>and returns the <a href='https://en.wikipedia.org/wiki/Linear_interpolation' title=''>piecewise linear interpolation</a> of <code>f</code> at <code>x</code>, based on <code>n</code> evenly spaced grid points <code>a = point[0] &lt; point[1] &lt; ... &lt; point[n-1] = b</code></p></li>
-<li><p>Aim for clarity, not efficiency</p></li>
-</ul></article></slide>
+</p></article></slide>
 
 
   <slide class="backdrop"></slide>
