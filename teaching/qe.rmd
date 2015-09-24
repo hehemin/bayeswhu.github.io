@@ -28,7 +28,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Lec 10](qe/Lec10.html), [Lec 11](qe/Lec11.html)
 
 - part 2
-    - [Lec 12](qe/Lec12.html)
+    - [Lec 12](qe/Lec12.html), [Lec 13](qe/Lec13.html)
 
 #### Homeworks
 
