@@ -165,13 +165,13 @@ plt.show()</pre>
 <li>In brief,
 
 <ul>
-<li>Lines 1–2 use the Python import keyword to pull in functionality from external libraries</li>
+<li>Lines 1–2 use the Python <code>import</code> keyword to pull in functionality from external libraries</li>
 <li>Line 3 sets the desired length of the time series</li>
-<li>Line 4 creates an empty list called epsilon_values that will store the ϵt values as we generate them</li>
-<li>Line 5 tells the Python interpreter that it should cycle through the block of indented lines (lines 6–7) ts_length times before continuing to line 8
+<li>Line 4 creates an empty list called <code>epsilon_values</code> that will store the \(\epsilon_t\) values as we generate them</li>
+<li>Line 5 tells the Python interpreter that it should cycle through the block of indented lines (lines 6–7) <code>ts_length</code> times before continuing to line 8
 
 <ul>
-<li>Lines 6–7 draw a new value \(\epsilon_t\) and append it to the end of the list epsilon_values</li>
+<li>Lines 6–7 draw a new value \(\epsilon_t\) and append it to the end of the list <code>epsilon_values</code></li>
 </ul></li>
 <li>Lines 8–9 generate the plot and display it to the user</li>
 </ul></li>
@@ -185,8 +185,8 @@ plt.show()</pre>
 <li>The statement <code>from random import normalvariate</code> causes the Python interpreter to
 
 <ul>
-<li>run the code in a file called random.py that was placed in your filesystem when you installed Python</li>
-<li>make the function normalvariate defined in that file available for use in your program</li>
+<li>run the code in a file called <code>random.py</code> that was placed in your filesystem when you installed Python</li>
+<li>make the function <code>normalvariate</code> defined in that file available for use in your program</li>
 </ul></li>
 </ul>
 
@@ -287,7 +287,7 @@ x[1]</pre>
 </article></slide><slide class=''><hgroup><h2>Lists</h2></hgroup><article  id="lists-5">
 
 <ul>
-<li><p>Returning to <code>test_program_1.py</code> above, we actually create a second list besides <code>epsilon_values</code></p></li>
+<li><p>Returning to the program above, we actually create a second list besides <code>epsilon_values</code></p></li>
 <li><p>In particular, line 5 calls the <code>range()</code> function, which creates sequential lists of integers</p></li>
 </ul>
 
@@ -575,6 +575,7 @@ uniform(0, 1)</pre>
 </ul>
 
 <pre class = 'prettyprint lang-python'>max(7, 2, 4)   # max() is a built-in Python function
+
 m = max
 m(7, 2, 4)</pre>
 
