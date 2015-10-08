@@ -9,6 +9,8 @@ output:
 
 #### Classes:
 
+- [Quantitative Economics](teaching/qe.html) (Fall 2015)
+
 - [International Trade](teaching/trade.html) (Fall 2015)
 
 - Industrial Organization for PhD (Spring 2015)
