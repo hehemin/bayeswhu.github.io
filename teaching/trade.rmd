@@ -37,9 +37,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 8](trade/Lec8.html)
 
-<!-- - [Lec 9](trade/Lec9.html)
+- [Lec 9](trade/Lec9.html)
 
-- [Lec 10](trade/Lec10.html)
+<!-- - [Lec 10](trade/Lec10.html)
 
 - [Lec 11](trade/Lec11.html)
 
