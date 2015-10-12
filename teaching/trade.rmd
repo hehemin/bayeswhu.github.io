@@ -67,4 +67,4 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Project
 
-<!-- - [Project List](trade/Project.html) -->
+- [Project List](trade/Project.html)
