@@ -43,8 +43,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 11](trade/Lec11.html)
 
-<!-- - [Lec 12](trade/Lec12.html) -->
+- [Lec 12](trade/Lec12.html) 
 
+<!-- -->
 #### Homeworks
 
 - [Homework 1](trade/Homework1.doc)
@@ -53,9 +54,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Keys
 
-<!-- - [Key 1](trade/Hw1_key.doc)
+- [Key 1](trade/Hw1_key.doc)
 
-- [Key 2](trade/Hw2_key.doc) -->
+<!-- - [Key 2](trade/Hw2_key.doc) -->
 
 #### Quiz
 
