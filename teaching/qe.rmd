@@ -36,6 +36,6 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Exercise Keys
 
-- [Key 3](qe/Lec3_key.ipynb)
+- [Key 3](qe/Lec3_Key.ipynb)
 
 <!-- - [Key 2](qe/Hw2_key.doc) -->
