@@ -62,9 +62,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Quiz 1](trade/Quiz1.ppt)
 
-<!-- - [Quiz 2](trade/Quiz2.ppt)
+- [Quiz 2](trade/Quiz2.ppt)
 
-- [Quiz 3](trade/Quiz3.ppt) -->
+<!-- - [Quiz 3](trade/Quiz3.ppt) -->
 
 #### Project
 
