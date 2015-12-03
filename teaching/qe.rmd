@@ -29,9 +29,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Lec 5 Object Oriented Programming](qe/Lec5.html)
     + [Lec 6 NumPy](qe/Lec6.html)
     + [Lec 7 SciPy](qe/Lec7.html)
+    + [Lec 8 Matplotlib](qe/Lec8.html)
     
-<!--    + [Lec 8 Matplotlib](qe/Lec8.html)
-    + [Lec 9 Pandas](qe/Lec9.html)
+<!--    + [Lec 9 Pandas](qe/Lec9.html)
     + [Lec 10 IPython Shell and Notebook](qe/Lec10.html)
     + [Lec 11 The Need for Speed](qe/Lec11.html)
 
