@@ -134,7 +134,7 @@ import numpy as np</pre>
 
 <ul>
 <li><p>Perhaps the two most important data types defined by pandas are the <code>DataFrame</code> and <code>Series</code> types</p></li>
-<li><p>You can think of a <code>Series</code> as a “column” of data, such as a collection of observations on a single variable</p></li>
+<li><p>You can think of a <code>Series</code> as a acolumna of data, such as a collection of observations on a single variable</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>s = pd.Series(np.random.randn(4), name=&#39;daily returns&#39;)
@@ -171,7 +171,7 @@ s</pre>
 </article></slide><slide class=''><hgroup><h2>Series</h2></hgroup><article  id="series-3">
 
 <ul>
-<li><p>Viewed in this way, <code>Series</code> are like fast, efficient Python dictionaries (with the restriction that the items in the dictionary all have the same type—in this case, floats)</p></li>
+<li><p>Viewed in this way, <code>Series</code> are like fast, efficient Python dictionaries (with the restriction that the items in the dictionary all have the same type-in this case, floats)</p></li>
 <li><p>In fact you can use much of the same syntax as Python dictionaries</p></li>
 </ul>
 
@@ -189,8 +189,8 @@ s
 <ul>
 <li><p>As mentioned above a <code>DataFrame</code> is somewhat like a spreadsheet, or a structure for storing the data matrix in a regression</p></li>
 <li><p>While a <code>Series</code> is one individual column of data, a <code>DataFrame</code> is all the columns</p></li>
-<li><p>Let’s look at an example, reading in data from the CSV file <code>data/test_pwt.csv</code>.</p></li>
-<li><p>Now let’s read the data in using pandas’ <code>read_csv</code> function</p></li>
+<li><p>Let&#39;s look at an example, reading in data from the CSV file <code>data/test_pwt.csv</code>.</p></li>
+<li><p>Now let&#39;s read the data in using pandas&#39; <code>read_csv</code> function</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>df = pd.read_csv(&#39;data/test_pwt.csv&#39;)
@@ -219,7 +219,7 @@ df</pre>
 <pre class = 'prettyprint lang-python'>df.ix[2:5, [&#39;country&#39;, &#39;tcgdp&#39;]]</pre>
 
 <ul>
-<li>Let’s imagine that we’re only interested in population and total GDP (<code>tcgdp</code>)</li>
+<li>Let&#39;s imagine that we&#39;re only interested in population and total GDP (<code>tcgdp</code>)</li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-3">
@@ -234,7 +234,7 @@ df</pre>
 
 <ul>
 <li><p>Here the index <code>0, 1,..., 7</code> is redundant, because we can use the country names as an index</p></li>
-<li><p>To do this, first let’s pull out the country column using the pop method</p></li>
+<li><p>To do this, first let&#39;s pull out the country column using the pop method</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-4">
@@ -250,7 +250,7 @@ df.index = countries
 df</pre>
 
 <ul>
-<li>Let’s give the columns slightly better names</li>
+<li>Let&#39;s give the columns slightly better names</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>df.columns = &#39;population&#39;, &#39;total GDP&#39;
@@ -259,14 +259,14 @@ df</pre>
 </article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-5">
 
 <ul>
-<li>Population is in thousands, let’s revert to single units</li>
+<li>Population is in thousands, let&#39;s revert to single units</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>df[&#39;population&#39;] = df[&#39;population&#39;] * 1e3
 df</pre>
 
 <ul>
-<li>Next we’re going to add a column showing real GDP per capita, multiplying by 1,000,000 as we go because total GDP is in millions</li>
+<li>Next we&#39;re going to add a column showing real GDP per capita, multiplying by 1,000,000 as we go because total GDP is in millions</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>df[&#39;GDP percap&#39;] = df[&#39;total GDP&#39;] * 1e6 / df[&#39;population&#39;]
@@ -287,7 +287,7 @@ import matplotlib.pyplot as plt
 plt.show()</pre>
 
 <ul>
-<li>At the moment the data frame is ordered alphabetically on the countries—let’s change it to GDP per capita</li>
+<li>At the moment the data frame is ordered alphabetically on the countries-let&#39;s change it to GDP per capita</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>df = df.sort_index(by=&#39;GDP percap&#39;, ascending=False)
@@ -307,7 +307,7 @@ df</pre>
 
 <ul>
 <li><p>pandas makes it straightforward to query several common Internet databases programmatically</p></li>
-<li><p>One particularly important one is FRED — a vast collection of time series data maintained by the St. Louis Fed</p></li>
+<li><p>One particularly important one is FRED - a vast collection of time series data maintained by the St. Louis Fed</p></li>
 <li><p>For example, suppose that we are interested in the unemployment rate</p></li>
 <li><p>Via FRED, the entire series for the US civilian rate can be downloaded directly by entering this URL into your browser</p></li>
 </ul>
@@ -338,12 +338,12 @@ df</pre>
 web_page = urllib.request.urlopen(&#39;http://cnn.com&#39;)</pre>
 
 <ul>
-<li><p>If there’s no error message, then the call has succeeded</p></li>
+<li><p>If there&#39;s no error message, then the call has succeeded</p></li>
 <li>If you do get an error, then there are two likely causes
 
 <ul>
-<li>You are not connected to the Internet — hopefully this isn’t the case</li>
-<li>Your machine is accessing the Internet through a proxy server, and Python isn’t aware of this</li>
+<li>You are not connected to the Internet - hopefully this isn&#39;t the case</li>
+<li>Your machine is accessing the Internet through a proxy server, and Python isn&#39;t aware of this</li>
 </ul></li>
 </ul>
 
@@ -370,7 +370,7 @@ source.read(100)</pre>
 </article></slide><slide class=''><hgroup><h2>Accessing Data with urllib.request</h2></hgroup><article  id="accessing-data-with-urllib.request-2">
 
 <ul>
-<li>But this is unnecessary — pandas’ <code>read_csv</code> function can handle the task for us</li>
+<li>But this is unnecessary - pandas&#39; <code>read_csv</code> function can handle the task for us</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>source = urllib2.urlopen(url)
@@ -390,7 +390,7 @@ data.describe()  # Your output might differ slightly</pre>
 
 <ul>
 <li><p>Although it is worth understanding the low level procedures, for the present case pandas can take care of all these messy details</p></li>
-<li><p>For example, we can obtain the same unemployment data for the period 2006–2012 inclusive as follows</p></li>
+<li><p>For example, we can obtain the same unemployment data for the period 2006a2012 inclusive as follows</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import pandas.io.data as web
@@ -406,10 +406,10 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>Data from the World Bank</h2></hgroup><article  id="data-from-the-world-bank">
 
 <ul>
-<li><p>Let’s look at one more example of downloading and manipulating data — this time from the World Bank</p></li>
+<li><p>Let&#39;s look at one more example of downloading and manipulating data - this time from the World Bank</p></li>
 <li><p>The World Bank collects and organizes data on a huge range of indicators</p></li>
 <li><p>For example, here we find data on government debt as a ratio to GDP: <a href='http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries' title=''>http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries</a></p></li>
-<li><p>If you click on “DOWNLOAD DATA” you will be given the option to download the data as an Excel file</p></li>
+<li><p>If you click on aDOWNLOAD DATAa you will be given the option to download the data as an Excel file</p></li>
 <li><p>The next program does this for you, parses the data from Excel file to pandas DataFrame, and plots time series for France, Germany, the US and Australia</p></li>
 </ul>
 

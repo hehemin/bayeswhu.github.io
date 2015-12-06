@@ -96,7 +96,7 @@
 </article></slide><slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview-1">
 
 <ul>
-<li><p>We’ve already generated quite a few figures in these lectures using Matplotlib</p></li>
+<li><p>We&#39;ve already generated quite a few figures in these lectures using Matplotlib</p></li>
 <li>Matplotlib is an outstanding graphics library, designed for scientific computing, with
 
 <ul>
@@ -111,7 +111,7 @@
 
 <ul>
 <li><p>Matplotlib is very easy to get started with, thanks to its simple MATLAB-style API (Application Progamming Interface)</p></li>
-<li><p>Here’s the kind of easy example you might find in introductory treatments</p></li>
+<li><p>Here&#39;s the kind of easy example you might find in introductory treatments</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>from pylab import *  # Depreciated
@@ -132,7 +132,7 @@ show()</pre>
 
 <ul>
 <li><p>The buttons at the bottom of the window allow you to manipulate the figure and then save it if you wish</p></li>
-<li><p>If you’re using IPython notebook you can also have it appear inline</p></li>
+<li><p>If you&#39;re using IPython notebook you can also have it appear inline</p></li>
 <li><p>The pylab module is actually just a few lines of code instructing the interpreter to pull in some key functionality from matplotlib and numpy</p></li>
 <li><p>It is in fact depreciated, although still in common use</p></li>
 <li><p>Also, <code>from pylab import *</code> pulls lots of names into the global namespace, which is a potential source of name conflicts</p></li>
@@ -165,7 +165,7 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>The Object-Oriented API</h2></hgroup><article  id="the-object-oriented-api-2">
 
 <ul>
-<li>Here’s the code corresponding to the preceding figure using the object oriented API:</li>
+<li>Here&#39;s the code corresponding to the preceding figure using the object oriented API:</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import matplotlib.pyplot as plt
@@ -177,7 +177,7 @@ ax.plot(x, y, &#39;b-&#39;, linewidth=2)
 plt.show()</pre>
 
 <ul>
-<li><p>While there’s a bit more typing, the more explicit use of objects gives us more fine-grained control</p></li>
+<li><p>While there&#39;s a bit more typing, the more explicit use of objects gives us more fine-grained control</p></li>
 <li><p>This will become more clear as we go along</p></li>
 </ul>
 
@@ -191,8 +191,8 @@ plt.show()</pre>
 <li>Here the call <code>fig, ax = plt.subplots()</code> returns a pair, where
 
 <ul>
-<li><code>fig</code> is a <code>Figure</code> instance—like a blank canvas</li>
-<li><code>ax</code> is an <code>AxesSubplot</code> instance—think of a frame for plotting in</li>
+<li><code>fig</code> is a <code>Figure</code> instance-like a blank canvas</li>
+<li><code>ax</code> is an <code>AxesSubplot</code> instance-think of a frame for plotting in</li>
 </ul></li>
 <li>The <code>plot()</code> function is actually a method of ax</li>
 </ul></li>
@@ -201,7 +201,7 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>Tweaks</h2></hgroup><article  id="tweaks">
 
 <ul>
-<li>Here we’ve changed the line to red and added a legend</li>
+<li>Here we&#39;ve changed the line to red and added a legend</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import matplotlib.pyplot as plt
@@ -214,7 +214,7 @@ ax.legend()
 plt.show()</pre>
 
 <ul>
-<li><p>We’ve also used <code>alpha</code> to make the line slightly transparent—which makes it look smoother</p></li>
+<li><p>We&#39;ve also used <code>alpha</code> to make the line slightly transparent-which makes it look smoother</p></li>
 <li><p>Unfortunately the legend is obscuring the line</p></li>
 <li><p>This can be fixed by replacing <code>ax.legend()</code> with <code>ax.legend(loc=&#39;upper center&#39;)</code></p></li>
 </ul>
@@ -275,8 +275,8 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>Multiple Plots on One Axis</h2></hgroup><article  id="multiple-plots-on-one-axis">
 
 <ul>
-<li><p>It’s straightforward to generate mutiple plots on the same axes</p></li>
-<li><p>Here’s an example that randomly generates three normal densities and adds a label with their mean</p></li>
+<li><p>It&#39;s straightforward to generate mutiple plots on the same axes</p></li>
+<li><p>Here&#39;s an example that randomly generates three normal densities and adds a label with their mean</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import matplotlib.pyplot as plt
@@ -318,7 +318,7 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>3D Plots</h2></hgroup><article  id="d-plots">
 
 <ul>
-<li>Matplotlib does a nice job of 3D plots — here is one example</li>
+<li>Matplotlib does a nice job of 3D plots - here is one example</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import matplotlib.pyplot as plt
@@ -341,7 +341,7 @@ plt.show()</pre>
 <ul>
 <li><p>Perhaps you will find a set of customizations that you regularly use</p></li>
 <li><p>Suppose we usually prefer our axes to go through the origin, and to have a grid</p></li>
-<li><p>Here’s a nice example of how the object-oriented API can be used to build a custom subplots function that implements these changes</p></li>
+<li><p>Here&#39;s a nice example of how the object-oriented API can be used to build a custom subplots function that implements these changes</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>A Customizing Function</h2></hgroup><article  id="a-customizing-function-1">

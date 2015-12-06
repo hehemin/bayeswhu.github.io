@@ -112,7 +112,7 @@
 <ul>
 <li><p>The essential problem that NumPy solves is fast array processing</p></li>
 <li><p>This is necessary main because iteration via loops in interpreted languages (Python, MATLAB, R, etc.) is relative slow</p></li>
-<li><p>Reason: interpreted languages convert commands to machine code and execute them one by one—a difficult process to optimize</p></li>
+<li><p>Reason: interpreted languages convert commands to machine code and execute them one by one-a difficult process to optimize</p></li>
 <li><p>Loops in compiled languages like C and Fortran can be orders of magnitude faster</p></li>
 <li><p>Does that mean that we should just switch to C or Fortran for everything?</p></li>
 </ul>
@@ -124,7 +124,7 @@
 <li><p>High productivity languages should be chosen over high speed languages for the great majority of tasks</p></li>
 <li><p>But it does mean that we need libaries like NumPy, through which operations can be sent in batches to optimized C and Fortran code</p></li>
 <li><p>The objective of this lecture is to provide a fast paced introduction to the basics. (If any points are unclear you can always turn to the official documentation)</p></li>
-<li><p>Let’s begin by considering NumPy arrays, which power almost all of the scientific Python ecosystem</p></li>
+<li><p>Let&#39;s begin by considering NumPy arrays, which power almost all of the scientific Python ecosystem</p></li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>NumPy Arrays</h2></hgroup><article  id="numpy-arrays">
@@ -188,7 +188,7 @@ type(a[0])</pre>
 <pre class = 'prettyprint lang-python'>z = np.zeros(10)</pre>
 
 <ul>
-<li><p>z is a “flat” array with no dimension — it is neither row nor column vector</p></li>
+<li><p>z is a aflata array with no dimension - it is neither row nor column vector</p></li>
 <li><p>The dimension is recorded in the <code>shape</code> attribute, which is a tuple</p></li>
 </ul>
 
@@ -218,7 +218,7 @@ z</pre>
 </article></slide><slide class=''><hgroup><h2>Creating Arrays</h2></hgroup><article  id="creating-arrays">
 
 <ul>
-<li><p>As we’ve seen, the <code>np.zeros</code> function creates an array of zeros. You can probably guess what <code>np.ones</code> creates</p></li>
+<li><p>As we&#39;ve seen, the <code>np.zeros</code> function creates an array of zeros. You can probably guess what <code>np.ones</code> creates</p></li>
 <li><p>Related is <code>np.empty</code>, which creates arrays in memory that can later be populated with data</p></li>
 </ul>
 
@@ -517,7 +517,7 @@ b
 z[b]</pre>
 
 <ul>
-<li>Of course we can—and frequently do—perform this in one step</li>
+<li>Of course we can-and frequently do-perform this in one step</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>z[z &gt; 3]</pre>
@@ -540,7 +540,7 @@ np.sin(z)</pre>
 
 <ul>
 <li><p>Because they act elementwise on arrays, these functions are called <em>vectorized functions</em></p></li>
-<li><p>In NumPy-speak, they are also called <em>ufuncs</em>, which stands for “universal functions”</p></li>
+<li><p>In NumPy-speak, they are also called <em>ufuncs</em>, which stands for auniversal functionsa</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Vectorized Functions</h2></hgroup><article  id="vectorized-functions-1">
@@ -574,7 +574,7 @@ x
 np.where(x &gt; 0, 1, 0)  # Insert 1 if x &gt; 0 true, otherwise 0</pre>
 
 <ul>
-<li>Although it’s usually better to hand code vectorized functions from vectorized NumPy operations, at a pinch you can use <code>np.vectorize</code></li>
+<li>Although it&#39;s usually better to hand code vectorized functions from vectorized NumPy operations, at a pinch you can use <code>np.vectorize</code></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>def f(x): return 1 if x &gt; 0 else 0
@@ -623,7 +623,7 @@ y.mean()</pre>
 <li>The standard (inverse transform) algorithm is as follows:
 
 <ul>
-<li>Divide the unit interval \([0,1]\) into \(n\) subintervals \(I_0,I_1,...,I_{n−1}\) such that the length of \(I_i\) is \(q_i\)</li>
+<li>Divide the unit interval \([0,1]\) into \(n\) subintervals \(I_0,I_1,...,I_{n-1}\) such that the length of \(I_i\) is \(q_i\)</li>
 <li>Draw a uniform random variable \(U\) on \([0,1]\) and return the \(i\) such that \(U\in I_i\)</li>
 </ul></li>
 <li><p>The probability of drawing \(i\) is the length of \(I_i\), which is equal to \(q_i\)</p></li>
@@ -645,7 +645,7 @@ def sample(q):
         a = a + q[i]</pre>
 
 <ul>
-<li><p>If you can’t see how this works, try thinking through the flow for a simple example, such as <code>q = [0.25, 0.75]</code> It helps to sketch the intervals on paper</p></li>
+<li><p>If you can&#39;t see how this works, try thinking through the flow for a simple example, such as <code>q = [0.25, 0.75]</code> It helps to sketch the intervals on paper</p></li>
 <li>Your exercise is to speed it up using NumPy, avoiding explicit loops
 
 <ul>

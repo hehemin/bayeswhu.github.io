@@ -113,8 +113,8 @@
 </article></slide><slide class=''><hgroup><h2>Overview</h2></hgroup><article  id="overview-2">
 
 <ul>
-<li><p>It’s not really necessary to “learn” SciPy as a whole—a better approach is to learn each relevant feature as required</p></li>
-<li><p>You can browse from the top of the documentation tree to see what’s available</p></li>
+<li><p>It&#39;s not really necessary to alearna SciPy as a whole-a better approach is to learn each relevant feature as required</p></li>
+<li><p>You can browse from the top of the documentation tree to see what&#39;s available</p></li>
 <li><p>In this lecture we aim only to highlight some useful parts of the package</p></li>
 </ul>
 
@@ -137,7 +137,7 @@ from numpy.lib.scimath import *
 del linalg</pre>
 
 <ul>
-<li>The majority of SciPy’s functionality resides in its subpackages
+<li>The majority of SciPy&#39;s functionality resides in its subpackages
 
 <ul>
 <li><code>scipy.optimize</code>, <code>scipy.integrate</code>, <code>scipy.stats</code>, etc.</li>
@@ -189,7 +189,7 @@ from scipy.optimize import brentq
 np.random.beta(5, 5, size=3)</pre>
 
 <ul>
-<li><p>This generates a draw from the distribution below when <code>a, b = 5, 5</code> \[ f(x;a,b)=\frac{x^{(a−1)}(1−x)^{(b−1)}}{\int^1_0 u^{(a−1)}u^{(b−1)}du}\:(0\leq x\leq 1) \]</p></li>
+<li><p>This generates a draw from the distribution below when <code>a, b = 5, 5</code> \[ f(x;a,b)=\frac{x^{(a-1)}(1-x)^{(b-1)}}{\int^1_0 u^{(a-1)}u^{(b-1)}du}\:(0\leq x\leq 1) \]</p></li>
 <li><p>Sometimes we need access to the density itself, or the cdf, the quantiles, etc.</p></li>
 <li><p>For this we can use <code>scipy.stats</code>, which provides all of this functionality as well as random number generation in a single consistent interface</p></li>
 </ul>
@@ -208,8 +208,8 @@ show()</pre>
 
 <ul>
 <li><p>In this code we created a so-called <code>rv_frozen</code> object, via the call <code>q = beta(5, 5)</code></p></li>
-<li><p>The “frozen” part of the notation related to the fact that q represents a particular distribution with a particular set of parameters</p></li>
-<li><p>Once we’ve done so, we can then generate random numbers, evaluate the density, etc., all from this fixed distribution</p></li>
+<li><p>The afrozena part of the notation related to the fact that q represents a particular distribution with a particular set of parameters</p></li>
+<li><p>Once we&#39;ve done so, we can then generate random numbers, evaluate the density, etc., all from this fixed distribution</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Random Variables and Distributions</h2></hgroup><article  id="random-variables-and-distributions-2">
@@ -272,7 +272,7 @@ gradient, intercept</pre>
 
 <ul>
 <li><p>A <em>root</em> of a real function \(f\) on \([a,b]\) is an \(x\in[a,b]\) such that \(f(x)=0\)</p></li>
-<li><p>For example, if we plot the function \[ f(x)=sin(4(x−1/4))+x+x^{20}−1 \] with \(x\in[0,1]\) we get</p></li>
+<li><p>For example, if we plot the function \[ f(x)=sin(4(x-1/4))+x+x^{20}-1 \] with \(x\in[0,1]\) we get</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Roots and Fixed Points</h2></hgroup><article  id="roots-and-fixed-points-2">
@@ -287,7 +287,7 @@ gradient, intercept</pre>
 
 <ul>
 <li><p>The unique root is approximately 0.408</p></li>
-<li><p>Let’s consider some numerical techniques for finding roots</p></li>
+<li><p>Let&#39;s consider some numerical techniques for finding roots</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Bisection</h2></hgroup><article  id="bisection">
@@ -298,16 +298,16 @@ gradient, intercept</pre>
 
 <ul>
 <li>Player A thinks of a secret number between 1 and 100</li>
-<li>Player B asks if it’s less than 50
+<li>Player B asks if it&#39;s less than 50
 
 <ul>
-<li>If yes, B asks if it’s less than 25</li>
-<li>If no, B asks if it’s less than 75</li>
+<li>If yes, B asks if it&#39;s less than 25</li>
+<li>If no, B asks if it&#39;s less than 75</li>
 </ul></li>
 <li>And so on</li>
 </ul></li>
 <li><p>This is bisection</p></li>
-<li><p>Here’s a fairly simplistic implementation of the algorithm in Python</p></li>
+<li><p>Here&#39;s a fairly simplistic implementation of the algorithm in Python</p></li>
 <li><p>It works for all sufficiently well behaved increasing continuous functions with \(f(a)&lt;0&lt;f(b)\)</p></li>
 </ul>
 
@@ -332,7 +332,7 @@ gradient, intercept</pre>
 </article></slide><slide class=''><hgroup><h2>Bisection</h2></hgroup><article  id="bisection-2">
 
 <ul>
-<li>In fact SciPy provides it’s own bisection function</li>
+<li>In fact SciPy provides it&#39;s own bisection function</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>from scipy.optimize import bisect
@@ -351,7 +351,7 @@ bisect(f, 0, 1)</pre>
 <li>When the function is well-behaved, the Newton-Raphson method is faster than bisection</li>
 <li>When the function is less well-behaved, the Newton-Raphson might fail</li>
 </ul></li>
-<li><p>Let’s investigate this using the same function \(f\), first looking at potential instability</p></li>
+<li><p>Let&#39;s investigate this using the same function \(f\), first looking at potential instability</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>The Newton-Raphson Method</h2></hgroup><article  id="the-newton-raphson-method-1">
@@ -363,7 +363,7 @@ newton(f, 0.7)   # Start the search at x = 0.7 instead</pre>
 
 <ul>
 <li><p>The second initial condition leads to failure of convergence</p></li>
-<li><p>On the other hand, using IPython’s <code>timeit</code> magic, we see that <code>newton</code> can be much faster</p></li>
+<li><p>On the other hand, using IPython&#39;s <code>timeit</code> magic, we see that <code>newton</code> can be much faster</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>timeit bisect(f, 0, 1)
@@ -423,7 +423,7 @@ timeit brentq(f, 0, 1)</pre>
 fixed_point(lambda x: x**2, 10.0)  # 10.0 is an initial guess</pre>
 
 <ul>
-<li>If you don’t get good results, you can always switch back to the <code>brentq</code> root finder, since the fixed point of a function \(f\) is the root of \(g(x):=x−f(x)\)</li>
+<li>If you don&#39;t get good results, you can always switch back to the <code>brentq</code> root finder, since the fixed point of a function \(f\) is the root of \(g(x):=x-f(x)\)</li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>Optimization</h2></hgroup><article  id="optimization">
@@ -432,10 +432,10 @@ fixed_point(lambda x: x**2, 10.0)  # 10.0 is an initial guess</pre>
 
 <ul>
 <li><p>Most numerical packages provide only functions for minimization</p></li>
-<li><p>Maximization can be performed by recalling that the maximizer of a function \(f\) on domain \(D\) is the minimizer of \(−f\) on \(D\)</p></li>
+<li><p>Maximization can be performed by recalling that the maximizer of a function \(f\) on domain \(D\) is the minimizer of \(-f\) on \(D\)</p></li>
 <li><p>Minimization is closely related to root finding: For smooth functions, interior optima correspond to roots of the first derivative</p></li>
 <li><p>The speed/robustness trade-off described above is present with numerical optimization too</p></li>
-<li><p>Unless you have some prior information you can exploit, it’s usually best to use hybrid methods</p></li>
+<li><p>Unless you have some prior information you can exploit, it&#39;s usually best to use hybrid methods</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Optimization</h2></hgroup><article  id="optimization-2">
@@ -460,7 +460,7 @@ fminbound(lambda x: x**2, -1, 2)  # Search in [-1, 2]</pre>
 
 <ul>
 <li><p>Most numerical integration methods work by computing the integral of an approximating polynomial</p></li>
-<li><p>The resulting error depends on how well the polynomial fits the integrand, which in turn depends on how “regular” the integrand is</p></li>
+<li><p>The resulting error depends on how well the polynomial fits the integrand, which in turn depends on how aregulara the integrand is</p></li>
 <li><p>In SciPy, the relevant module for numerical integration is <code>scipy.integrate</code></p></li>
 <li><p>A good default for univariate integration is <code>quad</code></p></li>
 </ul>
@@ -474,7 +474,7 @@ integral</pre>
 <ul>
 <li><p>In fact <code>quad</code> is an interface to a very standard numerical integration routine in the Fortran library QUADPACK</p></li>
 <li><p>It uses <a href='https://en.wikipedia.org/wiki/Clenshaw%E2%80%93Curtis_quadrature' title=''>Clenshaw-Curtis quadrature</a>, based on expansion in terms of Chebychev polynomials</p></li>
-<li><p>There are other options for univeriate integration—a useful one is <code>fixed_quad</code>, which is fast and hence works well inside for loops</p></li>
+<li><p>There are other options for univeriate integration-a useful one is <code>fixed_quad</code>, which is fast and hence works well inside for loops</p></li>
 <li><p>There are also functions for multivariate integration. See the documentation for more details</p></li>
 </ul>
 
@@ -519,7 +519,7 @@ integral</pre>
         return 2 * x(t-1)</pre>
 
 <ul>
-<li>What happens here is that each successive call uses it’s own <em>frame</em> in the stack
+<li>What happens here is that each successive call uses it&#39;s own <em>frame</em> in the stack
 
 <ul>
 <li>a frame is where the local variables of a given function call are held</li>

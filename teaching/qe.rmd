@@ -30,16 +30,16 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Lec 6 NumPy](qe/Lec6.html)
     + [Lec 7 SciPy](qe/Lec7.html)
     + [Lec 8 Matplotlib](qe/Lec8.html)
-    
-<!--    + [Lec 9 Pandas](qe/Lec9.html)
+    + [Lec 9 Pandas](qe/Lec9.html)
     + [Lec 10 IPython Shell and Notebook](qe/Lec10.html)
     + [Lec 11 The Need for Speed](qe/Lec11.html)
 
+<!--    
 - part 2 Introductory Applications
     + [Lec 12 Linear Algebra](qe/Lec12.html)
     + [Lec 13 Finite Markov Chains](qe/Lec13.html)
     + [Lec 14 Shortest Paths](qe/Lec14.html)
-    + [Lec 15 Schelling’s Segregation Model](qe/Lec15.html)
+    + [Lec 15 Schelling's Segregation Model](qe/Lec15.html)
     + [Lec 16 LLN and CLT](qe/Lec16.html) -->
 
 #### Exercise Keys

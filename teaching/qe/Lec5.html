@@ -105,7 +105,7 @@
 </ul></li>
 <li><p>OOP is all about how to organize your code</p></li>
 <li><p>This topic is important! Proper organization of code is a critical determinant of productivity</p></li>
-<li><p>Moreover, OOP is a part of Python, and to progress further it’s necessary to understand the basics</p></li>
+<li><p>Moreover, OOP is a part of Python, and to progress further it&#39;s necessary to understand the basics</p></li>
 </ul>
 
 </article></slide><slide class='segue dark nobackground'><hgroup class = 'auto-fadein'><h2>About OOP</h2></hgroup><article  id="about-oop">
@@ -133,7 +133,7 @@
 <li>Functions are called to act on these data according to the task</li>
 <li>Data are passed back and forth via function calls</li>
 </ul></li>
-<li><p>In contrast, in the OOP paradigm, data and functions are <strong>bundled together</strong> into “objects”</p></li>
+<li><p>In contrast, in the OOP paradigm, data and functions are <strong>bundled together</strong> into aobjectsa</p></li>
 <li><p>An example is a Python list, which not only stores data, but also knows how to sort itself, etc.</p></li>
 </ul>
 
@@ -144,7 +144,7 @@ x.sort()
 x</pre>
 
 <ul>
-<li><p>Here <code>sort</code> is a function that is “part of” the list object</p></li>
+<li><p>Here <code>sort</code> is a function that is apart ofa the list object</p></li>
 <li><p>In the OOP setting, functions are usually called <em>methods</em> (e.g., <code>sort</code> is a list method)</p></li>
 </ul>
 
@@ -170,7 +170,7 @@ x</pre>
 </article></slide><slide class=''><hgroup><h2>Standard Terminology</h2></hgroup><article  id="standard-terminology-1">
 
 <ul>
-<li>Attributes are accessed via “dotted attribute notation”
+<li>Attributes are accessed via adotted attribute notationa
 
 <ul>
 <li><code>object_name.data</code></li>
@@ -238,7 +238,7 @@ import sys</pre>
 </article></slide><slide class=''><hgroup><h2>Defining Your Own Classes</h2></hgroup><article  id="defining-your-own-classes-1">
 
 <ul>
-<li>Let’s build a super simple class as an exercise</li>
+<li>Let&#39;s build a super simple class as an exercise</li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>class Consumer:
@@ -257,7 +257,7 @@ c1.wealth</pre>
 <li>Notice the flexibility of Python:
 
 <ul>
-<li>We don’t actually need to specify what attributes a class will have</li>
+<li>We don&#39;t actually need to specify what attributes a class will have</li>
 <li>We can attach new attributes to instances of the class on the fly</li>
 </ul></li>
 </ul>
@@ -276,11 +276,11 @@ c1.wealth</pre>
 </article></slide><slide class=''><hgroup><h2>Example: Another Consumer Class</h2></hgroup><article  id="example-another-consumer-class">
 
 <ul>
-<li>Let’s build a <code>Consumer</code> class with more structure:
+<li>Let&#39;s build a <code>Consumer</code> class with more structure:
 
 <ul>
-<li>A <code>wealth</code> attribute that stores the consumer’s wealth (data)</li>
-<li>An <code>earn</code> method, where <code>earn(y)</code> increments the consumer’s wealth by y</li>
+<li>A <code>wealth</code> attribute that stores the consumer&#39;s wealth (data)</li>
+<li>An <code>earn</code> method, where <code>earn(y)</code> increments the consumer&#39;s wealth by y</li>
 <li>A <code>spend</code> method, where <code>spend(x)</code> either de-increments wealth by x or returns an error if insufficient funds exist</li>
 </ul></li>
 </ul>
@@ -305,7 +305,7 @@ c1.wealth</pre>
 </article></slide><slide class=''><hgroup><h2>Example: Another Consumer Class</h2></hgroup><article  id="example-another-consumer-class-2">
 
 <ul>
-<li><p>There’s some special syntax here so let’s step through carefully</p></li>
+<li><p>There&#39;s some special syntax here so let&#39;s step through carefully</p></li>
 <li>As an overview, this class defines instance data <code>wealth</code> and three methods: <code>__init__</code>, <code>earn</code> and <code>spend</code>
 
 <ul>
@@ -313,7 +313,7 @@ c1.wealth</pre>
 </ul></li>
 <li><p>The ideas behind the <code>earn</code> and <code>spend</code> methods were discussed above. Both of these act on the instance data wealth</p></li>
 <li><p>The <code>__init__</code> method is a special <em>constructor method</em>. Whenever we create an instance of the class, this method will be called automatically</p></li>
-<li><p>Calling <code>__init__</code> sets up a “namespace” to hold the instance data</p></li>
+<li><p>Calling <code>__init__</code> sets up a anamespacea to hold the instance data</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Usage</h2></hgroup><article  id="usage">
@@ -347,13 +347,13 @@ c1.wealth</pre>
 c2.__dict__</pre>
 
 <ul>
-<li>When we access or set attributes we’re actually just modifying the dictionary maintained by the instance</li>
+<li>When we access or set attributes we&#39;re actually just modifying the dictionary maintained by the instance</li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Self</h2></hgroup><article  id="self">
 
 <ul>
-<li><p>If you look at the <code>Consumer</code> class definition again you’ll see the word <code>self</code> throughout the code</p></li>
+<li><p>If you look at the <code>Consumer</code> class definition again you&#39;ll see the word <code>self</code> throughout the code</p></li>
 <li>The rules with <code>self</code> are that
 
 <ul>
@@ -374,9 +374,9 @@ c2.__dict__</pre>
 </article></slide><slide class=''><hgroup><h2>Example: The Solow Growth Model</h2></hgroup><article  id="example-the-solow-growth-model">
 
 <ul>
-<li><p>For our next example, let’s write a simple class to implement the Solow growth model</p></li>
-<li><p>The Solow growth model is a neoclassical growth model where the amount of capital stock per capita \(k_t\) evolves according to the rule \[ k_{t+1}=\frac{szk^{\alpha}_t+(1−d)k_t}{1+n} \]</p></li>
-<li><p>Here \(s\) is an exogenously given savings rate \(z\) is a productivity parameter \(\alpha\) is capital’s share of income \(n\) is the population growth rate \(d\) is the depreciation rate</p></li>
+<li><p>For our next example, let&#39;s write a simple class to implement the Solow growth model</p></li>
+<li><p>The Solow growth model is a neoclassical growth model where the amount of capital stock per capita \(k_t\) evolves according to the rule \[ k_{t+1}=\frac{szk^{\alpha}_t+(1-d)k_t}{1+n} \]</p></li>
+<li><p>Here \(s\) is an exogenously given savings rate \(z\) is a productivity parameter \(\alpha\) is capital&#39;s share of income \(n\) is the population growth rate \(d\) is the depreciation rate</p></li>
 <li><p>The <strong>steady state</strong> of the model is the \(k\) that solves it when \(k_{t+1}=k_t=k\)</p></li>
 </ul>
 
@@ -453,12 +453,12 @@ plt.show()</pre>
 </article></slide><slide class=''><hgroup><h2>Example: A Market</h2></hgroup><article  id="example-a-market">
 
 <ul>
-<li><p>Next let’s write a class for a simple one good market where agents are price takers</p></li>
+<li><p>Next let&#39;s write a class for a simple one good market where agents are price takers</p></li>
 <li>The market consists of the following objects:
 
 <ul>
-<li>A linear demand curve \(Q=a_d−b_dp\)</li>
-<li>A linear supply curve \(Q=a_z+b_z(p−t)\)</li>
+<li>A linear demand curve \(Q=a_d-b_dp\)</li>
+<li>A linear supply curve \(Q=a_z+b_z(p-t)\)</li>
 </ul></li>
 <li>Here
 
@@ -577,9 +577,9 @@ deadw(m)     </pre>
 </article></slide><slide class=''><hgroup><h2>Example: Chaos</h2></hgroup><article  id="example-chaos">
 
 <ul>
-<li><p>Let’s look at one more example, related to chaotic dynamics in nonlinear systems</p></li>
-<li><p>One simple transition rule that can generate complex dynamics is the logistic map \[ x_{t+1}=rx_t(1−x_t),x_0\in[0,1],r\in[0,4] \]</p></li>
-<li><p>Let’s write a class for generating time series from this model</p></li>
+<li><p>Let&#39;s look at one more example, related to chaotic dynamics in nonlinear systems</p></li>
+<li><p>One simple transition rule that can generate complex dynamics is the logistic map \[ x_{t+1}=rx_t(1-x_t),x_0\in[0,1],r\in[0,4] \]</p></li>
+<li><p>Let&#39;s write a class for generating time series from this model</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Example: Chaos</h2></hgroup><article  id="example-chaos-1">
@@ -704,7 +704,7 @@ f(8)  # Exactly equivalent to f.__call__(8)</pre>
 <ul>
 <li><p>The empirical cumulative distribution function (ecdf) corresponding to a sample \(\{X_i\}^n_{i=1}\) is defined as \[ F_n(x):=\frac{1}{n}\sum_{i=1}^n1\{X_i\leq x\}\:(x\in\mathbb{R}) \]</p></li>
 <li><p>Here \(1\{X_i\leq x\}\) is an indicator function (one if \(X_i\leq x\) and zero otherwise) and hence \(F_n(x)\) is the fraction of the sample that falls below \(x\)</p></li>
-<li><p>The Glivenko–Cantelli Theorem states that, provided that the sample is iid, the ecdf \(F_n\) converges to the true distribution function \(F\)</p></li>
+<li><p>The GlivenkoaCantelli Theorem states that, provided that the sample is iid, the ecdf \(F_n\) converges to the true distribution function \(F\)</p></li>
 </ul>
 
 </article></slide><slide class=''><hgroup><h2>Exercises 1</h2></hgroup><article  id="exercises-1-1">
@@ -745,7 +745,7 @@ F(0.5)</pre>
 
 <ul>
 <li>Evaluate the polynomial, returning \(p(x)\) for any \(x\)</li>
-<li>Differentiate the polynomial, replacing the original coefficients with those of its derivative \(p′\)</li>
+<li>Differentiate the polynomial, replacing the original coefficients with those of its derivative \(p&#39;\)</li>
 </ul></li>
 <li>Avoid using any import statements</li>
 </ul></article></slide>
