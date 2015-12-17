@@ -113,7 +113,7 @@
 <li>manipulating rows and columns</li>
 <li>adjusting indices</li>
 <li>working with dates and time series</li>
-<li>sorting, grouping, re-ordering and general data munging [1]</li>
+<li>sorting, grouping, re-ordering and general data munging</li>
 <li>dealing with missing values, etc., etc.</li>
 </ul></li>
 <li><p>This lecture will provide a basic introduction</p></li>
@@ -134,7 +134,7 @@ import numpy as np</pre>
 
 <ul>
 <li><p>Perhaps the two most important data types defined by pandas are the <code>DataFrame</code> and <code>Series</code> types</p></li>
-<li><p>You can think of a <code>Series</code> as a acolumna of data, such as a collection of observations on a single variable</p></li>
+<li><p>You can think of a <code>Series</code> as a &quot;column&quot; of data, such as a collection of observations on a single variable</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>s = pd.Series(np.random.randn(4), name=&#39;daily returns&#39;)
@@ -290,7 +290,7 @@ plt.show()</pre>
 <li>At the moment the data frame is ordered alphabetically on the countries-let&#39;s change it to GDP per capita</li>
 </ul>
 
-<pre class = 'prettyprint lang-python'>df = df.sort_index(by=&#39;GDP percap&#39;, ascending=False)
+<pre class = 'prettyprint lang-python'>df = df.sort_value(by=&#39;GDP percap&#39;, ascending=False)
 df</pre>
 
 </article></slide><slide class=''><hgroup><h2>DataFrames</h2></hgroup><article  id="dataframes-7">
@@ -390,7 +390,7 @@ data.describe()  # Your output might differ slightly</pre>
 
 <ul>
 <li><p>Although it is worth understanding the low level procedures, for the present case pandas can take care of all these messy details</p></li>
-<li><p>For example, we can obtain the same unemployment data for the period 2006a2012 inclusive as follows</p></li>
+<li><p>For example, we can obtain the same unemployment data for the period 2006-2012 inclusive as follows</p></li>
 </ul>
 
 <pre class = 'prettyprint lang-python'>import pandas.io.data as web
@@ -409,7 +409,7 @@ plt.show()</pre>
 <li><p>Let&#39;s look at one more example of downloading and manipulating data - this time from the World Bank</p></li>
 <li><p>The World Bank collects and organizes data on a huge range of indicators</p></li>
 <li><p>For example, here we find data on government debt as a ratio to GDP: <a href='http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries' title=''>http://data.worldbank.org/indicator/GC.DOD.TOTL.GD.ZS/countries</a></p></li>
-<li><p>If you click on aDOWNLOAD DATAa you will be given the option to download the data as an Excel file</p></li>
+<li><p>If you click on &quot;DOWNLOAD DATA&quot; you will be given the option to download the data as an Excel file</p></li>
 <li><p>The next program does this for you, parses the data from Excel file to pandas DataFrame, and plots time series for France, Germany, the US and Australia</p></li>
 </ul>
 
