@@ -50,3 +50,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Key 5](qe/Lec5_Key.ipynb)
     + [Key 6](qe/Lec6_Key.ipynb)
     + [Key 7](qe/Lec7_Key.ipynb)
+
+#### Quiz
+
+- [Quiz](qe/quiz.html)
