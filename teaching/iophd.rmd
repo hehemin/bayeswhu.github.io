@@ -5,7 +5,7 @@ output:
         mathjax: null
 ---
 
-### Industrial Organization (Spring 2015)
+### Industrial Organization (Spring 2016)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
