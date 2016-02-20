@@ -1,8 +1,7 @@
 ---
 output: 
     html_document:
-        css: my_markdown.css
-        mathjax: null
+        theme: readable
 ---
 
 ### R workshop (Spring 2015)
