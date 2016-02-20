@@ -21,6 +21,12 @@ output:
 
 #### Applications
 
+- Arcidiacono, Bayer, Blevins, and Ellickson, “Estimation of Dynamic Discrete Choice Models in Continuous Time with an Application to Retail Competition, forthcoming ReStud.
+
+- Jia, Panle. 2008. “What Happens When Wal-mart Comes to Town: An Empirical Analysis of the Discount Retailing Industry”. Econometrica 76 (6).: 1263–1316.
+
+- Holmes, T.J., “The Diffusion of Wal-Mart and Economies of Density,” Econometrica, Vol. 79, No. 1, January, 2011, 253-302
+
 - Ryan, S. P. (2012), The Costs of Environmental Regulation in a Concentrated Industry. Econometrica, 80: 1019–1061.
 
 - Miller, Nathan and Matthew Osbourne, "Competition Among Spatially Differentiated Firms: An Estimator with an Application to Cement," Nov 2012 working paper, forthcoming Rand
@@ -49,6 +55,12 @@ output:
 
 - Maskin, Eric and John Riley, "Monopoly with Incomplete Information, "The RAND Journal of Economics, Vol. 15, No. 2 (Summer, 1984), pp. 171-196
  
+#### About mergy policy
+
+- Jaffe, Sonia, and E. Glen Weyl. 2013. "The First-Order Approach to Merger Analysis." American Economic Journal: Microeconomics, 5(4): 188-218.
+
+- Nocke and Winston, Merger Policy with Merger Choice. American Economic Review, 2013, vol. 103(2), 1006-1033.
+
 ### Topic 3: Productivity, Firm Growth, and the Size Distribution of Firms
  
 - Lucas, Robert "On the Size Distribution of Business Firms," Bell Journal, 1978, 508-523
@@ -63,20 +75,4 @@ output:
 
 - Luttmer, Erzo "On the Mechanics of Firm Growth," The Review of Economic Studies, Review of Economic Studies (2011) 78 (3): 1042-1068.
 
-### Topic 4: Knowledge Spillovers
-  
-- Ahlfedlt, Gabriel, Steven Redding, Daniel Sturm and Nikolaus Wolf," The  Economics of Density: Evidence from the Berlin Wall ," NBER Working Paper, 20354, July 2014 
- 
-- Covert, Thomas, "Experiential and social learning in firms: the case of hydraulic fracturing in the Bakken Shale." manuscript, May 2014.
- 
-- Philippe  Aghion,  Antoine  Dechezleprêtre,  David  Hemous,  Ralf  Martin,  John  Van Reenen, "Carbon Taxes, Path Dependency and Directed Technical Change: Evidence from the Auto Industry," November 2012
- 
-- Zvi Griliches, "Hybrid Corn and the Economics of Innovation," Science, New Series, Vol. 132, No. 3422. (Jul. 29, 1960), pp. 275-280.
-  
-- Felix Tintelnot, "Global Production with Export Platforms, April 2014
-
-- Holmes,  The Diffusion of Wal-Mart and Economies of Density," Econometrica, Vol. 79, No. 1 (January, 2011), 253-302
-
-- Helpman, Melitz, Yeaple, "Export versus FDI with Heterogeneous Firms," American Economic Review 2004
-
-- Holmes, Thomas," "The Location of Sales Offices and the Attraction of Cities," Journal of Political Economy, Vol. 113, No. 3, June 2005, 551-581.
+- Hottman, Colin,Stephen J. Redding, and David E. Weinstein, “Quantifying the Sources of Firm Heterogeneity,” forthcoming Quarterly Journal of Economics
