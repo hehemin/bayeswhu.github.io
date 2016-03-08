@@ -30,9 +30,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 5](io/Lec5.html)
 
-<!-- - [Lec 6](io/Lec6.html)
+- [Lec 6](io/Lec6.html)
 
-- [Lec 7](io/Lec7.html)
+<!-- - [Lec 7](io/Lec7.html)
 
 - [Lec 8](io/Lec8.html)
 
