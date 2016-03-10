@@ -12,7 +12,7 @@ output:
 
 - [Industrial Organization](teaching/io.html) (Spring 2016)
 
-- [Quantitative Economics](teaching/qe.html) (Fall 2015)
+- [Quantitative Economics](teaching/qe.html) (2015 - 2016)
 
 - International Trade (Fall 2015)
 
@@ -20,6 +20,6 @@ output:
 
 - Industrial Organization (Spring 2015)
 
-- R workshop (Spring 2015)
+- R workshop (2014 - 2015)
 
 - International Trade (Fall 2014)

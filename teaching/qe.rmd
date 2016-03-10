@@ -4,7 +4,7 @@ output:
         theme: readable
 ---
 
-### Quantitative Economics (Fall 2015)
+### Quantitative Economics (Spring 2016)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
@@ -36,9 +36,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
   
 - part 2 Introductory Applications
     + [Lec 12 Linear Algebra](qe/Lec12.html)
-    
-<!--  
     + [Lec 13 Finite Markov Chains](qe/Lec13.html)
+    
+<!--    
     + [Lec 14 Shortest Paths](qe/Lec14.html)
     + [Lec 15 Schelling's Segregation Model](qe/Lec15.html)
     + [Lec 16 LLN and CLT](qe/Lec16.html) -->
@@ -51,7 +51,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Key 5](qe/Lec5_Key.ipynb)
     + [Key 6](qe/Lec6_Key.ipynb)
     + [Key 7](qe/Lec7_Key.ipynb)
+    + [Key 9](qe/Lec9_Key.ipynb)
+    + [Key 11](qe/Lec11_Key.ipynb)
 
 #### Quiz
 
-- [Quiz](qe/Quiz.html)
+- [Quiz_2016_03_10](qe/Quiz.html)
