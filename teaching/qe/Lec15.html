@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Jing Fang" />
+  <meta name="author" content="Jing Fang and Shihui Ma" />
   <title>Schelling’s Segregation Model</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -78,7 +78,7 @@
 
 <section>
     <h1 class="title">Schelling’s Segregation Model</h1>
-    <h2 class="author">Jing Fang</h2>
+    <h2 class="author">Jing Fang and Shihui Ma</h2>
 </section>
 
 <section><section id="overview" class="titleslide slide level1"><h1>Overview</h1></section><section id="overview-1" class="slide level2">
@@ -88,6 +88,10 @@
 <li><p>His model studies the dynamics of racially mixed neighborhoods</p></li>
 <li><p>Like much of Schelling’s work, the model shows how local interactions can lead to surprising aggregate structure</p></li>
 <li><p>In particular, it shows that relatively mild preference for neighbors of similar race can lead in aggregate to the collapse of mixed neighborhoods, and high levels of segregation</p></li>
+</ul>
+</section><section id="overview-2" class="slide level2">
+<h1>Overview</h1>
+<ul>
 <li><p>In recognition of this and other research, Schelling was awarded the 2005 Nobel Prize in Economic Sciences (joint with Robert Aumann)</p></li>
 <li><p>In this lecture we will build and run a version of Schelling’s model</p></li>
 </ul>
@@ -116,16 +120,16 @@
 <li><p>In particular, the initial location of each agent is an independent draw from a bivariate uniform distribution on <span class="math inline">\(S=(0,1)^2\)</span></p></li>
 <li><p>Now, cycling through the set of all agents, each agent is now given the chance to stay or move</p></li>
 <li><p>We assume that each agent will stay put if they are happy and move if unhappy</p></li>
+</ul>
+</section><section id="behavior-1" class="slide level2">
+<h1>Behavior</h1>
+<ul>
 <li>The algorithm for moving is as follows
 <ul>
 <li>Draw a random location in <span class="math inline">\(S\)</span></li>
 <li>If happy at new location, move there</li>
 <li>Else, go to step 1</li>
 </ul></li>
-</ul>
-</section><section id="behavior-1" class="slide level2">
-<h1>Behavior</h1>
-<ul>
 <li><p>In this way, we cycle continuously through the agents, moving as required</p></li>
 <li><p>We continue to cycle until no one wishes to move</p></li>
 </ul>
