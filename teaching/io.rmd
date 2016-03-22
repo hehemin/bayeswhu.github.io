@@ -34,11 +34,11 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 7](io/Lec7.html)
 
-<!-- - [Lec 8](io/Lec8.html)
+- [Lec 8](io/Lec8.html)
 
 - [Lec 9](io/Lec9.html)
 
-- [Lec 10](io/Lec10.html) -->
+<!-- - [Lec 10](io/Lec10.html) -->
 
 #### Homeworks
 
