@@ -55,4 +55,4 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Quiz
 
-- [Quiz_2016_03_10](qe/Quiz.html)
+- [Quiz_2016_03_24](qe/Quiz.html)
