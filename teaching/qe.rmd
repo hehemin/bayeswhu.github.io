@@ -39,8 +39,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Lec 13 Finite Markov Chains](qe/Lec13.html)
     + [Lec 14 Shortest Paths](qe/Lec14.html)
     + [Lec 15 Schelling's Segregation Model](qe/Lec15.html)
-    
-<!-- + [Lec 16 LLN and CLT](qe/Lec16.html) -->
+    + [Lec 16 LLN and CLT](qe/Lec16.html) <!-- -->
 
 #### Exercise Keys
 
@@ -55,4 +54,4 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Quiz
 
-- [Quiz_2016_03_24](qe/Quiz.html)
+- [Quiz_2016_03_31](qe/Quiz.html)
