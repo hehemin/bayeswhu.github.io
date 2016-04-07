@@ -52,6 +52,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Key 9](qe/Lec9_Key.ipynb)
     + [Key 11](qe/Lec11_Key.ipynb)
 
+- Part 2
+
 #### Quiz
 
-- [Quiz_2016_03_31](qe/Quiz.html)
+- [Quiz_2016_04_07](qe/Quiz.html)
