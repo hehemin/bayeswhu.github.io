@@ -10,7 +10,7 @@ output:
 
 - Industrial Organization for PhD (Spring 2016)
 
-- [Industrial Organization](teaching/io.html) (Spring 2016)
+- Industrial Organization (Spring 2016)
 
 - [Quantitative Economics](teaching/qe.html) (2015 - 2016)
 
