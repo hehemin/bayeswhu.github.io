@@ -176,20 +176,54 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Number-spiral-diagonals">Number spiral diagonals<a class="anchor-link" href="#Number-spiral-diagonals">&#182;</a></h3><ul>
-<li>Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:</li>
+<h3 id="Digit-factorials">Digit factorials<a class="anchor-link" href="#Digit-factorials">&#182;</a></h3><ul>
+<li><p>145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.</p>
+</li>
+<li><p>Find the sum of all numbers which are equal to the sum of the factorial of their digits.</p>
+</li>
+<li><p>Note: as 1! = 1 and 2! = 2 are not sums they are not included.</p>
+</li>
 </ul>
-<blockquote><p><br>
-    21 22 23 24 25<br>
-    20  7  8  9 10<br>
-    19  6  1  2 11<br>
-    18  5  4  3 12<br>
-    17 16 15 14 13</p>
-</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Double-base-palindromes">Double-base palindromes<a class="anchor-link" href="#Double-base-palindromes">&#182;</a></h3><ul>
+<li><p>The decimal number, $585 = 1001001001_2$ (binary), is palindromic in both bases.</p>
+</li>
+<li><p>Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.</p>
+</li>
+<li><p>(Please note that the palindromic number, in either base, may not include leading zeros.)</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Quadratic-primes">Quadratic primes<a class="anchor-link" href="#Quadratic-primes">&#182;</a></h3><ul>
+<li><p>Euler discovered the remarkable quadratic formula: $$ n^2 + n + 41 $$</p>
+</li>
+<li><p>It turns out that the formula will produce 40 primes for the consecutive values n = 0 to 39. However, when n = 40, 402 + 40 + 41 = 40(40 + 1) + 41 is divisible by 41, and certainly when n = 41, 41² + 41 + 41 is clearly divisible by 41.</p>
+</li>
+<li><p>The incredible formula  $n^2 − 79n + 1601$ was discovered, which produces 80 primes for the consecutive values n = 0 to 79. The product of the coefficients, −79 and 1601, is −126479.</p>
+</li>
+<li><p>Considering quadratics of the form:</p>
 <ul>
-<li><p>It can be verified that the sum of the numbers on the diagonals is 101.</p>
+<li>$n^2 + an + b$, where $|a| < 1000$ and $|b| < 1000$</li>
+<li>where $|n|$ is the modulus/absolute value of n</li>
+</ul>
 </li>
-<li><p>What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?</p>
+<li><p>Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of primes for consecutive values of n, starting with n = 0.</p>
 </li>
 </ul>
 
@@ -201,17 +235,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Digit-fifth-powers">Digit fifth powers<a class="anchor-link" href="#Digit-fifth-powers">&#182;</a></h3><ul>
-<li><p>Surprisingly there are only three numbers that can be written as the sum of fourth powers of their digits:</p>
-<p>$1634 = 1^4 + 6^4 + 3^4 + 4^4$<br>
-  $8208 = 8^4 + 2^4 + 0^4 + 8^4$<br>
-  $9474 = 9^4 + 4^4 + 7^4 + 4^4$</p>
+<h3 id="Circular-primes">Circular primes<a class="anchor-link" href="#Circular-primes">&#182;</a></h3><ul>
+<li><p>The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.</p>
 </li>
-<li><p>As $1 = 1^4$ is not a sum it is not included.</p>
+<li><p>There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.</p>
 </li>
-<li><p>The sum of these numbers is 1634 + 8208 + 9474 = 19316.</p>
-</li>
-<li><p>Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.</p>
+<li><p>How many circular primes are there below one million?</p>
 </li>
 </ul>
 
@@ -223,66 +252,104 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Distinct-powers">Distinct powers<a class="anchor-link" href="#Distinct-powers">&#182;</a></h3><ul>
-<li><p>Consider all integer combinations of $a^b$ for $2\leq a\leq 5$ and $2\leq b\leq 5$：</p>
-<p>$2^2=4, 2^3=8, 2^4=16, 2^5=32$<br>
-  $3^2=9, 3^3=27, 3^4=81, 3^5=243$<br>
-  $4^2=16, 4^3=64, 4^4=256, 4^5=1024$<br>
-  $5^2=25, 5^3=125, 5^4=625, 5^5=3125$</p>
-</li>
-<li><p>If they are then placed in numerical order, with any repeats removed, we get the following sequence of 15 distinct terms: $$ 4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125 $$</p>
-</li>
-<li><p>How many distinct terms are in the sequence generated by $a^b$ for $2\leq a\leq 100$ and $2\leq b\leq 100$?</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Non-abundant-sums">Non-abundant sums<a class="anchor-link" href="#Non-abundant-sums">&#182;</a></h3><ul>
-<li><p>A perfect number is a number for which the sum of its proper divisors is exactly equal to the number.</p>
-</li>
-<li><p>For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number.</p>
-</li>
-<li><p>A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n.</p>
-</li>
-<li><p>As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24.</p>
-</li>
-<li><p>By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers.</p>
-</li>
-<li><p>However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.</p>
-</li>
-<li><p>Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.</p>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Maximum-path-sum-II">Maximum path sum II<a class="anchor-link" href="#Maximum-path-sum-II">&#182;</a></h3><ul>
-<li>By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.</li>
-</ul>
-<p>3<br>
-7 4<br>
-2 4 6<br>
-8 5 9 3</p>
+<h3 id="Coin-sums">Coin sums<a class="anchor-link" href="#Coin-sums">&#182;</a></h3><ul>
+<li><p>In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:</p>
 <ul>
-<li><p>That is, 3 + 7 + 4 + 9 = 23.</p>
+<li>1p, 2p, 5p, 10p, 20p, 50p, £1 (100p) and £2 (200p).</li>
+</ul>
 </li>
-<li><p>Find the maximum total from top to bottom in <a href="quiz_triangle.txt">quiz_triangle.txt</a> (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.</p>
+<li><p>It is possible to make £2 in the following way:</p>
+<ul>
+<li>1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p</li>
+</ul>
 </li>
-<li><p>NOTE: This is a much more difficult version of Problem. It is not possible to try every route to solve this problem, as there are 299 altogether! If you could check one trillion (1012) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)</p>
+<li><p>How many different ways can £2 be made using any number of coins?</p>
 </li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>Use the data in WAGE1 for this exercise.</p>
+<ul>
+<li>(i) Find the average education level in the sample. What are the lowest and highest years of education?</li>
+<li>(ii) Find the average hourly wage in the sample. Does it seem high or low?</li>
+<li>(iii) The wage data are reported in 1976 dollars. Using the Internet or a printed source, find the Consumer Price Index (CPI) for the years 1976 and 2013.</li>
+<li>(iv) Use the CPI values from part (iii) to find the average hourly wage in 2013 dollars. Now does the average hourly wage seem reasonable?</li>
+<li>(v) How many women are in the sample? How many men?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in BWGHT to answer this question.</p>
+<ul>
+<li>(i) How many women are in the sample, and how many report smoking during pregnancy?</li>
+<li>(ii) What is the average number of cigarettes smoked per day? Is the average a good measure of the “typical” woman in this case? Explain.</li>
+<li>(iii) Among women who smoked during pregnancy, what is the average number of cigarettes smoked per day? How does this compare with your answer from part (ii), and why?</li>
+<li>(iv) Find the average of fatheduc in the sample. Why are only 1,192 observations used to compute this average?</li>
+<li>(v) Report the average family income and its standard deviation in dollars.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>The data in MEAP01 are for the state of Michigan in the year 2001. Use these data to answer the following questions.</p>
+<ul>
+<li>(i) Find the largest and smallest values of math4. Does the range make sense? Explain.</li>
+<li>(ii) How many schools have a perfect pass rate on the math test? What percentage is this of the total sample?</li>
+<li>(iii) How many schools have math pass rates of exactly 50%?</li>
+<li>(iv) Compare the average pass rates for the math and reading scores. Which test is harder to pass?</li>
+<li>(v) Find the correlation between math4 and read4. What do you conclude?</li>
+<li>(vi) The variable exppp is expenditure per pupil. Find the average of exppp along with its standard deviation. Would you say there is wide variation in per pupil spending?</li>
+<li>(vii) Suppose School A spends \$6,000 per student and School B spends \$5,500 per student. By what percentage does School A’s spending exceed School B’s? Compare this to $100*[log(6000)–log(5500)]$, which is the approximation percentage difference based on the difference in the natural logs.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>The data in JTRAIN2 come from a job training experiment conducted for low-income men during 1976–1977</p>
+<ul>
+<li>(i) Use the indicator variable train to determine the fraction of men receiving job training.</li>
+<li>(ii) The variable re78 is earnings from 1978, measured in thousands of 1982 dollars. Find the averages of re78 for the sample of men receiving job training and the sample not receiving job training. Is the difference economically large?</li>
+<li>(iii) The variable unem78 is an indicator of whether a man is unemployed or not in 1978. What fraction of the men who received job training are unemployed? What about for men who did not receive job training? Comment on the difference.</li>
+<li>(iv) From parts (ii) and (iii), does it appear that the job training program was effective? What would make our conclusions more convincing?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>Use the data in COUNTYMURDERS to answer this question. Use only the year 1996. The variable murders is the number of murders reported in the county. The variable execs is the number of executions that took place of people sentenced to death in the given county. Most states in the United States have the death penalty, but several do not.</p>
+<ul>
+<li>(i) How many counties are there in the data set? Of these, how many have zero murders? What percentage of counties have zero executions? (Remember, use only the 1996 data.)</li>
+<li>(ii) What is the largest number of murders? What is the largest number of executions? Why is the average number of executions so small?</li>
+<li>(iii) Compute the correlation coefficient between murders and execs and describe what you find.</li>
+<li>(iv) You should have computed a positive correlation in part (iii). Do you think that more executions cause more murders to occur? What might explain the positive correlation?</li>
 </ul>
 
 </div>
