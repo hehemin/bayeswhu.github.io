@@ -60,12 +60,12 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Quiz
 
-- [Quiz_2016_06_02](qe/Quiz.html)
+- [Quiz_2016_06_06](qe/Quiz.html)
+- [Assignment](qe/assignment.html)
 
 #### Quiz_Key
 
 - [Quiz_Key](qe/Quiz_Key.html)
-- [coin_sums](qe/solution_coin_sums.pdf)
 
 #### Data
 
