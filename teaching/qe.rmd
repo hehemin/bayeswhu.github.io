@@ -40,7 +40,10 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
     + [Lec 14 Shortest Paths](qe/Lec14.html)
     + [Lec 15 Schelling's Segregation Model](qe/Lec15.html)
     + [Lec 16 LLN and CLT](qe/Lec16.html)
-    + [Lec 17 Linear State Space Models](qe/Lec17.html)<!-- -->
+    + [Lec 17 Linear State Space Models](qe/Lec17.html)
+    + [Lec 18 Lake Model: Employment and Unemployment](qe/Lec18.pdf)
+        * [Supplementary Materials](qe/Analytical_McCall.pdf)
+    <!-- -->
 
 #### Exercise Keys
 
@@ -60,8 +63,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Quiz
 
-- [Quiz_2016_06_06](qe/Quiz.html)
-- [Assignment](qe/assignment.html)
+- [Quiz_2016_06_16](qe/Quiz.html)
 
 #### Quiz_Key
 

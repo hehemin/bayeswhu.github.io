@@ -176,7 +176,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Chapter-4">Chapter 4<a class="anchor-link" href="#Chapter-4">&#182;</a></h2>
+<h2 id="Chatper-5">Chatper 5<a class="anchor-link" href="#Chatper-5">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -185,12 +185,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>The following model can be used to study whether campaign expenditures affect election outcomes: $$ voteA=\beta_0+\beta_1\log(expendA)+\beta_2\log(expendB)+\beta_3 prtystrA+u, $$ where voteA is the percentage of the vote received by Candidate A, expendA and expendB are campaign expenditures by Candidates A and B, and prtystrA is a measure of party strength for Candidate A (the percentage of the most recent presidential vote that went to A’s party).</p>
+<h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>Use the data in WAGE1 for this exercise.</p>
 <ul>
-<li>(i) What is the interpretation of $\beta_1$?</li>
-<li>(ii) In terms of the parameters, state the null hypothesis that a 1% increase in A’s expenditures is offset by a 1% increase in B’s expenditures.</li>
-<li>(iii) Estimate the given model using the data in VOTE1 and report the results in usual form. Do A’s expenditures affect the outcome? What about B’s expenditures? Can you use these results to test the hypothesis in part (ii)?</li>
-<li>(iv) Estimate a model that directly gives the t statistic for testing the hypothesis in part (ii). What do you conclude? (Use a two-sided alternative.)</li>
+<li>(i) Estimate the equation $$ wage=\beta_0+\beta_1 educ+\beta_2 exper+\beta_3 tenure+u. $$ Save the residuals and plot a histogram.</li>
+<li>(ii) Repeat part (i), but with log(wage) as the dependent variable.</li>
+<li>(iii) Would you say that Assumption MLR.6 is closer to being satisfied for the level-level model or the log-level model?</li>
 </ul>
 
 </div>
@@ -201,12 +200,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in LAWSCH85 for this exercise.</p>
+<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in GPA2 for this exercise.</p>
 <ul>
-<li>(i) Using the same model as in Problem 4 in Chapter 3, $$ \log(salary)=\beta_0+\beta_1 LSAT+\beta_2 GPA+\beta_3\log(libvol)+\beta_4\log(cost)+\beta_5 rank+u, $$ state and test the null hypothesis that the rank of law schools has no ceteris paribus effect on median starting salary.</li>
-<li>(ii) Are features of the incoming class of students—namely, LSAT and GPA—individually or jointly significant for explaining salary? (Be sure to account for missing data on LSAT and GPA.)</li>
-<li>(iii) Test whether the size of the entering class (clsize) or the size of the faculty (faculty) needs to be added to this equation; carry out a single test. (Be careful to account for missing data on clsize and faculty.)</li>
-<li>(iv) What factors might influence the rank of the law school that are not included in the salary regression?</li>
+<li>(i) Using all 4,137 observations, estimate the equation $$ colgpa=\beta_0+\beta_1 hsperc+\beta_2 sat+u $$ and report the results in standard form.</li>
+<li>(ii) Reestimate the equation in part (i), using the first 2,070 observations.</li>
+<li>(iii) Find the ratio of the standard errors on hsperc from parts (i) and (ii). Compare this with the result from (5.10) $$ se(\hat{\beta}_j)\approx c_j/\sqrt{n}. $$</li>
 </ul>
 
 </div>
@@ -217,12 +215,22 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C7">C7<a class="anchor-link" href="#C7">&#182;</a></h4><p>Refer to the example used in Section 4-4. You will use the data set TWOYEAR.</p>
+<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>In equation (4.42) of Chapter 4, $$ bwght=\beta_0+\beta_1 cigs+\beta_2 parity+\beta_3 faminc+\beta_4 motheduc+\beta_5 fatheduc+u, $$ using the data set BWGHT, compute the LM statistic for testing whether motheduc and fatheduc are jointly significant. In obtaining the residuals for the restricted model, be sure that the restricted model is estimated using only those observations for which all variables in the unrestricted model are available (see Example 4.9).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>Several statistics are commonly used to detect nonnormality in underlying population distributions. Here we will study one that measures the amount of skewness in a distribution. Recall that any normally distributed random variable is symmetric about its mean; therefore, if we standardize a symmetrically distributed random variable, say $z=(y-\mu_y)/\sigma_y$, where $\mu_y=E(y)$ and $\sigma_y=sd(y)$, then z has mean zero, variance one, and $E(z^3)=0$. Given a sample of data $\{y_i: i=1,...,n\}$, we can standardize $y_i$ in the sample by using $z_i=(y_i-\hat{\mu}_y)/\hat{\sigma}_y$, where $\hat{\mu}_y$ is the sample mean and $\hat{\sigma}_y$ is the sample standard deviation. (We ignore the fact that these are estimates based on the sample.) A sample statistic that measures skewness is $n^{-1}\sum_{i=1}^n z_i^3$, or where n is replaced with (n-1) as a degrees-of-freedom adjustment. If y has a normal distribution in the population, the skewness measure in the sample for the standardized values should not differ significantly from zero.</p>
 <ul>
-<li>(i) The variable phsrank is the person’s high school percentile. (A higher number is better. For example, 90 means you are ranked better than 90 percent of your graduating class.) Find the smallest, largest, and average phsrank in the sample.</li>
-<li>(ii) Add phsrank to equation (4.26) $$ \log(wage)=\beta_0+\beta_1 jc+\beta_2 totcoll+\beta_3 exper+u $$ and report the OLS estimates in the usual form. Is phsrank statistically significant? How much is 10 percentage points of high school rank worth in terms of wage?</li>
-<li>(iii) Does adding phsrank to (4.26) substantively change the conclusions on the returns to two- and four-year colleges? Explain.</li>
-<li>(iv) The data set contains a variable called id. Explain why if you add id to equation (4.17) or (4.26) you expect it to be statistically insignificant. What is the two-sided p-value?</li>
+<li>(i) First use the data set 401KSUBS, keeping only observations with fsize=1. Find the skewness measure for inc. Do the same for log(inc). Which variable has more skewness and therefore seems less likely to be normally distributed?</li>
+<li>(ii) Next use BWGHT2. Find the skewness measures for bwght and log(bwght). What do you conclude?</li>
+<li>(iii) Evaluate the following statement: “The logarithmic transformation always makes a positive variable look more normally distributed.”</li>
+<li>(iv) If we are interested in the normality assumption in the context of regression, should we be evaluating the unconditional distributions of y and log(y)? Explain.</li>
 </ul>
 
 </div>
@@ -233,13 +241,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C8">C8<a class="anchor-link" href="#C8">&#182;</a></h4><p>The data set 401KSUBS contains information on net financial wealth (nettfa), age of the survey respondent (age), annual family income (inc), family size (fsize), and participation in certain pension plans for people in the United States. The wealth and income variables are both recorded in thousands of dollars. For this question, use only the data for single-person households (so fsize=1).</p>
+<h4 id="C5">C5<a class="anchor-link" href="#C5">&#182;</a></h4><p>Consider the analysis in Computer Exercise C11 in Chapter 4 using the data in HTV, where educ is the dependent variable in a regression.</p>
 <ul>
-<li>(i) How many single-person households are there in the data set?</li>
-<li>(ii) Use OLS to estimate the model $$ nettfa=\beta_0+\beta_1 inc+\beta_2 age+u, $$ and report the results using the usual format. Be sure to use only the single-person households in the sample. Interpret the slope coefficients. Are there any surprises in the slope estimates?</li>
-<li>(iii) Does the intercept from the regression in part (ii) have an interesting meaning? Explain.</li>
-<li>(iv) Find the p-value for the test $H_0: \beta_2=1$ against $H_1:\beta_2<1$. Do you reject $H_0$ at the 1% significance level?</li>
-<li>(v) If you do a simple regression of nettfa on inc, is the estimated coefficient on inc much different from the estimate in part (ii)? Why or why not?</li>
+<li>(i) How many different values are taken on by educ in the sample? Does educ have a continuous distribution?</li>
+<li>(ii) Plot a histogram of educ with a normal distribution overlay. Does the distribution of educ appear anything close to normal?</li>
+<li>(iii) Which of the CLM assumptions seems clearly violated in the model $$educ=\beta_0+\beta_1 motheduc+\beta_2 fatheduc+\beta_3 abil+\beta_4 abil^2+u? $$ How does this violation change the statistical inference procedures carried out in Computer Exercise C11 in Chapter 4?</li>
 </ul>
 
 </div>
@@ -250,29 +256,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C11">C11<a class="anchor-link" href="#C11">&#182;</a></h4><p>Use the data in HTV to answer this question. See also Computer Exercise C10 in Chapter 3.</p>
+<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>Use the data in ECONMATH to answer this question.</p>
 <ul>
-<li>(i) Estimate the regression model $$ educ=\beta_0+\beta_1 motheduc+\beta_2 fatheduc+\beta_3 abil+\beta_4 abil^2+u $$ by OLS and report the results in the usual form. Test the null hypothesis that educ is linearly related to abil against the alternative that the relationship is quadratic.</li>
-<li>(ii) Using the equation in part (i), test $H_0: \beta_1=\beta_2$ against a two-sided alternative. What is the p-value of the test?</li>
-<li>(iii) Add the two college tuition variables to the regression from part (i) and determine whether they are jointly statistically significant.</li>
-<li>(iv) What is the correlation between tuit17 and tuit18? Explain why using the average of the tuition over the two years might be preferred to adding each separately. What happens when you do use the average?</li>
-<li>(v) Do the findings for the average tuition variable in part (iv) make sense when interpreted causally? What might be going on?</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C12">C12<a class="anchor-link" href="#C12">&#182;</a></h4><p>Use the data in ECONMATH to answer the following questions.</p>
-<ul>
-<li>(i) Estimate a model explaining colgpa to hsgpa, actmth, and acteng. Report the results in the usual form. Are all explanatory variables statistically significant?</li>
-<li>(ii) Consider an increase in hsgpa of one standard deviation, about .343. By how much does colgpa increase, holding actmth and acteng fixed. About how many standard deviations would the actmth have to increase to change colgpa by the same amount as a one standard deviation in hsgpa? Comment.</li>
-<li>(iii) Test the null hypothesis that actmth and acteng have the same effect (in the population) against a two-sided alternative. Report the p-value and describe your conclusions.</li>
-<li>(iv) Suppose the college admissions officer wants you to use the data on the variables in part (i) to create an equation that explains at least 50 percent of the variation in colgpa. What would you tell the officer?</li>
+<li>(i) Logically, what are the smallest and largest values that can be taken on by the variable score? What are the smallest and largest values in the sample?</li>
+<li>(ii) Consider the linear model $$ score=\beta_0+\beta_1 colgpa+\beta_2 actmth+\beta_3 acteng+u. $$ Why cannot Assumption MLR.6 hold for the error term u? What consequences does this have for using the usual t statistic to test $H_0: \beta_3=0$?</li>
+<li>(iii) Estimate the model from part (ii) and obtain the t statistic and associated p-value for testing $H_0: \beta_3=0$. How would you defend your findings to someone who makes the following statement: “You cannot trust that p-value because clearly the error term in the equation cannot have a normal distribution.”</li>
 </ul>
 
 </div>
