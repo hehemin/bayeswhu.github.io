@@ -1,0 +1,30 @@
+---
+output: 
+    html_document:
+        theme: readable
+---
+
+### Microeconometrics with Python (Fall 2016)
+
+Instructor: [Jing Fang](http://bayeswhu.github.io)
+
+Office: 419, School of Economics
+
+Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
+
+-----
+
+### Course Materials
+
+#### Slides
+
+- [Lec 0](me/00.html)
+    <!-- -->
+
+#### Exercise Keys
+
+#### Quiz
+
+#### Quiz_Key
+
+#### Data
