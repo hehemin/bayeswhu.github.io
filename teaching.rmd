@@ -7,6 +7,7 @@ output:
 ### Teaching
 
 #### Classes:
+- [Microeconometrics with Python](teaching/me.html) (Fall 2016)
 
 - [International Trade](teaching/trade.html) (Fall 2016)
 
