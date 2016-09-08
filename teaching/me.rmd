@@ -19,6 +19,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 #### Slides
 
 - [Lec 0](me/00.html)
+
+- [Lec 1](me/01.html)
     <!-- -->
 
 #### Exercise Keys
