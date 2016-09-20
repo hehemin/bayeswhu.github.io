@@ -21,12 +21,12 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 0](me/00.html)
 
 - [Lec 1](me/01.html)
+
+- [Lec 2](me/02.html)
     <!-- -->
+    
+#### Exercise
 
 #### Exercise Keys
-
-#### Quiz
-
-#### Quiz_Key
 
 #### Data
