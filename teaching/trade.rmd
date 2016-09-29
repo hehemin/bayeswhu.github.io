@@ -32,9 +32,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 6](trade/Lec6.html)
 
-<!-- - [Lec 7](trade/Lec7.html)
+- [Lec 7](trade/Lec7.html)
 
-- [Lec 8](trade/Lec8.html)
+<!-- - [Lec 8](trade/Lec8.html)
 
 - [Lec 9](trade/Lec9.html)
 
@@ -47,9 +47,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 -->
 #### Homeworks
 
-<!-- - [Homework 1](trade/Homework1.doc)
+- [Homework 1](trade/Homework1.doc)
 
-- [Homework 2](trade/Homework2.doc) -->
+<!-- - [Homework 2](trade/Homework2.doc) -->
 
 #### Keys
 
@@ -78,3 +78,5 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 5](trade/cs05.docx)
 
 - [Lec 6](trade/cs06.docx)
+
+- [Lec 7](trade/cs07.docx)
