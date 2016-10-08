@@ -30,15 +30,15 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 5](trade/Ch05.ppt)
 
-- [Lec 6](trade/Lec6.html)
+- [Lec 6](trade/Ch06.ppt)
 
-- [Lec 7](trade/Lec7.html)
+- [Lec 7](trade/Ch07.ppt)
 
-<!-- - [Lec 8](trade/Lec8.html)
+- [Lec 8](trade/Ch08.ppt)
 
-- [Lec 9](trade/Lec9.html)
+- [Lec 9](trade/Ch09.ppt)
 
-- [Lec 10](trade/Lec10.html)
+<!-- - [Lec 10](trade/Lec10.html)
 
 - [Lec 11](trade/Lec11.html)
 
@@ -80,3 +80,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 6](trade/cs06.docx)
 
 - [Lec 7](trade/cs07.docx)
+
+- [Lec 8](trade/cs08.docx)
+
+- [Lec 9](trade/cs09.docx)
