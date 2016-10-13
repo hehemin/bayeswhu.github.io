@@ -29,10 +29,16 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 4](me/04.html)
 
 - [Lec 5](me/05.html)
+
+- [Lec 6](me/06.html)
     <!-- -->
     
 #### Exercise
 
+- [Homework 1](me/hw1.html)
+
 #### Exercise Keys
 
 #### Data
+
+- [data_text](me/data_text.zip)
