@@ -40,11 +40,11 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 10](trade/Lec10.html)
 
-<!-- - [Lec 11](trade/Lec11.html)
+- [Lec 11](trade/Lec11.html)
 
 - [Lec 12](trade/Lec12.html) 
 
--->
+<!-- -->
 #### Homeworks
 
 - [Homework 1](trade/Homework1.doc)
@@ -67,7 +67,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Project
 
-<!-- - [Project List](trade/Project.html)  -->
+- [Project List](trade/Project.ppt)  <!-- -->
 
 #### Presentation
 
@@ -86,3 +86,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 9](trade/cs09.docx)
 
 - [Lec 10](trade/cs10.docx)
+
+- [Lec 11](trade/cs11.docx)
+
+- [Lec 12](trade/cs12.docx)
