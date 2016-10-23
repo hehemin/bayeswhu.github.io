@@ -37,6 +37,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Homework 1](me/hw1.html)
 
+- [Homework 2](me/hw2.html)
+
 #### Exercise Keys
 
 #### Data
