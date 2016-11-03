@@ -33,6 +33,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 - [Lec 6](me/06.html)
 
 - [Lec 7](me/07.html)
+
+- [Lec 8](me/08.html)
     <!-- -->
     
 #### Exercise
