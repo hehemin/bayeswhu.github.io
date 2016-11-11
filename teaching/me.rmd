@@ -43,6 +43,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Homework 2](me/hw2.html)
 
+- [Homework 3](me/hw3.html)
+
 #### Exercise Keys
 
 - [Answer Key](me/answer_key.html)
