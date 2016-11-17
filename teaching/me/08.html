@@ -12117,7 +12117,7 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Estimator-inconsistency">Estimator inconsistency<a class="anchor-link" href="#Estimator-inconsistency">&#182;</a></h2><ul>
 <li>The DGP considered is $$ \begin{matrix}
-y & = & \beta x^*+u; & x^*\sim N(0.9); \; u\sim N(0,1) \\
+y & = & \beta x^*+u; & x^*\sim N(0,9); \; u\sim N(0,1) \\
 x & = & x^*+v; & v\sim N(0,1)
 \end{matrix} $$ OLS regression of y on $x^*$ consistently estimates $\beta$.</li>
 <li>However, only data on x rather than $x^*$ are abailable, so we instead obtain $\hat{\beta}$ from an OLS regression of y on x.</li>
