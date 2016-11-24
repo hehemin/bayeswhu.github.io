@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>hw1</title>
+<title>hw5</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11753,11 +11753,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>Use the data in WAGE1 for this exercise.</p>
 <ul>
-<li>(i) Find the average education level in the sample. What are the lowest and highest years of education?</li>
-<li>(ii) Find the average hourly wage in the sample. Does it seem high or low?</li>
-<li>(iii) The wage data are reported in 1976 dollars. Using the Internet or a printed source, find the Consumer Price Index (CPI) for the years 1976 and 2013.</li>
-<li>(iv) Use the CPI values from part (iii) to find the average hourly wage in 2013 dollars. Now does the average hourly wage seem reasonable?</li>
-<li>(v) How many women are in the sample? How many men?</li>
+<li>(i) Estimate the equation $$ wage=\beta_0+\beta_1 educ+\beta_2 exper+\beta_3 tenure+u. $$ Save the residuals and plot a histogram.</li>
+<li>(ii) Repeat part (i), but with log(wage) as the dependent variable.</li>
+<li>(iii) Would you say that Assumption MLR.6 is closer to being satisfied for the level-level model or the log-level model?</li>
 </ul>
 
 </div>
@@ -11768,13 +11766,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in BWGHT to answer this question.</p>
+<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in GPA2 for this exercise.</p>
 <ul>
-<li>(i) How many women are in the sample, and how many report smoking during pregnancy?</li>
-<li>(ii) What is the average number of cigarettes smoked per day? Is the average a good measure of the “typical” woman in this case? Explain.</li>
-<li>(iii) Among women who smoked during pregnancy, what is the average number of cigarettes smoked per day? How does this compare with your answer from part (ii), and why?</li>
-<li>(iv) Find the average of fatheduc in the sample. Why are only 1,192 observations used to compute this average?</li>
-<li>(v) Report the average family income and its standard deviation in dollars.</li>
+<li>(i) Using all 4,137 observations, estimate the equation $$ colgpa=\beta_0+\beta_1 hsperc+\beta_2 sat+u $$ and report the results in standard form.</li>
+<li>(ii) Reestimate the equation in part (i), using the first 2,070 observations.</li>
+<li>(iii) Find the ratio of the standard errors on hsperc from parts (i) and (ii). Compare this with the result from (5.10) $$ se(\hat{\beta}_j)\approx c_j/\sqrt{n}. $$</li>
 </ul>
 
 </div>
@@ -11785,15 +11781,22 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>The data in MEAP01 are for the state of Michigan in the year 2001. Use these data to answer the following questions.</p>
+<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>In equation (4.42) of Chapter 4, $$ bwght=\beta_0+\beta_1 cigs+\beta_2 parity+\beta_3 faminc+\beta_4 motheduc+\beta_5 fatheduc+u, $$ using the data set BWGHT, compute the LM statistic for testing whether motheduc and fatheduc are jointly significant. In obtaining the residuals for the restricted model, be sure that the restricted model is estimated using only those observations for which all variables in the unrestricted model are available (see Example 4.9).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>Several statistics are commonly used to detect nonnormality in underlying population distributions. Here we will study one that measures the amount of skewness in a distribution. Recall that any normally distributed random variable is symmetric about its mean; therefore, if we standardize a symmetrically distributed random variable, say $z=(y-\mu_y)/\sigma_y$, where $\mu_y=E(y)$ and $\sigma_y=sd(y)$, then z has mean zero, variance one, and $E(z^3)=0$. Given a sample of data $\{y_i: i=1,...,n\}$, we can standardize $y_i$ in the sample by using $z_i=(y_i-\hat{\mu}_y)/\hat{\sigma}_y$, where $\hat{\mu}_y$ is the sample mean and $\hat{\sigma}_y$ is the sample standard deviation. (We ignore the fact that these are estimates based on the sample.) A sample statistic that measures skewness is $n^{-1}\sum_{i=1}^n z_i^3$, or where n is replaced with (n-1) as a degrees-of-freedom adjustment. If y has a normal distribution in the population, the skewness measure in the sample for the standardized values should not differ significantly from zero.</p>
 <ul>
-<li>(i) Find the largest and smallest values of math4. Does the range make sense? Explain.</li>
-<li>(ii) How many schools have a perfect pass rate on the math test? What percentage is this of the total sample?</li>
-<li>(iii) How many schools have math pass rates of exactly 50%?</li>
-<li>(iv) Compare the average pass rates for the math and reading scores. Which test is harder to pass?</li>
-<li>(v) Find the correlation between math4 and read4. What do you conclude?</li>
-<li>(vi) The variable exppp is expenditure per pupil. Find the average of exppp along with its standard deviation. Would you say there is wide variation in per pupil spending?</li>
-<li>(vii) Suppose School A spends \$6,000 per student and School B spends \$5,500 per student. By what percentage does School A’s spending exceed School B’s? Compare this to $100*[log(6000)–log(5500)]$, which is the approximation percentage difference based on the difference in the natural logs.</li>
+<li>(i) First use the data set 401KSUBS, keeping only observations with fsize=1. Find the skewness measure for inc. Do the same for log(inc). Which variable has more skewness and therefore seems less likely to be normally distributed?</li>
+<li>(ii) Next use BWGHT2. Find the skewness measures for bwght and log(bwght). What do you conclude?</li>
+<li>(iii) Evaluate the following statement: “The logarithmic transformation always makes a positive variable look more normally distributed.”</li>
+<li>(iv) If we are interested in the normality assumption in the context of regression, should we be evaluating the unconditional distributions of y and log(y)? Explain.</li>
 </ul>
 
 </div>
@@ -11804,12 +11807,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>The data in JTRAIN2 come from a job training experiment conducted for low-income men during 1976–1977</p>
+<h4 id="C5">C5<a class="anchor-link" href="#C5">&#182;</a></h4><p>Consider the analysis in Computer Exercise C11 in Chapter 4 using the data in HTV, where educ is the dependent variable in a regression.</p>
 <ul>
-<li>(i) Use the indicator variable train to determine the fraction of men receiving job training.</li>
-<li>(ii) The variable re78 is earnings from 1978, measured in thousands of 1982 dollars. Find the averages of re78 for the sample of men receiving job training and the sample not receiving job training. Is the difference economically large?</li>
-<li>(iii) The variable unem78 is an indicator of whether a man is unemployed or not in 1978. What fraction of the men who received job training are unemployed? What about for men who did not receive job training? Comment on the difference.</li>
-<li>(iv) From parts (ii) and (iii), does it appear that the job training program was effective? What would make our conclusions more convincing?</li>
+<li>(i) How many different values are taken on by educ in the sample? Does educ have a continuous distribution?</li>
+<li>(ii) Plot a histogram of educ with a normal distribution overlay. Does the distribution of educ appear anything close to normal?</li>
+<li>(iii) Which of the CLM assumptions seems clearly violated in the model $$educ=\beta_0+\beta_1 motheduc+\beta_2 fatheduc+\beta_3 abil+\beta_4 abil^2+u? $$ How does this violation change the statistical inference procedures carried out in Computer Exercise C11 in Chapter 4?</li>
 </ul>
 
 </div>
@@ -11820,44 +11822,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C5">C5<a class="anchor-link" href="#C5">&#182;</a></h4><p>The data in FERTIL2 were collected on women living in the Republic of Botswana in 1988. The variable children refers to the number of living children. The variable electric is a binary indicator equal to one if the woman’s home has electricity, and zero if not.</p>
+<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>Use the data in ECONMATH to answer this question.</p>
 <ul>
-<li>(i) Find the smallest and largest values of children in the sample. What is the average of children?</li>
-<li>(ii) What percentage of women have electricity in the home?</li>
-<li>(iii) Compute the average of children for those without electricity and do the same for those with electricity. Comment on what you find.</li>
-<li>(iv) From part (iii), can you infer that having electricity “causes” women to have fewer children? Explain.</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>Use the data in COUNTYMURDERS to answer this question. Use only the year 1996. The variable murders is the number of murders reported in the county. The variable execs is the number of executions that took place of people sentenced to death in the given county. Most states in the United States have the death penalty, but several do not.</p>
-<ul>
-<li>(i) How many counties are there in the data set? Of these, how many have zero murders? What percentage of counties have zero executions? (Remember, use only the 1996 data.)</li>
-<li>(ii) What is the largest number of murders? What is the largest number of executions? Why is the average number of executions so small?</li>
-<li>(iii) Compute the correlation coefficient between murders and execs and describe what you find.</li>
-<li>(iv) You should have computed a positive correlation in part (iii). Do you think that more executions cause more murders to occur? What might explain the positive correlation?</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C7">C7<a class="anchor-link" href="#C7">&#182;</a></h4><p>The data set in ALCOHOL contains information on a sample of men in the United States. Two key variables are self-reported employment status and alcohol abuse (along with many other variables). The variables employ and abuse are both binary, or indicator, variables: they take on only the values zero and one.</p>
-<ul>
-<li>(i) What is percentage of the men in the sample report abusing alcohol? What is the employment rate?</li>
-<li>(ii) Consider the group of men who abuse alcohol. What is the employment rate?</li>
-<li>(iii) What is the employment rate for the group of men who do not abuse alcohol?</li>
-<li>(iv) Discuss the difference in your answers to parts (ii) and (iii). Does this allow you to conclude that alcohol abuse causes unemployment?</li>
+<li>(i) Logically, what are the smallest and largest values that can be taken on by the variable score? What are the smallest and largest values in the sample?</li>
+<li>(ii) Consider the linear model $$ score=\beta_0+\beta_1 colgpa+\beta_2 actmth+\beta_3 acteng+u. $$ Why cannot Assumption MLR.6 hold for the error term u? What consequences does this have for using the usual t statistic to test $H_0: \beta_3=0$?</li>
+<li>(iii) Estimate the model from part (ii) and obtain the t statistic and associated p-value for testing $H_0: \beta_3=0$. How would you defend your findings to someone who makes the following statement: “You cannot trust that p-value because clearly the error term in the equation cannot have a normal distribution.”</li>
 </ul>
 
 </div>

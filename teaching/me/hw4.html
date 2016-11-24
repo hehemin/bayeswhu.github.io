@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>hw2</title>
+<title>hw4</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11751,13 +11751,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>The data in 401K are a subset of data analyzed by Papke (1995) to study the relationship between participation in a 401(k) pension plan and the generosity of the plan. The variable prate is the percentage of eligible workers with an active account; this is the variable we would like to explain. The measure of generosity is the plan match rate, mrate. This variable gives the average amount the firm contributes to each worker’s plan for each \$1 contribution by the worker. For example, if $mrate=0.50$, then a \$1 contribution by the worker is matched by a 50¢ contribution by the firm.</p>
+<h4 id="C1">C1<a class="anchor-link" href="#C1">&#182;</a></h4><p>The following model can be used to study whether campaign expenditures affect election outcomes: $$ voteA=\beta_0+\beta_1\log(expendA)+\beta_2\log(expendB)+\beta_3 prtystrA+u, $$ where voteA is the percentage of the vote received by Candidate A, expendA and expendB are campaign expenditures by Candidates A and B, and prtystrA is a measure of party strength for Candidate A (the percentage of the most recent presidential vote that went to A’s party).</p>
 <ul>
-<li>(i) Find the average participation rate and the average match rate in the sample of plans.</li>
-<li>(ii) Now, estimate the simple regression equation $$ \widehat{prate}=\hat{\beta}_0+\hat{\beta}_1 mrate, $$ and report the results along with the sample size and R-squared.</li>
-<li>(iii) Interpret the intercept in your equation. Interpret the coefficient on mrate.</li>
-<li>(iv) Find the predicted prate when $mrate=3.5$. Is this a reasonable prediction? Explain what is happening here.</li>
-<li>(v) How much of the variation in prate is explained by mrate? Is this a lot in your opinion?</li>
+<li>(i) What is the interpretation of $\beta_1$?</li>
+<li>(ii) In terms of the parameters, state the null hypothesis that a 1% increase in A’s expenditures is offset by a 1% increase in B’s expenditures.</li>
+<li>(iii) Estimate the given model using the data in VOTE1 and report the results in usual form. Do A’s expenditures affect the outcome? What about B’s expenditures? Can you use these results to test the hypothesis in part (ii)?</li>
+<li>(iv) Estimate a model that directly gives the t statistic for testing the hypothesis in part (ii). What do you conclude? (Use a two-sided alternative.)</li>
 </ul>
 
 </div>
@@ -11768,11 +11767,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>The data set in CEOSAL2 contains information on chief executive officers for U.S. corporations. The variable salary is annual compensation, in thousands of dollars, and ceoten is prior number of years as company CEO.</p>
+<h4 id="C2">C2<a class="anchor-link" href="#C2">&#182;</a></h4><p>Use the data in LAWSCH85 for this exercise.</p>
 <ul>
-<li>(i) Find the average salary and the average tenure in the sample.</li>
-<li>(ii) How many CEOs are in their first year as CEO (that is, $ceoten=0$)? What is the longest tenure as a CEO?</li>
-<li>(iii) Estimate the simple regression model $$ log(salary)=\beta_0+\beta_1 ceoten+u, $$ and report your results in the usual form. What is the (approximate) predicted percentage increase in salary given one more year as a CEO?</li>
+<li>(i) Using the same model as in Problem 4 in Chapter 3, $$ \log(salary)=\beta_0+\beta_1 LSAT+\beta_2 GPA+\beta_3\log(libvol)+\beta_4\log(cost)+\beta_5 rank+u, $$ state and test the null hypothesis that the rank of law schools has no ceteris paribus effect on median starting salary.</li>
+<li>(ii) Are features of the incoming class of students—namely, LSAT and GPA—individually or jointly significant for explaining salary? (Be sure to account for missing data on LSAT and GPA.)</li>
+<li>(iii) Test whether the size of the entering class (clsize) or the size of the faculty (faculty) needs to be added to this equation; carry out a single test. (Be careful to account for missing data on clsize and faculty.)</li>
+<li>(iv) What factors might influence the rank of the law school that are not included in the salary regression?</li>
 </ul>
 
 </div>
@@ -11783,10 +11783,11 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>Use the data in SLEEP75 from Biddle and Hamermesh (1990) to study whether there is a tradeoff between the time spent sleeping per week and the time spent in paid work. We could use either variable as the dependent variable. For concreteness, estimate the model $$ sleep=\beta_0+\beta_1 totwrk+u, $$ where sleep is minutes spent sleeping at night per week and totwrk is total minutes worked during the week.</p>
+<h4 id="C3">C3<a class="anchor-link" href="#C3">&#182;</a></h4><p>Refer to Computer Exercise C2 in Chapter 3. Now, use the log of the housing price as the dependent variable: $$ \log(price)=\beta_0+\beta_1 sqrft+\beta_2 bdrms+u. $$</p>
 <ul>
-<li>(i) Report your results in equation form along with the number of observations and $R^2$. What does the intercept in this equation mean?</li>
-<li>(ii) If totwrk increases by 2 hours, by how much is sleep estimated to fall? Do you find this to be a large effect?</li>
+<li>(i) You are interested in estimating and obtaining a confidence interval for the percentage change in price when a 150-square-foot bedroom is added to a house. In decimal form, this is $\theta_1=150\beta_1+\beta_2$. Use the data in HPRICE1 to estimate $\theta_1$.</li>
+<li>(ii) Write $\beta_2$ in terms of $\theta_1$ and $\beta_1$ and plug this into the log(price) equation.</li>
+<li>(iii) Use part (ii) to obtain a standard error for $\hat{\theta}_2$ and use this standard error to construct a 95% confidence interval.</li>
 </ul>
 
 </div>
@@ -11797,11 +11798,21 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>Use the data in WAGE2 to estimate a simple regression explaining monthly salary (wage) in terms of IQ score (IQ).</p>
+<h4 id="C4">C4<a class="anchor-link" href="#C4">&#182;</a></h4><p>In Example 4.9 (BWGHT), the restricted version of the model can be estimated using all 1,388 observations in the sample. Compute the R-squared from the regression of bwght on cigs, parity, and faminc using all observations. Compare this to the R-squared reported for the restricted model in Example 4.9.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C5">C5<a class="anchor-link" href="#C5">&#182;</a></h4><p>Use the data in MLB1 for this exercise.</p>
 <ul>
-<li>(i) Find the average salary and average IQ in the sample. What is the sample standard deviation of IQ? (IQ scores are standardized so that the average in the population is 100 with a standard deviation equal to 15.)</li>
-<li>(ii) Estimate a simple regression model where a one-point increase in IQ changes wage by a constant dollar amount. Use this model to find the predicted increase in wage for an increase in IQ of 15 points. Does IQ explain most of the variation in wage?</li>
-<li>(iii) Now, estimate a model where each one-point increase in IQ has the same percentage effect on wage. If IQ increases by 15 points, what is the approximate percentage increase in predicted wage?</li>
+<li>(i) Use the model estimated in equation (4.31) $$ \log(salary)=\beta_0+\beta_1 years+\beta_2 gamesyr+\beta_3 bavg+\beta_4 hrunsyr+\beta_5 rbisyr $$ and drop the variable rbisyr. What happens to the statistical significance of hrunsyr? What about the size of the coefficient on hrunsyr?</li>
+<li>(ii) Add the variables runsyr (runs per year), fldperc (fielding percentage), and sbasesyr (stolen bases per year) to the model from part (i). Which of these factors are individually significant?</li>
+<li>(iii) In the model from part (ii), test the joint significance of bavg, fldperc, and sbasesyr.</li>
 </ul>
 
 </div>
@@ -11812,10 +11823,10 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C5">C5<a class="anchor-link" href="#C5">&#182;</a></h4><p>For the population of firms in the chemical industry, let rd denote annual expenditures on research and development, and let sales denote annual sales (both are in millions of dollars).</p>
+<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>Use the data in WAGE2 for this exercise.</p>
 <ul>
-<li>(i) Write down a model (not an estimated equation) that implies a constant elasticity between rd and sales. Which parameter is the elasticity?</li>
-<li>(ii) Now, estimate the model using the data in RDCHEM. Write out the estimated equation in the usual form. What is the estimated elasticity of rd with respect to sales? Explain in words what this elasticity means.</li>
+<li>(i) Consider the standard wage equation $$ \log(wage)=\beta_0+\beta_1 educ+\beta_2 exper+\beta_3 tenure+u. $$ State the null hypothesis that another year of general workforce experience has the same effect on log(wage) as another year of tenure with the current employer.</li>
+<li>(ii) Test the null hypothesis in part (i) against a two-sided alternative, at the 5% significance level, by constructing a 95% confidence interval. What do you conclude?</li>
 </ul>
 
 </div>
@@ -11826,13 +11837,12 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C6">C6<a class="anchor-link" href="#C6">&#182;</a></h4><p>We used the data in MEAP93 for Example 2.12. Now we want to explore the relationship between the math pass rate (math10) and spending per student (expend).</p>
+<h4 id="C7">C7<a class="anchor-link" href="#C7">&#182;</a></h4><p>Refer to the example used in Section 4-4. You will use the data set TWOYEAR.</p>
 <ul>
-<li>(i) Do you think each additional dollar spent has the same effect on the pass rate, or does a diminishing effect seem more appropriate? Explain.</li>
-<li>(ii) In the population model $$ math10=\beta_0+\beta_1\log(expend)+u, $$ argue that $\beta_1/10$ is the percentage point change in math10 given a 10% increase in expend.</li>
-<li>(iii) Use the data in MEAP93 to estimate the model from part (ii). Report the estimated equation in the usual way, including the sample size and R-squared.</li>
-<li>(iv) How big is the estimated spending effect? Namely, if spending increases by 10%, what is the estimated percentage point increase in math10?</li>
-<li>(v) One might worry that regression analysis can produce fitted values for math10 that are greater than 100. Why is this not much of a worry in this data set?</li>
+<li>(i) The variable phsrank is the person’s high school percentile. (A higher number is better. For example, 90 means you are ranked better than 90 percent of your graduating class.) Find the smallest, largest, and average phsrank in the sample.</li>
+<li>(ii) Add phsrank to equation (4.26) $$ \log(wage)=\beta_0+\beta_1 jc+\beta_2 totcoll+\beta_3 exper+u $$ and report the OLS estimates in the usual form. Is phsrank statistically significant? How much is 10 percentage points of high school rank worth in terms of wage?</li>
+<li>(iii) Does adding phsrank to (4.26) substantively change the conclusions on the returns to two- and four-year colleges? Explain.</li>
+<li>(iv) The data set contains a variable called id. Explain why if you add id to equation (4.17) or (4.26) you expect it to be statistically insignificant. What is the two-sided p-value?</li>
 </ul>
 
 </div>
@@ -11843,13 +11853,13 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C7">C7<a class="anchor-link" href="#C7">&#182;</a></h4><p>Use the data in CHARITY [obtained from Franses and Paap (2001)] to answer the following questions:</p>
+<h4 id="C8">C8<a class="anchor-link" href="#C8">&#182;</a></h4><p>The data set 401KSUBS contains information on net financial wealth (nettfa), age of the survey respondent (age), annual family income (inc), family size (fsize), and participation in certain pension plans for people in the United States. The wealth and income variables are both recorded in thousands of dollars. For this question, use only the data for single-person households (so fsize=1).</p>
 <ul>
-<li>(i) What is the average gift in the sample of 4,268 people (in Dutch guilders)? What percentage of people gave no gift?</li>
-<li>(ii) What is the average mailings per year? What are the minimum and maximum values?</li>
-<li>(iii) Estimate the model $$ gift=\beta_0+\beta_1 mailsyear+u $$ by OLS and report the results in the usual way, including the sample size and R-squared.</li>
-<li>(iv) Interpret the slope coefficient. If each mailing costs one guilder, is the charity expected to make a net gain on each mailing? Does this mean the charity makes a net gain on every mailing? Explain.</li>
-<li>(v) What is the smallest predicted charitable contribution in the sample? Using this simple regression analysis, can you ever predict zero for gift?</li>
+<li>(i) How many single-person households are there in the data set?</li>
+<li>(ii) Use OLS to estimate the model $$ nettfa=\beta_0+\beta_1 inc+\beta_2 age+u, $$ and report the results using the usual format. Be sure to use only the single-person households in the sample. Interpret the slope coefficients. Are there any surprises in the slope estimates?</li>
+<li>(iii) Does the intercept from the regression in part (ii) have an interesting meaning? Explain.</li>
+<li>(iv) Find the p-value for the test $H_0: \beta_2=1$ against $H_1:\beta_2<1$. Do you reject $H_0$ at the 1% significance level?</li>
+<li>(v) If you do a simple regression of nettfa on inc, is the estimated coefficient on inc much different from the estimate in part (ii)? Why or why not?</li>
 </ul>
 
 </div>
@@ -11860,14 +11870,13 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C8">C8<a class="anchor-link" href="#C8">&#182;</a></h4><p>To complete this exercise you need a software package that allows you to generate data from the uniform and normal distributions.</p>
+<h4 id="C9">C9<a class="anchor-link" href="#C9">&#182;</a></h4><p>Use the data in DISCRIM to answer this question. (See also Computer Exercise C8 in Chapter 3.)</p>
 <ul>
-<li>(i) Start by generating 500 observations on $x_i$—the explanatory variable—from the uniform distribution with range [0,10]. (Most statistical packages have a command for the Uniform(0,1) distribution; just multiply those observations by 10.) What are the sample mean and sample standard deviation of the $x_i$?</li>
-<li>(ii) Randomly generate 500 errors, $u_i$, from the Normal(0,36) distribution. (If you generate a Normal(0,1), as is commonly available, simply multiply the outcomes by six.) Is the sample average of the $u_i$ exactly zero? Why or why not? What is the sample standard deviation of the $u_i$?</li>
-<li>(iii) Now generate the $y_i$ as $$ y_i=1+2x_i+u_i=\beta_0+\beta_1 x_i+u_i; $$ that is, the population intercept is one and the population slope is two. Use the data to run the regression of $y_i$ on $x_i$. What are your estimates of the intercept and slope? Are they equal to the population values in the above equation? Explain.</li>
-<li>(iv) Obtain the OLS residuals, $\hat{u}_i$, and verify that equation (2.60) $$ \sum_{i=1}^n \hat{u}_i=0,\;\sum_{i=1}^n x_i\hat{u}_i=0 $$ holds (subject to rounding error).</li>
-<li>(v) Compute the same quantities in equation (2.60) but use the errors $u_i$ in place of the residuals. Now what do you conclude?</li>
-<li>(vi) Repeat parts (i), (ii), and (iii) with a new sample of data, starting with generating the $x_i$. Now what do you obtain for $\hat{\beta}_0$ and $\hat{\beta}_1$? Why are these different from what you obtained in part (iii)?</li>
+<li>(i) Use OLS to estimate the model $$ \log(psoda)=\beta_0+\beta_1 prpblck+\beta_2\log(income)+\beta_3 prppov+u, $$ and report the results in the usual form. Is $\hat{\beta}_1$ statistically different from zero at the 5% level against a two-sided alternative? What about at the 1% level?</li>
+<li>(ii) What is the correlation between log(income) and prppov? Is each variable statistically significant in any case? Report the two-sided p-values.</li>
+<li>(iii) To the regression in part (i), add the variable log(hseval). Interpret its coefficient and report the two-sided p-value for $H_0: \beta_{\log(hseval)}=0$.</li>
+<li>(iv) In the regression in part (iii), what happens to the individual statistical significance of log(income) and prppov? Are these variables jointly significant? (Compute a p-value.) What do you make of your answers?</li>
+<li>(v) Given the results of the previous regressions, which one would you report as most reliable in determining whether the racial makeup of a zip code influences local fast-food prices?</li>
 </ul>
 
 </div>
@@ -11878,13 +11887,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C9">C9<a class="anchor-link" href="#C9">&#182;</a></h4><p>Use the data in COUNTYMURDERS to answer this questions. Use only the data for 1996.</p>
+<h4 id="C10">C10<a class="anchor-link" href="#C10">&#182;</a></h4><p>Use the data in ELEM94_95 to answer this question. The findings can be compared with those in Table 4.1. The dependent variable lavgsal is the log of average teacher salary and bs is the ratio of average benefits to average salary (by school).</p>
 <ul>
-<li>(i) How many counties had zero murders in 1996? How many counties had at least one execution? What is the largest number of executions?</li>
-<li>(ii) Estimate the equation $$ murders=\beta_0+\beta_1 execs+u $$ by OLS and report the results in the usual way, including sample size and R-squared.</li>
-<li>(iii) Interpret the slope coefficient reported in part (ii). Does the estimated equation suggest a deterrent effect of capital punishment?</li>
-<li>(iv) What is the smallest number of murders that can be predicted by the equation? What is the residual for a county with zero executions and zero murders?</li>
-<li>(v) Explain why a simple regression analysis is not well suited for determining whether capital punishment has a deterrent effect on murders.</li>
+<li>(i) Run the simple regression of lavgsal on bs. Is the estimated slope statistically different from zero? Is it statistically different from -1?</li>
+<li>(ii) Add the variables lenrol and lstaff to the regression from part (i). What happens to the coefficient on bs? How does the situation compare with that in Table 4.1?</li>
+<li>(iii) How come the standard error on the bs coefficient is smaller in part (ii) than in part (i)? (Hint: What happens to the error variance versus multicollinearity when lenrol and lstaff are added?)</li>
+<li>(iv) How come the coefficient on lstaff is negative? Is it large in magnitude?</li>
+<li>(v) Now add the variable lunch to the regression. Holding other factors fixed, are teachers being compensated for teaching students from disadvantaged backgrounds? Explain.</li>
+<li>(vi) Overall, is the pattern of results that you find with ELEM94_95 consistent with the pattern in Table 4.1?</li>
 </ul>
 
 </div>
@@ -11895,13 +11905,29 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="C10">C10<a class="anchor-link" href="#C10">&#182;</a></h4><p>The data set in CATHOLIC includes test score information on over 7,000 students in the United States who were in eighth grade in 1988. The variables math12 and read12 are scores on twelfth grade standardized math and reading tests, respectively.</p>
+<h4 id="C11">C11<a class="anchor-link" href="#C11">&#182;</a></h4><p>Use the data in HTV to answer this question. See also Computer Exercise C10 in Chapter 3.</p>
 <ul>
-<li>(i) How many students are in the sample? Find the means and standard deviations of math12 and read12.</li>
-<li>(ii) Run the simple regression of math12 on read12 to obtain the OLS intercept and slope estimates. Report the results in the form $$ \widehat{math12}=\hat{\beta}_0+\hat{\beta}_1 read12 $$ $$ n=?,\; R^2=? $$ where you fill in the values for $\hat{\beta}_0$ and $\hat{\beta}_1$ and also replace the question marks.</li>
-<li>(iii) Does the intercept reported in part (ii) have a meaningful interpretation? Explain.</li>
-<li>(iv) Are you surprised by the $\hat{\beta}_1$ that you found? What about $R^2$?</li>
-<li>(v) Suppose that you present your findings to a superintendent of a school district, and the superintendent says, “Your findings show that to improve math scores we just need to improve reading scores, so we should hire more reading tutors.” How would you respond to this comment? (Hint: If you instead run the regression of read12 on math12, what would you expect to find?)</li>
+<li>(i) Estimate the regression model $$ educ=\beta_0+\beta_1 motheduc+\beta_2 fatheduc+\beta_3 abil+\beta_4 abil^2+u $$ by OLS and report the results in the usual form. Test the null hypothesis that educ is linearly related to abil against the alternative that the relationship is quadratic.</li>
+<li>(ii) Using the equation in part (i), test $H_0: \beta_1=\beta_2$ against a two-sided alternative. What is the p-value of the test?</li>
+<li>(iii) Add the two college tuition variables to the regression from part (i) and determine whether they are jointly statistically significant.</li>
+<li>(iv) What is the correlation between tuit17 and tuit18? Explain why using the average of the tuition over the two years might be preferred to adding each separately. What happens when you do use the average?</li>
+<li>(v) Do the findings for the average tuition variable in part (iv) make sense when interpreted causally? What might be going on?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="C12">C12<a class="anchor-link" href="#C12">&#182;</a></h4><p>Use the data in ECONMATH to answer the following questions.</p>
+<ul>
+<li>(i) Estimate a model explaining colgpa to hsgpa, actmth, and acteng. Report the results in the usual form. Are all explanatory variables statistically significant?</li>
+<li>(ii) Consider an increase in hsgpa of one standard deviation, about .343. By how much does colgpa increase, holding actmth and acteng fixed. About how many standard deviations would the actmth have to increase to change colgpa by the same amount as a one standard deviation in hsgpa? Comment.</li>
+<li>(iii) Test the null hypothesis that actmth and acteng have the same effect (in the population) against a two-sided alternative. Report the p-value and describe your conclusions.</li>
+<li>(iv) Suppose the college admissions officer wants you to use the data on the variables in part (i) to create an equation that explains at least 50 percent of the variation in colgpa. What would you tell the officer?</li>
 </ul>
 
 </div>
