@@ -38,11 +38,11 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 9](trade/Ch09.ppt)
 
-- [Lec 10](trade/Lec10.ppt)
+- [Lec 10](trade/Ch10.ppt)
 
-- [Lec 11](trade/Lec11.ppt)
+- [Lec 11](trade/Ch11.ppt)
 
-- [Lec 12](trade/Lec12.ppt) 
+- [Lec 12](trade/Ch12.ppt) 
 
 <!-- -->
 #### Homeworks
