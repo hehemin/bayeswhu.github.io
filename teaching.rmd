@@ -9,7 +9,7 @@ output:
 #### Classes:
 - [Microeconometrics with Python](teaching/me.html) (Fall 2016)
 
-- [International Trade](teaching/trade.html) (Fall 2016)
+- International Trade (Fall 2016)
 
 - Industrial Organization for PhD (Spring 2016)
 
