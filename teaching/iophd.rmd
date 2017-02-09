@@ -1,10 +1,8 @@
 ---
-output: 
-    html_document:
-        theme: readable
+output: html_document
 ---
 
-### Industrial Organization (Spring 2016)
+### Empirical Methods for Industrial Organization (Spring 2017)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
@@ -16,6 +14,30 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 ### Course Materials
 
-#### Paper List
+1. Estimating demand in discrete-choice differentiated product markets
 
-- [Papers](iophd/papers.html)
+papers:
+
+- Berry (1994, RAND)
+- Berry, Levinsohn, and Pakes (1995, ECMA)
+
+2. Single-agent dynamic models
+
+papers:
+
+- Rust (1987, ECMA)
+- Aguirregabiria and Mira (2007, ECMA)
+- Pakes (1986, ECMA)
+
+3. Dynamic games/oligopoly
+
+papers:
+
+- Ryan (2012, ECMA)
+
+4. Entry
+
+papers:
+
+- Bresnahan and Reiss (1991, JPE)
+- Holmes (2011, ECMA)

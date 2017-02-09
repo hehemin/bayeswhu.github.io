@@ -1,13 +1,15 @@
 ---
-output: 
-    html_document:
-        theme: readable
+output: html_document
 ---
 
 ### Teaching
 
 #### Classes:
-- [Microeconometrics with Python](teaching/me.html) (Fall 2016)
+- [Industrial Organization for PhD (Spring 2017)](./teaching/iophd.html)
+
+- [Industrial Organization (Spring 2017)](./teaching/io.html)
+
+- Microeconometrics with Python (Fall 2016)
 
 - International Trade (Fall 2016)
 
