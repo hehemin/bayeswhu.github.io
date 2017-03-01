@@ -20,11 +20,11 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 1](io/Lec1.html)
 
-<!-- - [Lec 2](io/Lec2.html)
+- [Lec 2](io/Lec2.html)
 
 - [Lec 3](io/Lec3.html)
 
-- [Lec 4](io/Lec4.html)
+<!-- - [Lec 4](io/Lec4.html)
 
 - [Lec 5](io/Lec5.html)
 
