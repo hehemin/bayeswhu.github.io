@@ -21,6 +21,9 @@ papers:
 - Berry (1994, RAND)
 - Berry, Levinsohn, and Pakes (1995, ECMA)
 
+notes:
+[Note1](iophd/Lec1.html)
+
 2. Single-agent dynamic models
 
 papers:
