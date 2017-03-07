@@ -65,11 +65,11 @@
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'Lec1_files/reveal.js-3.3.0/css/print/pdf.css' : 'Lec1_files/reveal.js-3.3.0/css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/usr/local/lib/R/3.3/site-library/revealjs/reveal.js-3.3.0/css/print/pdf.css' : '/usr/local/lib/R/3.3/site-library/revealjs/reveal.js-3.3.0/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     <!--[if lt IE 9]>
-    <script src="Lec1_files/reveal.js-3.3.0/lib/js/html5shiv.js"></script>
+    <script src="/usr/local/lib/R/3.3/site-library/revealjs/reveal.js-3.3.0/lib/js/html5shiv.js"></script>
     <![endif]-->
 
 </head>
@@ -577,7 +577,7 @@ s_j &amp; = &amp; \frac{1}{M}[M\cdot Pr(y_{ij}=1|\beta,x_{j'},\xi_{j'},j'=1,...,
 <ul>
 <li>In order to do this we must:
 <ol type="1">
-<li>At current <span class="math inline">\(\hat{\theta}\)</span>, we solve for the mean utilities <span class="math inline">\(\delta_1(\hat{\theta}),...,\delta_J(\hat{\theta}\)</span> to solve the system of equations <span class="math display">\[ \begin{matrix}
+<li>At current <span class="math inline">\(\hat{\theta}\)</span>, we solve for the mean utilities <span class="math inline">\(\delta_1(\hat{\theta}),...,\delta_J(\hat{\theta})\)</span> to solve the system of equations <span class="math display">\[ \begin{matrix}
 \hat{s}_1 &amp; = &amp; \widetilde{s}^{RC}_1(\delta_1,...,\delta_J; \hat{\theta}) \\
 \vdots &amp; &amp; \vdots \\
 \hat{s}_J &amp; = &amp; \widetilde{s}^{RC}_J(\delta_1,...,\delta_J; \hat{\theta}) \\
@@ -631,7 +631,7 @@ s_j &amp; = &amp; \frac{1}{M}[M\cdot Pr(y_{ij}=1|\beta,x_{j'},\xi_{j'},j'=1,...,
 </section><section id="estimating-equilibrium-both-demand-and-supply-side-5" class="slide level2">
 <h1>Estimating equilibrium: both demand and supply side</h1>
 <ol start="2" type="1">
-<li>For the resulting <span class="math inline">\(\delta_1(\hat{\theta}),...,\delta_J(\hat{\theta}\)</span>, calculate <span class="math display">\[ \overrightarrow{\widetilde{s}_j^{RC}}(\hat{\theta})=(\widetilde{s}_1^{RC}(\delta(\hat{\theta})),...,\widetilde{s}_J^{RC}(\delta(\hat{\theta}))' \]</span> and also the partial derivative matrix <span class="math display">\[ D(\hat{\theta})=\begin{pmatrix}
+<li>For the resulting <span class="math inline">\(\delta_1(\hat{\theta}),...,\delta_J(\hat{\theta})\)</span>, calculate <span class="math display">\[ \overrightarrow{\widetilde{s}_j^{RC}}(\hat{\theta})=(\widetilde{s}_1^{RC}(\delta(\hat{\theta})),...,\widetilde{s}_J^{RC}(\delta(\hat{\theta}))' \]</span> and also the partial derivative matrix <span class="math display">\[ D(\hat{\theta})=\begin{pmatrix}
 \frac{\partial\widetilde{s}_1^{RC}(\delta(\hat{\theta}))}{\partial p_1} &amp; \frac{\partial\widetilde{s}_1^{RC}(\delta(\hat{\theta}))}{\partial p_2} &amp; ... &amp; \frac{\partial\widetilde{s}_1^{RC}(\delta(\hat{\theta}))}{\partial p_J} \\ 
 \frac{\partial\widetilde{s}_2^{RC}(\delta(\hat{\theta}))}{\partial p_1} &amp; \frac{\partial\widetilde{s}_2^{RC}(\delta(\hat{\theta}))}{\partial p_2} &amp; ... &amp; \frac{\partial\widetilde{s}_2^{RC}(\delta(\hat{\theta}))}{\partial p_J} \\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
@@ -665,10 +665,10 @@ p_J-c^J \\
 </section><section id="simulating-the-integral-in-previous-equations-1" class="slide level2">
 <h1>Simulating the integral in previous equations</h1>
 <ul>
-<li>In the case of previous equation, note that the integral there is an expectation: <span class="math display">\[ \begin{matrix}
+<li>In the case of previous equation, note that the integral there is an expectation: <span class="math display">\[ \begin{array}{l}
 \varepsilon(\bar{\alpha},\bar{\beta},\Sigma) = \\
-E_G[\frac{\exp(\delta_j+(\beta_i−\bar{\beta})X_j-(\alpha_i-\bar{\alpha})p_j)}{1+\Sigma^J_{j'=1}\exp(\delta_{j'}+(\beta_i−\bar{\beta})X_{j'}-(\alpha_i-\bar{\alpha})p_{j'})}|\bar{\alpha},\bar{\beta},\Sigma] 
-\end{matrix} \]</span> where the random variables are <span class="math inline">\(\alpha_i\)</span> and <span class="math inline">\(\beta_i\)</span>, which we assume to be drawn from the multivariate normal distribution <span class="math inline">\(N((\bar{\alpha},\bar{\beta})',\Sigma)\)</span>.</li>
+E_G[\frac{\exp(\delta_j+(\beta_i−\bar{\beta})X_j-(\alpha_i-\bar{\alpha})p_j)}{1+\Sigma^J_{j'=1}\exp(\delta_{j'}+(\beta_i−\bar{\beta})X_{j'}-(\alpha_i-\bar{\alpha})p_{j'})}|\bar{\alpha},\bar{\beta},\Sigma]
+\end{array} \]</span> where the random variables are <span class="math inline">\(\alpha_i\)</span> and <span class="math inline">\(\beta_i\)</span>, which we assume to be drawn from the multivariate normal distribution <span class="math inline">\(N((\bar{\alpha},\bar{\beta})',\Sigma)\)</span>.</li>
 </ul>
 </section><section id="simulating-the-integral-in-previous-equations-2" class="slide level2">
 <h1>Simulating the integral in previous equations</h1>
@@ -697,9 +697,9 @@ u^s_2 \\
 </section><section id="simulating-the-integral-in-previous-equations-4" class="slide level2">
 <h1>Simulating the integral in previous equations</h1>
 <ul>
-<li>Then approximate the integral by the sample average (over all the simulation draws) <span class="math display">\[ \begin{matrix} \varepsilon(\hat{\bar{\alpha}},\hat{\bar{\beta}},\hat{\Sigma}) \approx \\ \frac{1}{S}\Sigma^S_{s=1}\frac{\exp(\delta_j+(\beta_s−\hat{\bar{\beta}})X_j-(\alpha_s-\hat{\bar{\alpha}})p_j)}{1+\Sigma^J_{j'=1}\exp(\delta_{j'}+(beta_s−\hat{\bar{\beta}})X_{j'}-(\alpha_s-\hat{\bar{\alpha}})p_{j'})}. 
-\end{matrix} \]</span></li>
-<li>For given <span class="math inline">\(\hat{\bar{\alpha}},\hat{\bar{\beta}},\hat{\Sigma}\)</span>, the law of large numbers ensure that this approximation is accurate as <span class="math inline">\(S\rightarrow 1\)</span>.</li>
+<li>Then approximate the integral by the sample average (over all the simulation draws) <span class="math display">\[ \begin{array}{l} \varepsilon(\hat{\bar{\alpha}},\hat{\bar{\beta}},\hat{\Sigma}) \approx \\ \frac{1}{S}\Sigma^S_{s=1}\frac{\exp(\delta_j+(\beta_s−\hat{\bar{\beta}})X_j-(\alpha_s-\hat{\bar{\alpha}})p_j)}{1+\Sigma^J_{j'=1}\exp(\delta_{j'}+(\beta_s−\hat{\bar{\beta}})X_{j'}-(\alpha_s-\hat{\bar{\alpha}})p_{j'})}. 
+\end{array} \]</span></li>
+<li>For given <span class="math inline">\(\hat{\bar{\alpha}},\hat{\bar{\beta}},\hat{\Sigma}\)</span>, the law of large numbers ensure that this approximation is accurate as <span class="math inline">\(S\rightarrow\infty\)</span>.</li>
 </ul>
 </section></section>
     </div>
