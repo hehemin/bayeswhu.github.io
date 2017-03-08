@@ -42,7 +42,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Homeworks
 
-<!-- - [Homework 1](io/Homework.pdf) -->
+- [Homework 1](io/Homework.pdf)
 
 #### Keys
 
