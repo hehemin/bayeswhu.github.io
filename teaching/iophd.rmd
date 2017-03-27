@@ -32,11 +32,17 @@ papers:
 - Aguirregabiria and Mira (2007, ECMA)
 - Pakes (1986, ECMA)
 
+notes:
+[Note2](iophd/Lec2.html)
+
 3. Dynamic games/oligopoly
 
 papers:
 
 - Ryan (2012, ECMA)
+
+notes:
+[Note3](iophd/Lec3.html)
 
 4. Entry
 
