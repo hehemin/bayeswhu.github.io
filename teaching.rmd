@@ -5,9 +5,9 @@ output: html_document
 ### Teaching
 
 #### Classes:
-- [Industrial Organization for PhD (Spring 2017)](./teaching/iophd.html)
+- Industrial Organization for PhD (Spring 2017)
 
-- [Industrial Organization (Spring 2017)](./teaching/io.html)
+- Industrial Organization (Spring 2017)
 
 - Microeconometrics with Python (Fall 2016)
 
