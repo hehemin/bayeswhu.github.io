@@ -5,6 +5,8 @@ output: html_document
 ### Teaching
 
 #### Classes:
+- [International Trade](teaching\trade.html) (Fall 2017)
+
 - Industrial Organization for PhD (Spring 2017)
 
 - Industrial Organization (Spring 2017)

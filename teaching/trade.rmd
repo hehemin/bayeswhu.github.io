@@ -4,7 +4,7 @@ output:
         theme: readable
 ---
 
-### International Trade (Fall 2016)
+### International Trade (Fall 2017)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
@@ -17,6 +17,8 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 ### Course Materials
 
 #### Slides
+
+<!-- 
 
 - [Introduction](trade/Introduction.ppt)
 
@@ -44,49 +46,28 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 12](trade/Ch12.ppt) 
 
-<!-- -->
+-->
+
 #### Homeworks
 
-- [Homework 1](trade/Homework1.doc)
+<!-- - [Homework 1](trade/Homework1.doc)
 
-- [Homework 2](trade/Homework2.doc) <!-- -->
+- [Homework 2](trade/Homework2.doc) -->
 
 #### Keys
 
-- [Key 1](trade/Hw1_key.doc)
+<!-- - [Key 1](trade/Hw1_key.doc)
 
-- [Key 2](trade/Hw2_key.doc) <!-- -->
+- [Key 2](trade/Hw2_key.doc) -->
 
 #### Quiz
 
-- [Quiz 1](trade/Quiz1.ppt)
+<!-- - [Quiz 1](trade/Quiz1.ppt)
 
-<!-- - [Quiz 2](trade/Quiz2.ppt)
+- [Quiz 2](trade/Quiz2.ppt)
 
 - [Quiz 3](trade/Quiz3.ppt) -->
 
 #### Project
 
-- [Project List](trade/Project.ppt)  <!-- -->
-
-#### Presentation
-
-- [Lec 3](trade/cs03.docx)
-
-- [Lec 4](trade/cs04.docx)
-
-- [Lec 5](trade/cs05.docx)
-
-- [Lec 6](trade/cs06.docx)
-
-- [Lec 7](trade/cs07.docx)
-
-- [Lec 8](trade/cs08.docx)
-
-- [Lec 9](trade/cs09.docx)
-
-- [Lec 10](trade/cs10.docx)
-
-- [Lec 11](trade/cs11.docx)
-
-- [Lec 12](trade/cs12.docx)
+<!-- - [Project List](trade/Project.ppt)  -->
