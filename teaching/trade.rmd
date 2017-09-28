@@ -28,9 +28,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 4](trade/Ch04.ppt)
 
-<!-- - [Lec 5](trade/Ch05.ppt)
+- [Lec 5](trade/Ch05.ppt)
 
-- [Lec 6](trade/Ch06.ppt)
+<!-- - [Lec 6](trade/Ch06.ppt)
 
 - [Lec 7](trade/Ch07.ppt)
 
