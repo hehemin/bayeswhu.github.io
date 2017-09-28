@@ -48,9 +48,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Homeworks
 
-<!-- - [Homework 1](trade/Homework1.doc)
+- [Homework 1](trade/Homework1.doc)
 
-- [Homework 2](trade/Homework2.doc) -->
+<!-- - [Homework 2](trade/Homework2.doc) -->
 
 #### Keys
 
