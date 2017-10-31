@@ -34,13 +34,13 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 7](trade/Ch07.ppt)
 
-<!-- - [Lec 8](trade/Ch08.ppt)
+- [Lec 8](trade/Ch08.ppt)
 
 - [Lec 9](trade/Ch09.ppt)
 
 - [Lec 10](trade/Ch10.ppt)
 
-- [Lec 11](trade/Ch11.ppt)
+<!-- - [Lec 11](trade/Ch11.ppt)
 
 - [Lec 12](trade/Ch12.ppt) 
 
@@ -54,9 +54,9 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 #### Keys
 
-<!-- - [Key 1](trade/Hw1_key.doc)
+- [Key 1](trade/Hw1_key.doc)
 
-- [Key 2](trade/Hw2_key.doc) -->
+<!-- - [Key 2](trade/Hw2_key.doc) -->
 
 #### Quiz
 
