@@ -2,7 +2,7 @@
 output: html_document
 ---
 
-### Industrial Organization (Spring 2017)
+### Industrial Organization (Spring 2018)
 
 Instructor: [Jing Fang](http://bayeswhu.github.io)
 
@@ -18,7 +18,7 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 0](io/Lec0.html)
 
-- [Lec 1](io/Lec1.html)
+<!-- - [Lec 1](io/Lec1.html)
 
 - [Lec 2](io/Lec2.html)
 
@@ -38,12 +38,39 @@ Email: [jing_fang@hust.edu.cn](jing_fang@hust.edu.cn)
 
 - [Lec 10](io/Lec10.html)  
 
-- [Lec 11](io/Lec11.html) <!-- -->
+- [Lec 11](io/Lec11.html) -->
 
-#### Homeworks
+#### Present Papers
 
-- [Homework 1](io/Homework.pdf)
+- Chapter 2
+    + Coase, Ronald H. 1937. "The Nature of the Firm." Economica 4:386-405.
+    + Alchian, Armen A., and Harold Demsetz. 1972. "Production, Information Costs and Economic Organization." American Economic Review 62:777-95.
+    + Klein, Benjamin, Robert G. Crawford, and Armen A. Alchian 1978. " Vertical Integration, Appropriable Rents, and the Competitive Contracting Process." Journal of Law and Economics 21:297-326.
+    + Calvo, Guillermo A., and Stanislaw Wellisz. 1979. "Supervision, Loss of Control, and the Optimum Size of the Firm." Journal of Political Economy 86:943-52.
+    + Holmstrom, Bengt. 1979. "Moral Hazard and Observability." Bell Journal of Economics 10:74-91.
 
-#### Keys
+- Chapter 4
+    + Stigler, George. 1965. "The Dominant Firm and the Inverted Umbrella." Journal of Law and Economics 8.
 
-- [Key 1](io/Homework_key.pdf) <!-- -->
+- Chapter 5
+    + Jacquemin, Alexis, and Margaret E. Slade. 1989. "Cartels, Collusion, and Horizontal Merger." in Richard Schmalensee and Robert D. Willig, eds., The Handbook of Industrial Organization.
+
+- Chapter 6
+    + Ulph, Alistair. 1987. "Recent Advances in Oligopoly Theory from a Game Theory Perspective." Journal of Economic Surveys 1:149-72.
+    + Fudenberg, Drew, and Jean Tirole. 1989. "Noncooperative Game Theory for Industrial Organization: An Introduction and Overview," in Richard Schmalensee and Robert D. Willig, eds., The Handbook of Industrial Organization.
+    + Shapiro, Carl. 1989. "Theories of Oligopoly Behavior," in Richard Schmalensee and Robert D. Willig, eds., The Handbook of Industrial Organization.
+    + Gaudet, Gerard, and Stephen W. Salant. 1991. "Increasing the Profits of a Subset of Firms in Oligopoly Models with Strategic Substitutes." American Economic Review 81:658-65.
+    
+- Chapter 7
+    + Robinson, Joan. 1934. "What Is Perfect Competition?" Quarterly Journal of Economics 49:104-20.
+    + Kaldor, Nicholas. 1935. "Market Imperfection and Excess Capacity." Economica 2:33-50.
+    + Eaton, B. Curtis, and Richard G. Lipsey. 1989. "Product Differentiation." in Richard Schmalensee and Robert D. Willig, eds., The Handbook of Industrial Organization.
+
+- Chapter 9
+    + Stole, Lars. 2007. "Price Discrimination in Competitive Environments," in Mark Armstrong and Robert Porter, eds., Handbook of Industrial Organization, Vol. 3.
+    + Varian Hal R. 1989. "Price Discrimination," in Richard Schmalensee and Robert D. Willig, eds., The Handbook of Industrial Organization.
+    + Borenstein, Severin. 1985. "Price Discrimination in Free Entry Markets." Rand Journal of Economics 16:380-97.
+    + Holmes, Thomas. 1989. "The Effects of Third-Degree Price Discrimination in Oligopoly." American Economic Review 79:244-50.
+    + Katz, Michael L. 1984. "Price Discrimination and Monopolyistic Competition." Econometrica 52:1453-72.
+    + Lederer, Phillip J., and Arthur P. Hurter, Jr. 1986. "Competition of Firms: Discriminatory Pricing and Location." Econometrica 54:623-40.
+    
